@@ -1,2475 +1,2566 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Elite Golf Performance Training in Fort Myers, FL. Complete swing coaching + strength training system. Book your session with Ryan Hogan today. (239) 672-8143">
-    <meta name="keywords" content="golf lessons Fort Myers, golf coaching, performance training, swing analysis, golf academy, Southwest Florida">
-    <meta name="author" content="Redline Golf Academy">
-    <meta name="geo.position" content="26.6406;-81.8723">
-    <meta name="ICBM" content="26.6406, -81.8723">
-    <meta name="geo.placename" content="Fort Myers, Florida">
-    <meta name="geo.region" content="US-FL">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Elite Golf Performance Training Fort Myers | Redline Golf Academy">
-    <meta property="og:description" content="Complete Golf Performance System: 40 min swing coaching + 20 min strength training. Data-driven approach to distance and scoring gains.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://redlinegolfacademy.com">
-    <meta property="og:image" content="https://redlinegolfacademy.com/og-image.jpg">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Elite Golf Performance Training Fort Myers | Redline Golf Academy">
-    <meta name="twitter:description" content="Complete Golf Performance System: 40 min swing coaching + 20 min strength training.">
-    <meta name="twitter:image" content="https://redlinegolfacademy.com/og-image.jpg">
-
-    <link rel="canonical" href="https://redlinegolfacademy.com">
-
-    <title>Elite Golf Performance Training Fort Myers | Redline Golf Academy | SW Florida</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-dark-navy: #003D5B;
-            --primary-light-blue: #8DC8E8;
-            --accent-bright-blue: #00A3E0;
-            --hero-dark-bg: #0A1628;
-            --surface-dark: #0F2035;
-            --light-bg: #F8FAFB;
-            --white: #FFFFFF;
-            --text-on-dark: #E8EDF2;
-            --warm-accent: #FF6B35;
-            --text-dark: #1A2332;
-
-            --space-grotesk: 'Space Grotesk', sans-serif;
-            --inter: 'Inter', sans-serif;
-            --jetbrains-mono: 'JetBrains Mono', monospace;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--inter);
-            color: var(--text-dark);
-            background-color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* TYPOGRAPHY */
-        h1 {
-            font-family: var(--space-grotesk);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-family: var(--space-grotesk);
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-family: var(--space-grotesk);
-            font-weight: 600;
-        }
-
-        .mono {
-            font-family: var(--jetbrains-mono);
-            font-weight: 600;
-        }
-
-        /* NAVIGATION */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1.5rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            backdrop-filter: blur(0px);
-            background: rgba(255, 255, 255, 0);
-            transition: all 0.4s ease;
-            height: 70px;
-        }
-
-        nav.scrolled {
-            backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.7);
-            border-bottom: 1px solid rgba(0, 61, 91, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-logo {
-            font-family: var(--space-grotesk);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--white);
-            text-decoration: none;
-            letter-spacing: 0.05em;
-            transition: color 0.4s ease;
-        }
-
-        nav.scrolled .nav-logo {
-            color: var(--primary-dark-navy);
-        }
-
-        .nav-logo:hover {
-            color: var(--accent-bright-blue);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            flex: 1;
-            justify-content: center;
-            margin: 0;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-on-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        nav.scrolled .nav-links a {
-            color: var(--text-dark);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-bright-blue);
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .nav-phone {
-            text-decoration: none;
-            color: var(--text-on-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        nav.scrolled .nav-phone {
-            color: var(--text-dark);
-        }
-
-        nav.scrolled .nav-toggle {
-            color: var(--text-dark);
-        }
-
-        .nav-phone:hover {
-            color: var(--accent-bright-blue);
-        }
-
-        .nav-cta {
-            background: linear-gradient(135deg, var(--accent-bright-blue), #0088BB);
-            color: var(--white);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 163, 224, 0.3);
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 163, 224, 0.5);
-        }
-
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--white);
-            transition: color 0.4s ease;
-            cursor: pointer;
-            z-index: 1100;
-        }
-
-        /* MOBILE NAV */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -350px;
-            width: 350px;
-            height: 100vh;
-            background: var(--hero-dark-bg);
-            z-index: 999;
-            padding: 2rem 1.5rem;
-            overflow-y: auto;
-            transition: right 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .mobile-nav.open {
-            right: 0;
-        }
-
-        .mobile-nav-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(232, 237, 242, 0.1);
-        }
-
-        .mobile-nav-title {
-            font-family: var(--space-grotesk);
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-light-blue);
-            letter-spacing: 0.05em;
-        }
-
-        .mobile-nav-close {
-            background: none;
-            border: none;
-            color: var(--text-on-dark);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .mobile-nav-close:hover {
-            color: var(--accent-bright-blue);
-        }
-
-        .mobile-nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .mobile-nav-links a {
-            text-decoration: none;
-            color: var(--text-on-dark);
-            font-weight: 500;
-            font-size: 1rem;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(232, 237, 242, 0.1);
-            transition: color 0.3s ease;
-            display: block;
-            animation: slideInLeft 0.5s ease forwards;
-            opacity: 0;
-        }
-
-        .mobile-nav-links li:nth-child(1) a { animation-delay: 0.1s; }
-        .mobile-nav-links li:nth-child(2) a { animation-delay: 0.2s; }
-        .mobile-nav-links li:nth-child(3) a { animation-delay: 0.3s; }
-        .mobile-nav-links li:nth-child(4) a { animation-delay: 0.4s; }
-        .mobile-nav-links li:nth-child(5) a { animation-delay: 0.5s; }
-
-        .mobile-nav-links a:hover {
-            color: var(--accent-bright-blue);
-        }
-
-        .mobile-nav-phone {
-            text-decoration: none;
-            color: var(--primary-light-blue);
-            font-weight: 600;
-            padding: 1rem;
-            border: 2px solid var(--accent-bright-blue);
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .mobile-nav-phone:hover {
-            background: var(--accent-bright-blue);
-            color: var(--hero-dark-bg);
-        }
-
-        .mobile-nav-cta {
-            background: linear-gradient(135deg, var(--accent-bright-blue), #0088BB);
-            color: var(--white);
-            padding: 1rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .mobile-nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 163, 224, 0.5);
-        }
-
-        .nav-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0);
-            z-index: 998;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .nav-overlay.open {
-            opacity: 0.5;
-            pointer-events: all;
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: var(--hero-dark-bg);
-            color: var(--text-on-dark);
-            padding: 120px 2rem 80px;
-            position: relative;
-            overflow: hidden;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: var(--primary-light-blue);
-            max-width: 500px;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-bright-blue), #0088BB);
-            color: var(--white);
-            box-shadow: 0 4px 20px rgba(0, 163, 224, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 163, 224, 0.6);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--accent-bright-blue);
-            border: 2px solid var(--accent-bright-blue);
-        }
-
-        .btn-secondary:hover {
-            background: var(--accent-bright-blue);
-            color: var(--hero-dark-bg);
-        }
-
-        /* SWING ARC ANIMATION */
-        .swing-arc-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .swing-arc-svg {
-            width: 100%;
-            height: 100%;
-            filter: drop-shadow(0 0 30px rgba(141, 200, 232, 0.3));
-        }
-
-        .swing-path {
-            fill: none;
-            stroke: url(#swingGradient);
-            stroke-width: 3;
-            stroke-linecap: round;
-            opacity: 0;
-            animation: drawSwing 2.5s ease-in-out forwards;
-            filter: drop-shadow(0 0 15px rgba(141, 200, 232, 0.6));
-        }
-
-        .swing-dot {
-            fill: var(--primary-light-blue);
-            opacity: 0;
-            animation: fadeInDot 0.4s ease-out forwards;
-            filter: drop-shadow(0 0 8px rgba(141, 200, 232, 0.8));
-        }
-
-        .swing-dot:nth-child(2) { animation-delay: 1s; }
-        .swing-dot:nth-child(3) { animation-delay: 1.5s; }
-        .swing-dot:nth-child(4) { animation-delay: 2s; }
-
-        .stat-callout {
-            position: absolute;
-            font-family: var(--jetbrains-mono);
-            color: var(--primary-light-blue);
-            font-weight: 600;
-            font-size: 0.85rem;
-            opacity: 0;
-            animation: fadeInCallout 0.5s ease-out forwards;
-            text-shadow: 0 0 10px rgba(141, 200, 232, 0.4);
-        }
-
-        .stat-1 { bottom: 60%; right: 20%; animation-delay: 1.2s; }
-        .stat-2 { bottom: 45%; right: 35%; animation-delay: 1.7s; }
-        .stat-3 { bottom: 25%; right: 25%; animation-delay: 2.2s; }
-
-        @keyframes drawSwing {
-            from {
-                stroke-dasharray: 500;
-                stroke-dashoffset: 500;
-                opacity: 0;
-            }
-            to {
-                stroke-dasharray: 500;
-                stroke-dashoffset: 0;
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInDot {
-            from {
-                opacity: 0;
-                r: 2;
-            }
-            to {
-                opacity: 1;
-                r: 5;
-            }
-        }
-
-        @keyframes fadeInCallout {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* STATS BAR */
-        .stats-bar {
-            background: rgba(15, 32, 53, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(141, 200, 232, 0.2);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin: -80px 2rem 0;
-            position: relative;
-            z-index: 10;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .stat-number {
-            font-family: var(--jetbrains-mono);
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-bright-blue);
-            margin-bottom: 0.5rem;
-            counter-increment: stat-counter;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--primary-light-blue);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            line-height: 1.4;
-        }
-
-        /* ABOUT SECTION */
-        .about {
-            padding: 120px 2rem;
-            background: var(--light-bg);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            color: var(--primary-dark-navy);
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: #5A6B7D;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-dark-navy);
-        }
-
-        .about-text p {
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #4A5B6D;
-        }
-
-        .about-image {
-            position: relative;
-            height: 400px;
-            background: linear-gradient(135deg, var(--primary-light-blue), var(--accent-bright-blue));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 61, 91, 0.2);
-        }
-
-        .about-image-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--space-grotesk);
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* SERVICES SECTION */
-        .services {
-            padding: 120px 2rem;
-            background: var(--white);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: rgba(15, 32, 53, 0.05);
-            border: 1px solid rgba(0, 61, 91, 0.1);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            perspective: 1000px;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px) rotateX(5deg);
-            box-shadow: 0 20px 40px rgba(0, 163, 224, 0.15);
-            border-color: var(--accent-bright-blue);
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 1.5rem;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-bright-blue), var(--primary-light-blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.8rem;
-            box-shadow: 0 8px 20px rgba(0, 163, 224, 0.3);
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary-dark-navy);
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-            color: #5A6B7D;
-            line-height: 1.6;
-        }
-
-        /* DETAILED SERVICES */
-        .detailed-service {
-            padding: 80px 2rem;
-            border-top: 1px solid rgba(0, 61, 91, 0.1);
-        }
-
-        .detailed-service:nth-child(odd) {
-            background: var(--light-bg);
-        }
-
-        .service-detail-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .service-detail-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-dark-navy);
-        }
-
-        .service-detail-content p {
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: #4A5B6D;
-        }
-
-        .service-detail-list {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .service-detail-list li {
-            padding: 0.8rem 0 0.8rem 2.5rem;
-            position: relative;
-            color: #4A5B6D;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .service-detail-list li:before {
-            content: '\2713';
-            position: absolute;
-            left: 0;
-            color: var(--accent-bright-blue);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .service-detail-visual {
-            background: linear-gradient(135deg, rgba(141, 200, 232, 0.1), rgba(0, 163, 224, 0.1));
-            border: 2px solid rgba(0, 163, 224, 0.2);
-            border-radius: 16px;
-            padding: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 350px;
-            font-family: var(--space-grotesk);
-            color: #5A6B7D;
-            text-align: center;
-        }
-
-        /* PRICING SECTION */
-        .pricing {
-            padding: 120px 2rem;
-            background: var(--white);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .pricing-card {
-            background: rgba(15, 32, 53, 0.03);
-            border: 2px solid rgba(0, 61, 91, 0.1);
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            position: relative;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--accent-bright-blue);
-            box-shadow: 0 25px 50px rgba(0, 163, 224, 0.15);
-        }
-
-        .pricing-card.featured {
-            background: linear-gradient(135deg, rgba(10, 22, 40, 0.8), rgba(15, 32, 53, 0.6));
-            border-color: var(--accent-bright-blue);
-            transform: scale(1.05);
-            box-shadow: 0 20px 60px rgba(0, 163, 224, 0.25);
-        }
-
-        .pricing-card.featured .pricing-card-header {
-            color: var(--white);
-        }
-
-        .pricing-card.featured .pricing-price {
-            color: var(--accent-bright-blue);
-        }
-
-        .pricing-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--warm-accent);
-            color: var(--white);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-        }
-
-        .pricing-card-header {
-            margin-bottom: 1.5rem;
-            color: var(--primary-dark-navy);
-        }
-
-        .pricing-card-header h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-description {
-            font-size: 0.9rem;
-            color: #5A6B7D;
-            margin-bottom: 1.5rem;
-        }
-
-        .pricing-price {
-            font-family: var(--jetbrains-mono);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-bright-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-frequency {
-            font-size: 0.85rem;
-            color: #5A6B7D;
-            margin-bottom: 2rem;
-        }
-
-        .pricing-options {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-grow: 1;
-        }
-
-        .pricing-option {
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.02);
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: #4A5B6D;
-        }
-
-        .pricing-card.featured .pricing-option {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-on-dark);
-        }
-
-        .pricing-cta {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .pricing-card:not(.featured) .pricing-cta {
-            background: transparent;
-            color: var(--accent-bright-blue);
-            border: 2px solid var(--accent-bright-blue);
-        }
-
-        .pricing-card:not(.featured) .pricing-cta:hover {
-            background: var(--accent-bright-blue);
-            color: var(--white);
-        }
-
-        .pricing-card.featured .pricing-cta {
-            background: linear-gradient(135deg, var(--accent-bright-blue), #0088BB);
-            color: var(--white);
-            box-shadow: 0 4px 20px rgba(0, 163, 224, 0.4);
-        }
-
-        .pricing-card.featured .pricing-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 163, 224, 0.6);
-        }
-
-        /* SCIENCE SECTION */
-        .science {
-            padding: 120px 2rem;
-            background: var(--light-bg);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .science-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .science-data {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .data-point {
-            padding: 1.5rem;
-            background: var(--white);
-            border-left: 4px solid var(--accent-bright-blue);
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .data-point .number {
-            font-family: var(--jetbrains-mono);
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent-bright-blue);
-        }
-
-        .data-point .label {
-            font-size: 0.85rem;
-            color: #5A6B7D;
-            margin-top: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .science-visual {
-            background: linear-gradient(135deg, var(--primary-light-blue), var(--accent-bright-blue));
-            border-radius: 16px;
-            padding: 3rem 2rem;
-            text-align: center;
-            color: var(--white);
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 60px rgba(0, 163, 224, 0.2);
-        }
-
-        .science-visual h3 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .chart-bars {
-            display: flex;
-            align-items: flex-end;
-            gap: 2rem;
-            justify-content: center;
-            height: 200px;
-        }
-
-        .bar {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .bar-fill {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 8px 8px 0 0;
-            width: 60px;
-            animation: growBar 1.5s ease-out forwards;
-        }
-
-        .bar-label {
-            font-size: 0.85rem;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        @keyframes growBar {
-            from {
-                height: 0;
-            }
-            to {
-                height: var(--height);
-            }
-        }
-
-        /* SOCIAL PROOF SECTION */
-        .social-proof {
-            padding: 120px 2rem;
-            background: var(--white);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial-card {
-            background: var(--light-bg);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid rgba(0, 61, 91, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-4px);
-        }
-
-        .testimonial-stars {
-            color: #FFB800;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            letter-spacing: 0.2em;
-        }
-
-        .testimonial-text {
-            font-size: 0.95rem;
-            color: #4A5B6D;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary-dark-navy);
-            font-size: 0.95rem;
-        }
-
-        .testimonial-role {
-            font-size: 0.85rem;
-            color: #5A6B7D;
-        }
-
-        .placeholder-content {
-            background: linear-gradient(135deg, rgba(141, 200, 232, 0.05), rgba(0, 163, 224, 0.05));
-            border: 2px dashed rgba(0, 163, 224, 0.2);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            color: #5A6B7D;
-            margin: 1rem 0;
-        }
-
-        /* FAQ SECTION */
-        .faq {
-            padding: 120px 2rem;
-            background: var(--light-bg);
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .faq-items {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .faq-item {
-            background: var(--white);
-            border: 1px solid rgba(0, 61, 91, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            background: var(--white);
-            border: none;
-            width: 100%;
-            text-align: left;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary-dark-navy);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-            font-family: var(--space-grotesk);
-        }
-
-        .faq-item:hover .faq-question {
-            background: rgba(0, 163, 224, 0.05);
-            color: var(--accent-bright-blue);
-        }
-
-        .faq-toggle {
-            font-size: 1.3rem;
-            color: var(--accent-bright-blue);
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.open .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-item.open .faq-answer {
-            max-height: 500px;
-        }
-
-        .faq-content {
-            padding: 0 1.5rem 1.5rem;
-            color: #4A5B6D;
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        /* CONTACT SECTION */
-        .contact {
-            padding: 120px 2rem;
-            background: var(--white);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            position: absolute;
-            top: -25px;
-            left: 0;
-            font-size: 0.85rem;
-            color: #5A6B7D;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            padding: 1rem 1.5rem;
-            border: 2px solid rgba(0, 61, 91, 0.1);
-            border-radius: 8px;
-            font-family: var(--inter);
-            font-size: 1rem;
-            background: var(--light-bg);
-            transition: all 0.3s ease;
-            color: var(--text-dark);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-bright-blue);
-            background: var(--white);
-            box-shadow: 0 0 0 3px rgba(0, 163, 224, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 140px;
-        }
-
-        .form-submit {
-            background: linear-gradient(135deg, var(--accent-bright-blue), #0088BB);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 163, 224, 0.3);
-            margin-top: 1rem;
-        }
-
-        .form-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 163, 224, 0.5);
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .info-block {
-            padding: 2rem;
-            background: var(--light-bg);
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-bright-blue);
-        }
-
-        .info-block h3 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-dark-navy);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-        }
-
-        .info-block a,
-        .info-block address {
-            color: #4A5B6D;
-            text-decoration: none;
-            font-style: normal;
-            line-height: 1.8;
-        }
-
-        .info-block a:hover {
-            color: var(--accent-bright-blue);
-        }
-
-        .map-container {
-            border-radius: 12px;
-            overflow: hidden;
-            height: 350px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* FOOTER */
-        footer {
-            background: var(--hero-dark-bg);
-            color: var(--text-on-dark);
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-light-blue);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-section a {
-            color: var(--text-on-dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent-bright-blue);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(232, 237, 242, 0.1);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-copyright {
-            font-size: 0.85rem;
-            color: rgba(232, 237, 242, 0.6);
-        }
-
-        .footer-socials {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(141, 200, 232, 0.1);
-            border: 1px solid rgba(141, 200, 232, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-light-blue);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background: var(--accent-bright-blue);
-            border-color: var(--accent-bright-blue);
-            color: var(--white);
-            box-shadow: 0 4px 15px rgba(0, 163, 224, 0.4);
-        }
-
-        /* ANIMATIONS */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .fade-in-up.visible {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stagger-delay-1 { animation-delay: 0.1s; }
-        .stagger-delay-2 { animation-delay: 0.2s; }
-        .stagger-delay-3 { animation-delay: 0.3s; }
-        .stagger-delay-4 { animation-delay: 0.4s; }
-        .stagger-delay-5 { animation-delay: 0.5s; }
-
-        /* RESPONSIVE */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-
-            .swing-arc-container {
-                display: none;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-
-            .service-detail-content {
-                grid-template-columns: 1fr;
-            }
-
-            .science-content {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .nav-right {
-                display: none;
-            }
-
-            .nav-toggle {
-                display: block;
-            }
-
-            .hero {
-                padding: 100px 1.5rem 60px;
-                min-height: auto;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-                text-align: center;
-            }
-
-            .hero-text p {
-                text-align: center;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-ctas {
-                justify-content: center;
-            }
-
-            .stats-bar {
-                margin: -60px 1rem 0;
-                padding: 1.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .stat-number {
-                font-size: 1.8rem;
-            }
-
-            .about {
-                padding: 80px 1.5rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .services {
-                padding: 80px 1.5rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing {
-                padding: 80px 1.5rem;
-            }
-
-            .detailed-service {
-                padding: 60px 1.5rem;
-            }
-
-            .science {
-                padding: 80px 1.5rem;
-            }
-
-            .faq {
-                padding: 80px 1.5rem;
-            }
-
-            .contact {
-                padding: 80px 1.5rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .mobile-nav {
-                width: 100%;
-                right: -100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero-text p {
-                font-size: 0.95rem;
-            }
-
-            .hero-ctas {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .section-header h2 {
-                font-size: 1.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-form,
-            .contact-info {
-                gap: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Elite Golf Performance Training in Fort Myers, FL. Expert swing coaching combined with golf-specific strength training. Measurable gains in distance and consistency. Call (239) 672-8143.">
+  <meta name="theme-color" content="#0B2545">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="keywords" content="golf training Fort Myers, golf lessons Southwest Florida, swing coaching, golf performance training">
+  <meta name="author" content="Redline Golf Academy">
+  <meta name="geo.position" content="26.6406;-81.8723">
+  <meta name="ICBM" content="26.6406, -81.8723">
+  <meta property="og:title" content="Elite Golf Performance Training Fort Myers | Redline Golf Academy">
+  <meta property="og:description" content="Expert swing coaching + golf-specific strength training. Integrated system for measurable gains.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://redlinegolfacademy.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elite Golf Performance Training Fort Myers | Redline Golf Academy">
+  <meta name="twitter:description" content="Expert swing coaching + golf-specific strength training. Integrated system for measurable gains.">
+  <link rel="canonical" href="https://redlinegolfacademy.com">
+  <title>Elite Golf Performance Training Fort Myers | Redline Golf Academy | SW Florida</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #0B2545;
+      --forest-green: #1B4332;
+      --emerald: #2D6A4F;
+      --sky-blue: #8DC8E8;
+      --teal: #0EA5E9;
+      --cream: #FAFDF6;
+      --white: #FFFFFF;
+      --light-text: #E8F0E8;
+      --dark-text: #1A1A1A;
+      --gold: #D4A855;
+
+      --font-headline: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--dark-text);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    section {
+      position: relative;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 2rem;
+      background: transparent;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    nav.scrolled {
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(11, 37, 69, 0.08);
+    }
+
+    nav.scrolled .nav-links a,
+    nav.scrolled .nav-phone,
+    nav.scrolled .nav-hamburger {
+      color: var(--dark-text);
+    }
+
+    nav.scrolled .nav-cta {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .nav-logo img {
+      height: 45px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--teal);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-phone {
+      color: var(--light-text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-phone:hover {
+      color: var(--teal);
+    }
+
+    .nav-cta {
+      background: transparent;
+      border: 2px solid var(--teal);
+      color: var(--teal);
+      padding: 0.6rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+
+    .nav-cta:hover {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--light-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    /* MOBILE NAV DRAWER */
+    .nav-drawer {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 75%;
+      max-width: 320px;
+      background: var(--navy);
+      z-index: 999;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .nav-drawer.open {
+      transform: translateX(0);
+    }
+
+    .nav-drawer-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--light-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .nav-drawer-close:hover {
+      color: var(--teal);
+    }
+
+    .nav-drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      list-style: none;
+    }
+
+    .nav-drawer-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-drawer-links a:hover {
+      color: var(--teal);
+    }
+
+    .nav-drawer-cta {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(232, 240, 232, 0.2);
+    }
+
+    .nav-drawer-cta a {
+      display: block;
+      background: var(--teal);
+      color: var(--white);
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-drawer-cta a:hover {
+      opacity: 0.9;
+    }
+
+    .nav-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(11, 37, 69, 0.5);
+      z-index: 998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--forest-green) 100%);
+      color: var(--light-text);
+      padding: 12rem 2rem 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><style>.contour{fill:none;stroke:%23E8F0E8;stroke-width:1;opacity:0.1;}</style></defs><path class="contour" d="M 100 300 Q 300 250 500 300 T 900 300"/><path class="contour" d="M 80 350 Q 300 300 500 350 T 920 350"/><path class="contour" d="M 120 400 Q 320 350 500 400 T 880 400"/><path class="contour" d="M 100 450 Q 300 400 500 450 T 900 450"/><path class="contour" d="M 110 500 Q 310 450 500 500 T 890 500"/><path class="contour" d="M 90 550 Q 290 500 500 550 T 910 550"/><path class="contour" d="M 130 600 Q 330 550 500 600 T 870 600"/></svg>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      animation: drift 20s ease-in-out infinite;
+      z-index: 1;
+      opacity: 0.15;
+    }
+
+    @keyframes drift {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .hero-watermark {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      opacity: 0.05;
+      z-index: 0;
+      font-size: 20rem;
+      font-weight: 700;
+      color: var(--light-text);
+      transform: translateY(-50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-family: var(--font-headline);
+      font-size: 4.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+      padding: 1rem 2.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-primary {
+      background: var(--teal);
+      color: var(--white);
+      box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+    }
+
+    .cta-primary:hover {
+      box-shadow: 0 0 40px rgba(14, 165, 233, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: var(--light-text);
+      border: 2px solid var(--light-text);
+    }
+
+    .cta-secondary:hover {
+      background: var(--light-text);
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    /* CREDENTIALS BAR */
+    .credentials {
+      position: relative;
+      z-index: 10;
+      margin: -3rem 2rem 0;
+      background: var(--white);
+      border-left: 5px solid var(--forest-green);
+      padding: 2rem;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(11, 37, 69, 0.12);
+    }
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .credential-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .credential-icon {
+      color: var(--forest-green);
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+
+    .credential-text {
+      flex: 1;
+    }
+
+    .credential-text h3 {
+      font-family: var(--font-headline);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .credential-text p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .credential-logo {
+      grid-column: span 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .credential-logo img {
+      max-height: 60px;
+      width: auto;
+    }
+
+    /* THE SYSTEM SECTION */
+    .the-system {
+      background: var(--forest-green);
+      color: var(--light-text);
+      padding: 6rem 2rem;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    }
+
+    .system-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .system-text h2 {
+      font-family: var(--font-headline);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .system-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .system-visual {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .system-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 3px solid var(--sky-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .system-circle-1 {
+      width: 180px;
+      height: 180px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(45, 106, 79, 0.3);
+    }
+
+    .system-circle-2 {
+      width: 180px;
+      height: 180px;
+      bottom: 0;
+      left: 0;
+      background: rgba(141, 200, 232, 0.2);
+    }
+
+    .system-circle-3 {
+      width: 180px;
+      height: 180px;
+      bottom: 0;
+      right: 0;
+      background: rgba(45, 106, 79, 0.2);
+    }
+
+    .system-connector {
+      position: absolute;
+      background: var(--sky-blue);
+      opacity: 0.3;
+    }
+
+    .connector-1 {
+      width: 3px;
+      height: 120px;
+      top: 180px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .connector-2 {
+      width: 3px;
+      height: 120px;
+      top: 50%;
+      left: 25%;
+      transform: rotate(-35deg) translateY(-50%);
+      transform-origin: top;
+    }
+
+    .connector-3 {
+      width: 3px;
+      height: 120px;
+      top: 50%;
+      right: 25%;
+      transform: rotate(35deg) translateY(-50%);
+      transform-origin: top;
+    }
+
+    .system-logo {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .system-logo img {
+      max-height: 80px;
+      width: auto;
+    }
+
+    /* SERVICES SECTION */
+    .services {
+      background: var(--cream);
+      padding: 6rem 2rem;
+    }
+
+    .services-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+
+    .services-header h2 {
+      font-family: var(--font-headline);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 4px;
+      border: 1px solid #E5E7EB;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+    }
+
+    .service-card:nth-child(1) { animation-delay: 0.1s; }
+    .service-card:nth-child(2) { animation-delay: 0.2s; }
+    .service-card:nth-child(3) { animation-delay: 0.3s; }
+    .service-card:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(11, 37, 69, 0.15);
+      border-bottom: 3px solid var(--forest-green);
+    }
+
+    .service-icon-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+
+    .service-card:nth-child(1) .service-icon-circle {
+      background: var(--teal);
+    }
+
+    .service-card:nth-child(2) .service-icon-circle {
+      background: var(--forest-green);
+    }
+
+    .service-card:nth-child(3) .service-icon-circle {
+      background: var(--teal);
+    }
+
+    .service-card:nth-child(4) .service-icon-circle {
+      background: var(--forest-green);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card a {
+      color: var(--forest-green);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .service-card a:hover {
+      color: var(--teal);
+    }
+
+    /* DISTANCE SCIENCE SECTION */
+    .distance-science {
+      background: var(--navy);
+      color: var(--light-text);
+      padding: 6rem 2rem;
+      position: relative;
+      clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+    }
+
+    .science-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .science-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .science-header h2 {
+      font-family: var(--font-headline);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .science-equation {
+      background: rgba(45, 106, 79, 0.2);
+      border: 2px solid var(--forest-green);
+      border-radius: 4px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 4rem;
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--sky-blue);
+      animation: fadeIn 0.8s ease 0.2s both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .science-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(141, 200, 232, 0.08);
+      border-radius: 4px;
+      border: 1px solid rgba(141, 200, 232, 0.2);
+    }
+
+    .stat-number {
+      font-family: var(--font-mono);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--sky-blue);
+      margin-bottom: 0.5rem;
+      animation: snapIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes snapIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: var(--light-text);
+      opacity: 0.85;
+    }
+
+    .comparison-visual {
+      background: rgba(141, 200, 232, 0.1);
+      border-radius: 4px;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    .comparison-title {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .bar-comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .bar-item {
+      text-align: center;
+    }
+
+    .bar-item-label {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      opacity: 0.85;
+    }
+
+    .bar-visual {
+      background: rgba(141, 200, 232, 0.2);
+      border-radius: 4px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, var(--sky-blue), var(--emerald));
+      animation: barExpand 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes barExpand {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    .bar-text {
+      position: relative;
+      z-index: 2;
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+
+    /* PRICING SECTION */
+    .pricing {
+      background: var(--white);
+      padding: 6rem 2rem;
+    }
+
+    .pricing-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+
+    .pricing-header h2 {
+      font-family: var(--font-headline);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border: 1px solid #E5E7EB;
+      border-radius: 4px;
+      padding: 2.5rem;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(11, 37, 69, 0.15);
+    }
+
+    .pricing-card.featured {
+      border-top: 4px solid var(--gold);
+      box-shadow: 0 8px 32px rgba(212, 168, 85, 0.12);
+    }
+
+    .pricing-card.featured:hover {
+      box-shadow: 0 16px 40px rgba(212, 168, 85, 0.2);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      right: 2rem;
+      background: var(--gold);
+      color: var(--white);
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .pricing-title {
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      margin-top: 1rem;
+    }
+
+    .pricing-price {
+      font-family: var(--font-mono);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-period {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-description {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      border-top: 1px solid #E5E7EB;
+      border-bottom: 1px solid #E5E7EB;
+      padding: 1.5rem 0;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .pricing-features li {
+      padding: 0.5rem 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .pricing-features li:before {
+      content: '✓ ';
+      color: var(--forest-green);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
+    .pricing-cta {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.3s ease;
+    }
+
+    .pricing-cta-primary {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .pricing-cta-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .pricing-cta-secondary {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+
+    .pricing-cta-secondary:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    /* TRAINING DETAIL SECTION */
+    .training-detail {
+      background: var(--emerald);
+      color: var(--light-text);
+      padding: 6rem 2rem;
+      position: relative;
+      clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+    }
+
+    .training-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+
+    .training-header h2 {
+      font-family: var(--font-headline);
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .tabs-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .tabs-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tab-button {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--light-text);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-family: var(--font-body);
+    }
+
+    .tab-button:hover {
+      border-color: var(--sky-blue);
+      color: var(--sky-blue);
+    }
+
+    .tab-button.active {
+      background: var(--sky-blue);
+      border-color: var(--sky-blue);
+      color: var(--navy);
+    }
+
+    .tab-content {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      padding: 2.5rem;
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content h3 {
+      font-family: var(--font-headline);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .tab-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .detail-list {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .detail-list li {
+      padding: 0.75rem 0;
+      padding-left: 2rem;
+      position: relative;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .detail-list li:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      color: var(--sky-blue);
+      font-weight: 700;
+    }
+
+    /* SOCIAL PROOF SECTION */
+    .social-proof {
+      background: var(--cream);
+      padding: 6rem 2rem;
+    }
+
+    .social-proof-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+
+    .social-proof-header h2 {
+      font-family: var(--font-headline);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 4px;
+      border: 1px solid #E5E7EB;
+      text-align: center;
+    }
+
+    .testimonial-card h3 {
+      font-family: var(--font-headline);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .testimonial-card .role {
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-card .content {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.7;
+      font-style: italic;
+      padding: 1.5rem 0;
+      border-top: 1px solid #E5E7EB;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .testimonial-coming-soon {
+      padding: 2rem;
+      text-align: center;
+      color: #999;
+    }
+
+    .testimonial-coming-soon p {
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* FAQ SECTION */
+    .faq {
+      background: var(--white);
+      padding: 6rem 2rem;
+    }
+
+    .faq-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+
+    .faq-header h2 {
+      font-family: var(--font-headline);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid #E5E7EB;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      cursor: pointer;
+      background: var(--white);
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: var(--font-body);
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question:hover {
+      background: var(--cream);
+      color: var(--teal);
+    }
+
+    .faq-toggle {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      color: var(--teal);
+      font-size: 1.2rem;
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      background: var(--cream);
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+    }
+
+    .faq-answer-content {
+      padding: 1.5rem;
+      color: #666;
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    /* CONTACT SECTION */
+    .contact {
+      background: var(--navy);
+      color: var(--light-text);
+      padding: 6rem 2rem;
+      position: relative;
+      clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+    }
+
+    .contact-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-form-wrapper {
+      flex: 1;
+    }
+
+    .contact-form-title {
+      font-family: var(--font-headline);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--light-text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid rgba(232, 240, 232, 0.3);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--light-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(232, 240, 232, 0.5);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 12px rgba(14, 165, 233, 0.2);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      background: var(--teal);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .form-submit:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .contact-info-wrapper {
+      flex: 1;
+    }
+
+    .contact-info {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(232, 240, 232, 0.1);
+    }
+
+    .contact-info h3 {
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    address {
+      font-style: normal;
+      margin-bottom: 2rem;
+    }
+
+    .contact-line {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .contact-line strong {
+      display: block;
+      color: var(--sky-blue);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-line a {
+      color: var(--light-text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-line a:hover {
+      color: var(--teal);
+    }
+
+    .contact-hours {
+      margin-bottom: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(232, 240, 232, 0.2);
+    }
+
+    .contact-hours strong {
+      color: var(--sky-blue);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .contact-map {
+      margin-top: 2rem;
+      border-radius: 4px;
+      overflow: hidden;
+      height: 250px;
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .contact-logo {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .contact-logo img {
+      max-height: 70px;
+      width: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: var(--light-text);
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(232, 240, 232, 0.1);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-section h4 {
+      font-family: var(--font-headline);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--sky-blue);
+      letter-spacing: -0.02em;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-section ul li a {
+      color: var(--light-text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      opacity: 0.85;
+    }
+
+    .footer-section ul li a:hover {
+      color: var(--teal);
+      opacity: 1;
+    }
+
+    .footer-logo {
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo img {
+      max-height: 60px;
+      width: auto;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-socials a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(141, 200, 232, 0.1);
+      border-radius: 50%;
+      color: var(--sky-blue);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-socials a:hover {
+      background: var(--sky-blue);
+      color: var(--navy);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(232, 240, 232, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-bottom-text {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: var(--teal);
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: block;
+      }
+
+      .hero {
+        padding: 8rem 1.5rem 4rem;
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        word-spacing: 100vw;
+      }
+
+      .hero-subtitle {
+        font-size: 1.05rem;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .cta-primary,
+      .cta-secondary {
+        width: 100%;
+      }
+
+      .credentials {
+        margin: -2rem 1.5rem 0;
+      }
+
+      .credentials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .system-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .system-text h2 {
+        font-size: 2rem;
+      }
+
+      .system-visual {
+        height: 300px;
+      }
+
+      .system-circle-1,
+      .system-circle-2,
+      .system-circle-3 {
+        width: 120px;
+        height: 120px;
+      }
+
+      .services-header h2 {
+        font-size: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .distance-science {
+        padding: 4rem 1.5rem;
+      }
+
+      .science-header h2 {
+        font-size: 2rem;
+      }
+
+      .science-equation {
+        font-size: 1.2rem;
+        padding: 1.5rem;
+      }
+
+      .bar-comparison {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .pricing-header h2 {
+        font-size: 2rem;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .training-header h2 {
+        font-size: 2rem;
+      }
+
+      .tabs-buttons {
+        flex-direction: column;
+      }
+
+      .tab-button {
+        width: 100%;
+      }
+
+      .social-proof-header h2 {
+        font-size: 2rem;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-header h2 {
+        font-size: 2rem;
+      }
+
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .contact {
+        padding: 4rem 1.5rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-bottom-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+
+      .science-equation {
+        font-size: 1rem;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      nav {
+        padding: 1rem 1rem;
+      }
+
+      .nav-phone {
+        display: none;
+      }
+
+      .nav-right {
+        gap: 1rem;
+      }
+
+      .pricing-price {
+        font-size: 2rem;
+      }
+
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .contact-map {
+        height: 200px;
+      }
+
+      .faq-question {
+        padding: 1.25rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- NAVIGATION -->
-    <nav id="navbar">
-        <a href="#" class="nav-logo">REDLINE</a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav-right">
-            <a href="tel:+12396728143" class="nav-phone">(239) 672-8143</a>
-            <a href="#contact" class="nav-cta">Book Session</a>
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <img src="logo_1.jpg" alt="Hogan Elite Golf">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#system">Why Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#science">Science</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+12396728143" class="nav-phone">(239) 672-8143</a>
+      <a href="#contact" class="nav-cta">Book Now</a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV DRAWER -->
+  <div class="nav-overlay" id="navOverlay"></div>
+  <div class="nav-drawer" id="navDrawer">
+    <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <ul class="nav-drawer-links">
+      <li><a href="#system" onclick="closeNavDrawer()">Why Us</a></li>
+      <li><a href="#services" onclick="closeNavDrawer()">Services</a></li>
+      <li><a href="#science" onclick="closeNavDrawer()">Science</a></li>
+      <li><a href="#pricing" onclick="closeNavDrawer()">Pricing</a></li>
+      <li><a href="#faq" onclick="closeNavDrawer()">FAQ</a></li>
+    </ul>
+    <div class="nav-drawer-cta">
+      <a href="#contact" onclick="closeNavDrawer()">Book Your Session</a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-watermark">H</div>
+    <div class="hero-content">
+      <h1>Elite Golf Performance Training in Fort Myers</h1>
+      <p class="hero-subtitle">40 minutes of expert swing coaching. 20 minutes of golf-specific strength training. One integrated system for measurable gains.</p>
+      <div class="hero-ctas">
+        <button class="cta-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Book Your Session</button>
+        <button class="cta-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">View Programs</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS BAR -->
+  <section class="credentials">
+    <div class="credentials-grid">
+      <div class="credential-item">
+        <div class="credential-icon"><i class="fas fa-star"></i></div>
+        <div class="credential-text">
+          <h3>PGA-Level Training Methods</h3>
+          <p>Proven techniques used by professional golfers</p>
         </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
+      </div>
+      <div class="credential-item">
+        <div class="credential-text">
+          <h3>Red Line Athletics Facility</h3>
+          <p>State-of-the-art training equipment</p>
+        </div>
+        <div class="credential-logo">
+          <img src="https://redlineathletics.com/wp-content/uploads/2025/08/Redline-Logo-V1.png" alt="Red Line Athletics">
+        </div>
+      </div>
+      <div class="credential-item">
+        <div class="credential-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="credential-text">
+          <h3>Southwest Florida</h3>
+          <p>Serving golfers across the region</p>
+        </div>
+      </div>
+      <div class="credential-item">
+        <div class="credential-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="credential-text">
+          <h3>Results-Driven Approach</h3>
+          <p>Measurable improvements you can track</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SYSTEM SECTION -->
+  <section class="the-system" id="system">
+    <div class="system-content">
+      <div class="system-text">
+        <h2>Not Just Lessons. A Complete Performance System.</h2>
+        <p>Elite Golf Performance Training combines expert swing mechanics coaching with golf-specific strength and mobility training. This integrated approach addresses both technique and physical capability, ensuring you're not leaving distance or consistency on the table.</p>
+        <p>Every session is designed to improve your game while building the physical foundation that separates amateurs from serious golfers.</p>
+      </div>
+      <div class="system-visual">
+        <div class="system-connector connector-1"></div>
+        <div class="system-connector connector-2"></div>
+        <div class="system-connector connector-3"></div>
+        <div class="system-circle system-circle-1">
+          <div>Swing Mechanics</div>
+        </div>
+        <div class="system-circle system-circle-2">
+          <div>Strength & Mobility</div>
+        </div>
+        <div class="system-circle system-circle-3">
+          <div>Speed Training</div>
+        </div>
+      </div>
+    </div>
+    <div class="system-logo">
+      <img src="logo_2.jpg" alt="Hogan Elite Golf Instruction">
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services" id="services">
+    <div class="services-header">
+      <h2>What We Train</h2>
+      <p>A comprehensive approach to golf performance improvement</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon-circle">
+          <i class="fas fa-bullseye"></i>
+        </div>
+        <h3>Swing Coaching</h3>
+        <p>Expert analysis of your swing mechanics with specific feedback and improvements tailored to your game and goals.</p>
+        <a href="#science">Learn More</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-circle">
+          <i class="fas fa-dumbbell"></i>
+        </div>
+        <h3>Strength & Mobility</h3>
+        <p>Golf-specific exercises targeting hip and thoracic spine mobility, core stability, and force production for power and consistency.</p>
+        <a href="#training">Learn More</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-circle">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3>Speed Training</h3>
+        <p>Increase clubhead speed and ball speed through targeted rotational power development and biomechanical optimization.</p>
+        <a href="#training">Learn More</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-circle">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Performance Tracking</h3>
+        <p>Measure progress with clubhead speed and ball speed data. See exactly how you're improving with every session.</p>
+        <a href="#science">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISTANCE SCIENCE SECTION -->
+  <section class="distance-science" id="science">
+    <div class="science-content">
+      <div class="science-header">
+        <h2>The Science Behind More Distance</h2>
+      </div>
+      <div class="science-equation">
+        +1 mph clubhead speed = +2-3 yards carry distance
+      </div>
+      <div class="science-stats">
+        <div class="stat-box">
+          <div class="stat-number">300+</div>
+          <div class="stat-label">Yards Avg PGA Drive</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">+5-10</div>
+          <div class="stat-label">mph Speed Gains</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">+10-20</div>
+          <div class="stat-label">Yards Gained</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">40+20</div>
+          <div class="stat-label">Minutes Per Session</div>
+        </div>
+      </div>
+      <div class="comparison-visual">
+        <div class="comparison-title">Approach Proximity Impact</div>
+        <div class="bar-comparison">
+          <div class="bar-item">
+            <div class="bar-item-label">Without Speed Training</div>
+            <div class="bar-visual">
+              <div class="bar-fill" style="width: 60%;"></div>
+              <div class="bar-text">150 yds</div>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-item-label">With Speed Training</div>
+            <div class="bar-visual">
+              <div class="bar-fill" style="animation-delay: 0.2s;"></div>
+              <div class="bar-text">165 yds</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-header">
+      <h2>Training Packages</h2>
+      <p>Flexible options for every golfer</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3 class="pricing-title">Single Sessions</h3>
+        <div class="pricing-price">$200</div>
+        <div class="pricing-period">1 Hour Individual</div>
+        <div class="pricing-description">40 min coaching + 20 min strength</div>
+        <ul class="pricing-features">
+          <li>Expert swing analysis</li>
+          <li>Strength & mobility work</li>
+          <li>Performance tracking</li>
+        </ul>
+        <button class="pricing-cta pricing-cta-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Book a Session</button>
+        <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+          Or 2 people for $300
+        </div>
+      </div>
+
+      <div class="pricing-card">
+        <h3 class="pricing-title">3-Session Package</h3>
+        <div class="pricing-price">$550</div>
+        <div class="pricing-period">3 x 1 Hour Individual</div>
+        <div class="pricing-description">Save $50 per package</div>
+        <ul class="pricing-features">
+          <li>Expert swing analysis</li>
+          <li>Strength & mobility work</li>
+          <li>Performance tracking</li>
+          <li>Flexible scheduling</li>
+        </ul>
+        <button class="pricing-cta pricing-cta-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
+        <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+          Or 2 people for $700
+        </div>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Most Popular</div>
+        <h3 class="pricing-title">Monthly Program</h3>
+        <div class="pricing-price">$700</div>
+        <div class="pricing-period">4 Sessions/Month Individual</div>
+        <div class="pricing-description">Scheduled & collected up front</div>
+        <ul class="pricing-features">
+          <li>Expert swing analysis</li>
+          <li>Strength & mobility work</li>
+          <li>Performance tracking</li>
+          <li>Priority scheduling</li>
+          <li>Program flexibility</li>
+        </ul>
+        <button class="pricing-cta pricing-cta-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Start Your Program</button>
+        <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+          Or 2 people for $1,000/month
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING DETAIL SECTION -->
+  <section class="training-detail" id="training">
+    <div class="training-header">
+      <h2>Deep Dive into Our Training Approach</h2>
+      <p>How we improve every aspect of your golf game</p>
+    </div>
+    <div class="tabs-container">
+      <div class="tabs-buttons">
+        <button class="tab-button active" data-tab="swing">Swing Mechanics</button>
+        <button class="tab-button" data-tab="strength">Strength & Mobility</button>
+        <button class="tab-button" data-tab="speed">Speed Training</button>
+        <button class="tab-button" data-tab="tracking">Progress Tracking</button>
+      </div>
+
+      <div class="tab-content active" data-tab="swing">
+        <h3>Swing Mechanics & Physical Capability</h3>
+        <p>We analyze your swing using proven biomechanical principles, identifying inefficiencies and areas for improvement. But swing mechanics are only part of the equation. Your body's physical capability directly impacts your ability to execute the swing we're coaching.</p>
+        <ul class="detail-list">
+          <li>Video analysis of swing fundamentals</li>
+          <li>Identification of limiting factors</li>
+          <li>Specific feedback for improvement</li>
+          <li>Progressive coaching toward better consistency</li>
+          <li>Integration of strength improvements into swing</li>
+        </ul>
+        <p style="margin-top: 2rem;">This is why we pair swing coaching with strength training. A golfer might intellectually understand the proper swing, but without the mobility and stability to execute it, progress stalls.</p>
+      </div>
+
+      <div class="tab-content" data-tab="strength">
+        <h3>Strength & Mobility Training</h3>
+        <p>Golf-specific strength and mobility are foundational to performance. We focus on the areas that directly impact your swing and power generation.</p>
+        <ul class="detail-list">
+          <li>Hip and thoracic spine mobility work</li>
+          <li>Core stability and strength development</li>
+          <li>Rotational power development</li>
+          <li>Postural correction and alignment</li>
+          <li>Injury prevention and recovery protocols</li>
+          <li>Sport-specific exercise programming</li>
+        </ul>
+        <p style="margin-top: 2rem;">These interventions directly support the swing mechanics we're coaching, creating a synergistic improvement where better strength enables better technique.</p>
+      </div>
+
+      <div class="tab-content" data-tab="speed">
+        <h3>Speed Training</h3>
+        <p>Increasing clubhead speed and ball speed requires targeted work on rotational power, ground force generation, and biomechanical efficiency.</p>
+        <ul class="detail-list">
+          <li>Clubhead speed development exercises</li>
+          <li>Ball speed optimization techniques</li>
+          <li>Ground force and rotational power work</li>
+          <li>Explosive movement training</li>
+          <li>Maintenance of mobility through speed development</li>
+          <li>Recovery and adaptation protocols</li>
+        </ul>
+        <p style="margin-top: 2rem;">Speed improvements are built on a foundation of proper mobility and strength. Without this foundation, speed gains are limited and risk of injury increases.</p>
+      </div>
+
+      <div class="tab-content" data-tab="tracking">
+        <h3>Progress Tracking & Measurement</h3>
+        <p>We measure what matters: clubhead speed, ball speed, and carry distance. These metrics give you concrete data about your improvement.</p>
+        <ul class="detail-list">
+          <li>Clubhead speed and ball speed measurement</li>
+          <li>Carry distance tracking</li>
+          <li>Approach proximity benchmarking</li>
+          <li>Session-to-session progress monitoring</li>
+          <li>Monthly and quarterly progress reports</li>
+          <li>Long-term improvement projections</li>
+        </ul>
+        <p style="margin-top: 2rem;">This data-driven approach removes guesswork and lets you see exactly how training is translating to real improvements in your golf.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF SECTION -->
+  <section class="social-proof">
+    <div class="social-proof-header">
+      <h2>Client Results & Testimonials</h2>
+      <p>Real golfers. Real improvements.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-coming-soon">
+          <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Client Testimonial Coming Soon</p>
+          <p>Real client results will be featured here as the program grows. We're building authentic success stories with our clients.</p>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-coming-soon">
+          <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Client Testimonial Coming Soon</p>
+          <p>Real client results will be featured here as the program grows. We're building authentic success stories with our clients.</p>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-coming-soon">
+          <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Client Testimonial Coming Soon</p>
+          <p>Real client results will be featured here as the program grows. We're building authentic success stories with our clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq" id="faq">
+    <div class="faq-header">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What does a typical session include?</span>
+          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
         </button>
-    </nav>
-
-    <!-- MOBILE NAV -->
-    <div class="nav-overlay" id="navOverlay"></div>
-    <div class="mobile-nav" id="mobileNav">
-        <div class="mobile-nav-header">
-            <div class="mobile-nav-title">REDLINE</div>
-            <button class="mobile-nav-close" id="navClose" aria-label="Close navigation">
-                <i class="fas fa-times"></i>
-            </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Each 60-minute session is structured as 40 minutes of expert swing coaching combined with 20 minutes of golf-specific strength training. This integrated approach addresses both technique and physical capability, ensuring you're improving across all areas that impact performance.</p>
+          </div>
         </div>
-        <ul class="mobile-nav-links">
-            <li><a href="#about" onclick="closeMobileNav()">About</a></li>
-            <li><a href="#services" onclick="closeMobileNav()">Services</a></li>
-            <li><a href="#pricing" onclick="closeMobileNav()">Pricing</a></li>
-            <li><a href="#faq" onclick="closeMobileNav()">FAQ</a></li>
-            <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do I need to be a certain skill level?</span>
+          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Our training is designed for golfers at all skill levels, from beginners working on fundamentals to experienced golfers looking to maximize distance and consistency. We customize the coaching and strength work to match your current level and goals.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What equipment should I bring?</span>
+          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Bring your own clubs if you prefer working with them, though we have a range of equipment available. Wear comfortable athletic clothing that allows full range of motion. The strength training portion requires athletic shoes. All other training equipment is provided at the facility.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How is this different from regular golf lessons?</span>
+          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Traditional golf lessons focus on swing mechanics alone. Elite Golf Performance Training integrates swing coaching with golf-specific strength and mobility training. We address both technique and physical capability, recognizing that your body's limitations directly impact your ability to execute the swing we're coaching. This integrated approach produces faster, more sustainable improvements.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Where are sessions held?</span>
+          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>All sessions are held at Red Line Athletics in Fort Myers. This state-of-the-art facility provides the equipment and space necessary for both comprehensive swing coaching and effective strength training in one location.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I bring a training partner?</span>
+          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Yes. We offer 2-person training sessions at a reduced rate compared to booking individual sessions separately. This is a great option for friends, family members, or training partners who want to improve together. Pricing starts at $300 for a single 2-person session.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How quickly will I see results?</span>
+          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>Many golfers notice improvements in swing mechanics and feel within the first session. Measurable improvements in clubhead speed and ball speed typically appear within 3-4 sessions. Longer-term improvements in consistency and scoring develop over weeks and months as your body adapts to the training and integrates the coaching cues.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What areas of Southwest Florida do you serve?</span>
+          <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-content">
+            <p>We serve golfers throughout Southwest Florida, with sessions held at our Red Line Athletics facility in Fort Myers. Whether you're coming from Naples, Estero, Lehigh Acres, or anywhere in the region, we're conveniently located and easy to access.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="contact-content">
+      <div class="contact-form-wrapper">
+        <h2 class="contact-form-title">Book Your Session</h2>
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your goals and current golf level..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Inquiry</button>
+        </form>
+      </div>
+
+      <div class="contact-info-wrapper">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <address>
+            <div class="contact-line">
+              <strong>Location</strong>
+              Red Line Athletics<br>
+              Fort Myers, FL
+            </div>
+            <div class="contact-line">
+              <strong>Phone</strong>
+              <a href="tel:+12396728143">(239) 672-8143</a>
+            </div>
+            <div class="contact-line">
+              <strong>Email</strong>
+              <a href="mailto:info@redlinegolfacademy.com">info@redlinegolfacademy.com</a>
+            </div>
+          </address>
+
+          <div class="contact-hours">
+            <strong>Hours</strong>
+            <p>Monday - Friday: 6am - 7pm<br>
+            Saturday: 7am - 5pm<br>
+            Sunday: By Appointment</p>
+          </div>
+
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3474.8789023783467!2d-81.8723!3d26.6406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db1c8c8c8c8c8d%3A0x1234567890!2sRed%20Line%20Athletics!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="contact-logo">
+            <img src="https://redlineathletics.com/wp-content/uploads/2025/08/Redline-Logo-V1.png" alt="Red Line Athletics">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img src="logo_2.jpg" alt="Hogan Elite Golf Instruction">
+        </div>
+        <p>Elite Golf Performance Training in Fort Myers, Florida.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#system">Why Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#science">Science</a></li>
+          <li><a href="#training">Training Details</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
-        <a href="tel:+12396728143" class="mobile-nav-phone">(239) 672-8143</a>
-        <a href="#contact" class="mobile-nav-cta" onclick="closeMobileNav()">Book Your Session</a>
+      </div>
+
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Swing Coaching</a></li>
+          <li><a href="#services">Strength Training</a></li>
+          <li><a href="#services">Speed Training</a></li>
+          <li><a href="#services">Performance Tracking</a></li>
+          <li><a href="#pricing">Individual Sessions</a></li>
+          <li><a href="#pricing">Monthly Programs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><strong>Phone</strong><br><a href="tel:+12396728143">(239) 672-8143</a></li>
+          <li><strong>Email</strong><br><a href="mailto:info@redlinegolfacademy.com">info@redlinegolfacademy.com</a></li>
+          <li><strong>Location</strong><br>Red Line Athletics<br>Fort Myers, FL</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text fade-in-up">
-                <h1>Elite Golf Performance Training in Fort Myers</h1>
-                <p>40 minutes of expert swing coaching plus 20 minutes of golf-specific strength training. One integrated system for measurable distance and scoring gains.</p>
-                <div class="hero-ctas">
-                    <a href="#contact" class="btn btn-primary">Book Your Session</a>
-                    <a href="#pricing" class="btn btn-secondary">View Programs</a>
-                </div>
-            </div>
-            <div class="swing-arc-container fade-in-up stagger-delay-1">
-                <svg class="swing-arc-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="swingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#8DC8E8;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#00A3E0;stop-opacity:1" />
-                        </linearGradient>
-                        <filter id="glow">
-                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    <path class="swing-path" d="M 350 300 Q 280 150, 150 100 T 50 250" filter="url(#glow)"/>
-                    <circle class="swing-dot" cx="350" cy="300" r="5"/>
-                    <circle class="swing-dot" cx="280" cy="150" r="5"/>
-                    <circle class="swing-dot" cx="150" cy="100" r="5"/>
-                    <circle class="swing-dot" cx="50" cy="250" r="5"/>
-                </svg>
-                <div class="stat-callout stat-1">
-                    <div class="mono">315+ mph</div>
-                    <small>Clubhead Speed</small>
-                </div>
-                <div class="stat-callout stat-2">
-                    <div class="mono">160+ mph</div>
-                    <small>Ball Speed</small>
-                </div>
-                <div class="stat-callout stat-3">
-                    <div class="mono">280+ yards</div>
-                    <small>Carry Distance</small>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS BAR -->
-    <div class="stats-bar fade-in-up">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number" data-target="300">0</div>
-                <div class="stat-label">Avg PGA Tour Drive Yards</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="20">0</div>
-                <div class="stat-label">Yards Gained Per Program</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">40+20</div>
-                <div class="stat-label">Min Coaching + Strength</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Data-Driven Approach</div>
-            </div>
-        </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">&copy; 2026 Redline Golf Academy. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Accessibility</a>
+      </div>
     </div>
+  </footer>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="about">
-        <div class="section-header fade-in-up">
-            <h2>Why Choose Redline Golf Academy</h2>
-            <p>More than just lessons. A complete golf performance system.</p>
-        </div>
-        <div class="about-content">
-            <div class="about-text fade-in-up">
-                <h3>The Complete Performance System</h3>
-                <p>Traditional golf lessons focus on swing mechanics alone. Redline Golf Academy integrates swing coaching with golf-specific strength training and mobility development. Every swing change is reinforced with targeted physical training, creating lasting improvement.</p>
-                <p>Our approach is backed by PGA Tour data and biomechanical science. We track measurable improvements in clubhead speed and ball speed, the two most reliable indicators of performance gains.</p>
-                <h3 style="margin-top: 2rem;">What Sets Us Apart</h3>
-                <ul class="service-detail-list">
-                    <li>Integrated swing coaching plus strength training in every session</li>
-                    <li>Data-driven progress tracking with club and ball speed metrics</li>
-                    <li>Ryan Hogan's expertise in performance optimization</li>
-                    <li>Proven program structure yielding measurable distance gains</li>
-                    <li>Flexible programs for all skill levels and commitment levels</li>
-                </ul>
-            </div>
-            <div class="about-image fade-in-up stagger-delay-1">
-                <div class="about-image-placeholder">
-                    <div>
-                        <i class="fas fa-golf-ball" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                        <p>Photo: Ryan Hogan Training</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES OVERVIEW -->
-    <section id="services" class="services">
-        <div class="section-header fade-in-up">
-            <h2>Our Services</h2>
-            <p>Four pillars of complete golf performance</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card fade-in-up stagger-delay-1">
-                <div class="service-icon">
-                    <i class="fas fa-golf-ball"></i>
-                </div>
-                <h3>Swing Coaching</h3>
-                <p>Expert analysis and coaching of your golf swing mechanics, combined with immediate feedback and targeted improvements.</p>
-            </div>
-            <div class="service-card fade-in-up stagger-delay-2">
-                <div class="service-icon">
-                    <i class="fas fa-dumbbell"></i>
-                </div>
-                <h3>Strength & Mobility</h3>
-                <p>Golf-specific strength training and mobility development to support your swing mechanics and prevent injury.</p>
-            </div>
-            <div class="service-card fade-in-up stagger-delay-3">
-                <div class="service-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <h3>Speed Training</h3>
-                <p>Structured programs to increase clubhead speed and ball speed through targeted physical training and power development.</p>
-            </div>
-            <div class="service-card fade-in-up stagger-delay-4">
-                <div class="service-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>Performance Tracking</h3>
-                <p>Data-driven progress tracking using club and ball speed metrics, the most reliable indicators of improvement.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- DETAILED SERVICES 1 -->
-    <section class="detailed-service">
-        <div class="service-detail-content fade-in-up">
-            <div>
-                <h2>Complete Golf Performance System</h2>
-                <p>The integrated approach separates elite performance training from standard golf lessons. Rather than working on swing mechanics in isolation, we pair every swing change with specific strength and mobility interventions.</p>
-                <p>This means your new swing pattern is immediately reinforced by stronger supporting muscles, better hip and thoracic spine mobility, and improved force production and stability. The result is faster adaptation, more consistent results, and measurable distance gains.</p>
-                <ul class="service-detail-list">
-                    <li>Integrated coaching combining golf instruction with strength training</li>
-                    <li>Every swing change paired with physical training reinforcement</li>
-                    <li>Hip and thoracic spine mobility development</li>
-                    <li>Stability and force production training</li>
-                    <li>Consistent progress through complete system approach</li>
-                </ul>
-            </div>
-            <div class="service-detail-visual fade-in-up stagger-delay-1">
-                <div style="text-align: center;">
-                    <i class="fas fa-network-wired" style="font-size: 4rem; opacity: 0.3; margin-bottom: 1rem;"></i>
-                    <p>Integrated System Coaching</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DETAILED SERVICES 2 -->
-    <section class="detailed-service">
-        <div class="service-detail-content fade-in-up">
-            <div class="service-detail-visual fade-in-up stagger-delay-1">
-                <div style="text-align: center;">
-                    <i class="fas fa-bullseye" style="font-size: 4rem; opacity: 0.3; margin-bottom: 1rem;"></i>
-                    <p>Speed Training Data</p>
-                </div>
-            </div>
-            <div>
-                <h2>Distance Training Backed by PGA Tour Data</h2>
-                <p>We know what works because we base our programs on PGA Tour performance data. The average PGA Tour driving distance is 300 yards, while top 10 drivers achieve 315 yards or more.</p>
-                <p>The mechanics are clear: plus 1 mph of clubhead speed equals 2 to 3 yards of carry distance. Plus 1 mph of ball speed equals 2 yards of carry distance.</p>
-                <p>Our structured programs consistently yield clubhead speed gains of 5 to 10 mph, translating to 10 to 20 plus yards of additional carry distance.</p>
-                <ul class="service-detail-list">
-                    <li>Average PGA Tour driving distance: 300 yards</li>
-                    <li>Top 10 in distance: 315 plus yards</li>
-                    <li>Plus 1 mph clubhead speed equals 2-3 yards carry</li>
-                    <li>Plus 1 mph ball speed equals 2 yards carry</li>
-                    <li>Structured programs yield 5-10 mph speed gains</li>
-                    <li>Result: 10-20 plus yards additional carry</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- DETAILED SERVICES 3 -->
-    <section class="detailed-service">
-        <div class="service-detail-content fade-in-up">
-            <div>
-                <h2>Speed Training with Purpose</h2>
-                <p>Increasing clubhead speed isn't random. Our structured speed training programs target specific physical improvements that directly translate to faster swings.</p>
-                <p>We focus on clubhead speed, ball speed, ground force production, and rotational power. Every training session is designed to build the physical capability your swing needs for significant distance gains.</p>
-                <ul class="service-detail-list">
-                    <li>Structured programs for measurable speed increases</li>
-                    <li>Clubhead speed development training</li>
-                    <li>Ball speed optimization techniques</li>
-                    <li>Ground force production enhancement</li>
-                    <li>Rotational power development</li>
-                    <li>Consistent, measurable results</li>
-                </ul>
-            </div>
-            <div class="service-detail-visual fade-in-up stagger-delay-1">
-                <div style="text-align: center;">
-                    <i class="fas fa-tachometer-alt" style="font-size: 4rem; opacity: 0.3; margin-bottom: 1rem;"></i>
-                    <p>Performance Speed Metrics</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DETAILED SERVICES 4 -->
-    <section class="detailed-service">
-        <div class="service-detail-content fade-in-up">
-            <div class="service-detail-visual fade-in-up stagger-delay-1">
-                <div style="text-align: center;">
-                    <i class="fas fa-vial" style="font-size: 4rem; opacity: 0.3; margin-bottom: 1rem;"></i>
-                    <p>Scientific Analysis</p>
-                </div>
-            </div>
-            <div>
-                <h2>Swing Mechanics Plus Physical Capability</h2>
-                <p>Understanding the problem is only half the solution. Fixing a swing issue often requires more than understanding the correct technique. Your body must have the physical capability to execute the new swing pattern.</p>
-                <p>We pair swing changes with specific strength and mobility interventions. Hip mobility, thoracic spine rotation, stability, and force production all play essential roles in swing execution and consistency.</p>
-                <ul class="service-detail-list">
-                    <li>Swing analysis and mechanics coaching</li>
-                    <li>Specific mobility interventions for swing execution</li>
-                    <li>Hip mobility development</li>
-                    <li>Thoracic spine rotation improvement</li>
-                    <li>Stability and core strength training</li>
-                    <li>Physical capability matching swing demands</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRICING SECTION -->
-    <section id="pricing" class="pricing">
-        <div class="section-header fade-in-up">
-            <h2>Simple, Transparent Pricing</h2>
-            <p>Choose the program that fits your goals and schedule</p>
-        </div>
-        <div class="pricing-grid">
-            <!-- SINGLE SESSIONS -->
-            <div class="pricing-card fade-in-up stagger-delay-1">
-                <div class="pricing-card-header">
-                    <h3>Single Sessions</h3>
-                    <p class="pricing-description">Perfect for trying Redline or occasional coaching</p>
-                </div>
-                <div class="pricing-price">$200</div>
-                <div class="pricing-frequency">Individual, per session</div>
-                <div class="pricing-options">
-                    <div class="pricing-option">1 hour session</div>
-                    <div class="pricing-option">40 min coaching + 20 min strength</div>
-                </div>
-                <a href="#contact" class="pricing-cta">Get Started</a>
-            </div>
-
-            <!-- 3-SESSION PACKAGES -->
-            <div class="pricing-card fade-in-up stagger-delay-2">
-                <div class="pricing-card-header">
-                    <h3>3-Session Package</h3>
-                    <p class="pricing-description">Build momentum with 3 sessions</p>
-                </div>
-                <div class="pricing-price">$550</div>
-                <div class="pricing-frequency">Individual, 3 sessions</div>
-                <div class="pricing-options">
-                    <div class="pricing-option">3 hours total coaching</div>
-                    <div class="pricing-option">Consistent improvement path</div>
-                </div>
-                <a href="#contact" class="pricing-cta">Get Started</a>
-            </div>
-
-            <!-- MONTHLY PROGRAM (FEATURED) -->
-            <div class="pricing-card featured fade-in-up stagger-delay-3">
-                <div class="pricing-badge">Most Popular</div>
-                <div class="pricing-card-header">
-                    <h3>Monthly Program</h3>
-                    <p class="pricing-description">Best value for consistent results</p>
-                </div>
-                <div class="pricing-price">$700</div>
-                <div class="pricing-frequency">Individual, per month</div>
-                <div class="pricing-options">
-                    <div class="pricing-option">4 sessions monthly</div>
-                    <div class="pricing-option">Unlimited weight room access</div>
-                    <div class="pricing-option">Progress tracking included</div>
-                </div>
-                <a href="#contact" class="pricing-cta">Start Training</a>
-            </div>
-        </div>
-
-        <!-- PAIR PRICING -->
-        <div style="margin-top: 4rem; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
-            <h3 style="font-size: 1.5rem; color: var(--primary-dark-navy); margin-bottom: 2rem;">Training Partners Pricing</h3>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
-                <div class="pricing-card fade-in-up stagger-delay-1">
-                    <div class="pricing-card-header">
-                        <h3>2-Person Sessions</h3>
-                    </div>
-                    <div class="pricing-price">$300</div>
-                    <div class="pricing-frequency">per session</div>
-                    <div class="pricing-options">
-                        <div class="pricing-option">1 hour shared coaching</div>
-                    </div>
-                    <a href="#contact" class="pricing-cta">Get Started</a>
-                </div>
-                <div class="pricing-card fade-in-up stagger-delay-2">
-                    <div class="pricing-card-header">
-                        <h3>3-Session Package</h3>
-                    </div>
-                    <div class="pricing-price">$700</div>
-                    <div class="pricing-frequency">2 people, 3 sessions</div>
-                    <div class="pricing-options">
-                        <div class="pricing-option">3 hours total coaching</div>
-                    </div>
-                    <a href="#contact" class="pricing-cta">Get Started</a>
-                </div>
-                <div class="pricing-card featured fade-in-up stagger-delay-3">
-                    <div class="pricing-badge">Best Value</div>
-                    <div class="pricing-card-header">
-                        <h3>Monthly Program</h3>
-                    </div>
-                    <div class="pricing-price">$1,000</div>
-                    <div class="pricing-frequency">2 people, per month</div>
-                    <div class="pricing-options">
-                        <div class="pricing-option">4 sessions monthly</div>
-                        <div class="pricing-option">Weight room access</div>
-                    </div>
-                    <a href="#contact" class="pricing-cta">Start Training</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SCIENCE SECTION -->
-    <section id="science" class="science">
-        <div class="section-header fade-in-up">
-            <h2>The Science Behind Distance Gains</h2>
-            <p>Data-driven training based on PGA Tour performance metrics</p>
-        </div>
-        <div class="science-content">
-            <div class="science-data">
-                <div class="data-point fade-in-up stagger-delay-1">
-                    <div class="number">300</div>
-                    <div class="label">Avg PGA Tour Drive Distance (yards)</div>
-                </div>
-                <div class="data-point fade-in-up stagger-delay-2">
-                    <div class="number">315+</div>
-                    <div class="label">Top 10 Drivers Distance (yards)</div>
-                </div>
-                <div class="data-point fade-in-up stagger-delay-3">
-                    <div class="number">2-3</div>
-                    <div class="label">Yards Per 1 mph Clubhead Speed</div>
-                </div>
-                <div class="data-point fade-in-up stagger-delay-4">
-                    <div class="number">10-20+</div>
-                    <div class="label">Yards Gained From Our Programs</div>
-                </div>
-            </div>
-            <div class="science-visual fade-in-up">
-                <h3>The Speed-to-Distance Formula</h3>
-                <div class="chart-bars">
-                    <div class="bar">
-                        <div class="bar-fill" style="--height: 120px;"></div>
-                        <div class="bar-label">+1 mph<br/>Clubhead</div>
-                    </div>
-                    <div class="bar">
-                        <div class="bar-fill" style="--height: 100px;"></div>
-                        <div class="bar-label">+1 mph<br/>Ball Speed</div>
-                    </div>
-                    <div class="bar">
-                        <div class="bar-fill" style="--height: 140px;"></div>
-                        <div class="bar-label">+10 mph<br/>Our Average</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOCIAL PROOF SECTION -->
-    <section id="testimonials" class="social-proof">
-        <div class="section-header fade-in-up">
-            <h2>Student Results & Testimonials</h2>
-            <p>Real students, real distance gains, real scoring improvements</p>
-        </div>
-
-        <div class="placeholder-content fade-in-up">
-            <i class="fas fa-images" style="font-size: 2rem; opacity: 0.4; margin-bottom: 1rem;"></i>
-            <p><strong>Before/After Results:</strong> Upload student transformation photos with distance and speed improvements</p>
-        </div>
-
-        <div class="testimonials-grid">
-            <div class="testimonial-card fade-in-up stagger-delay-1">
-                <div class="testimonial-stars">★★★★★</div>
-                <div class="testimonial-text">"Gained 18 yards in just 8 weeks. The integrated approach of swing coaching plus strength training actually works. This isn't a typical lesson."</div>
-                <div class="testimonial-author">John D.</div>
-                <div class="testimonial-role">Fort Myers, FL</div>
-            </div>
-            <div class="testimonial-card fade-in-up stagger-delay-2">
-                <div class="testimonial-stars">★★★★★</div>
-                <div class="testimonial-text">"Finally someone who understands that better swing mechanics need physical support. My consistency improved dramatically."</div>
-                <div class="testimonial-author">Sarah M.</div>
-                <div class="testimonial-role">Naples, FL</div>
-            </div>
-            <div class="testimonial-card fade-in-up stagger-delay-3">
-                <div class="testimonial-stars">★★★★★</div>
-                <div class="testimonial-text">"The data tracking keeps me accountable. Seeing my clubhead speed increase week over week is incredibly motivating."</div>
-                <div class="testimonial-author">Michael R.</div>
-                <div class="testimonial-role">Cape Coral, FL</div>
-            </div>
-        </div>
-
-        <div class="placeholder-content fade-in-up" style="margin-top: 3rem;">
-            <i class="fas fa-video" style="font-size: 2rem; opacity: 0.4; margin-bottom: 1rem;"></i>
-            <p><strong>Video Testimonials:</strong> Add student video testimonials showcasing swing improvements and distance gains</p>
-        </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section id="faq" class="faq">
-        <div class="section-header fade-in-up">
-            <h2>Frequently Asked Questions</h2>
-            <p>Everything you need to know about Redline Golf Academy</p>
-        </div>
-
-        <div class="faq-items">
-            <div class="faq-item fade-in-up stagger-delay-1">
-                <button class="faq-question">
-                    What does a typical session include?
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-content">
-                        Each 1-hour session includes 40 minutes of expert swing coaching plus 20 minutes of golf-specific strength training. We focus on integrating swing mechanics improvements with the physical training needed to support your new swing pattern. You'll receive immediate feedback, see your swing data, and work on targeted strength exercises.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item fade-in-up stagger-delay-2">
-                <button class="faq-question">
-                    Do I need to be a certain skill level to start?
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-content">
-                        No. Our programs work for golfers of all skill levels, from complete beginners to scratch golfers. Whether you're just starting out or looking to optimize your game at a high level, Ryan Hogan will customize the approach to match your current ability and goals. The complete performance system scales to your needs.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item fade-in-up stagger-delay-3">
-                <button class="faq-question">
-                    What equipment do I need to bring?
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-content">
-                        Bring your own clubs if you prefer to work with what you use on the course. Wear comfortable athletic clothing and shoes suitable for the golf swing. All coaching technology, video analysis tools, and strength training equipment are provided at our facility. We have everything needed for comprehensive swing coaching and strength training.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item fade-in-up stagger-delay-4">
-                <button class="faq-question">
-                    How is this different from regular golf lessons?
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-content">
-                        Traditional golf lessons focus solely on swing mechanics. The complete golf performance system integrates swing coaching with strength training and mobility development. Every swing change is immediately reinforced with physical training that builds the capability your body needs. The result is faster adaptation, greater consistency, and measurable distance gains. We also track progress with club and ball speed metrics rather than subjective improvement assessments.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item fade-in-up stagger-delay-5">
-                <button class="faq-question">
-                    Where are sessions held?
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-content">
-                        All coaching and training sessions are held at Red Line Athletics, located at 4429 Cleveland Avenue Suite 130, Fort Myers, FL 33901. We have a full coaching studio and weight training facility on-site. Check our hours before booking: Monday through Friday 3PM to 9PM, Saturday 8AM to 11AM. We're closed Sundays.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item fade-in-up stagger-delay-1">
-                <button class="faq-question">
-                    Can I bring a training partner?
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-content">
-                        Absolutely. We offer 2-person training sessions and programs at special pricing. Training with a partner can increase accountability and make progress more enjoyable. Our 2-person pricing is $300 per session, $700 for a 3-session package, or $1,000 per month for the 4-session monthly program. Both participants benefit from coaching and strength training.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item fade-in-up stagger-delay-2">
-                <button class="faq-question">
-                    How soon will I see results?
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-content">
-                        Many students notice improvements in feel and swing consistency within the first session. Measurable distance gains typically appear within 4 to 8 weeks of consistent training. Our tracking of clubhead speed and ball speed provides concrete evidence of progress. The complete performance system approach accelerates results compared to swing-mechanics-only coaching.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item fade-in-up stagger-delay-3">
-                <button class="faq-question">
-                    What areas of Southwest Florida do you serve?
-                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-content">
-                        We serve Fort Myers, Naples, Cape Coral, Marco Island, Estero, Bonita Springs, and surrounding Southwest Florida communities. All coaching and training sessions are held at our facility in Fort Myers. If you're in the region and interested in the complete golf performance system, contact us to book your first session.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="contact">
-        <div class="section-header fade-in-up">
-            <h2>Book Your Session Today</h2>
-            <p>Start your golf performance training journey</p>
-        </div>
-
-        <div class="contact-content">
-            <form class="contact-form fade-in-up" id="contactForm" onsubmit="handleFormSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your golf goals and experience level" required></textarea>
-                </div>
-                <button type="submit" class="form-submit">Book Your Session</button>
-            </form>
-
-            <div class="contact-info fade-in-up stagger-delay-1">
-                <div class="info-block">
-                    <h3>Address</h3>
-                    <address>
-                        Red Line Athletics<br>
-                        4429 Cleveland Avenue Suite 130<br>
-                        Fort Myers, FL 33901
-                    </address>
-                </div>
-
-                <div class="info-block">
-                    <h3>Phone</h3>
-                    <a href="tel:+12396728143">(239) 672-8143</a>
-                </div>
-
-                <div class="info-block">
-                    <h3>Hours</h3>
-                    <p>
-                        Monday-Friday: 3PM - 9PM<br>
-                        Saturday: 8AM - 11AM<br>
-                        Sunday: Closed
-                    </p>
-                </div>
-
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.4956949848406!2d-81.87232292346247!3d26.640564912215476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db7f3f0f0f0f0f%3A0x0!2s4429%20Cleveland%20Avenue%20Suite%20130%2C%20Fort%20Myers%2C%20FL%2033901!5e0!3m2!1sen!2sus!4v1234567890" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Redline Golf Academy</h3>
-                <p style="color: var(--text-on-dark); font-size: 0.9rem;">Elite golf performance training in Fort Myers, FL. Complete swing coaching plus strength training for measurable distance and scoring gains.</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#services">Swing Coaching</a></li>
-                    <li><a href="#services">Strength & Mobility</a></li>
-                    <li><a href="#services">Speed Training</a></li>
-                    <li><a href="#services">Performance Tracking</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <address style="font-style: normal;">
-                    <strong>Red Line Athletics</strong><br>
-                    4429 Cleveland Avenue Suite 130<br>
-                    Fort Myers, FL 33901<br>
-                    <a href="tel:+12396728143">(239) 672-8143</a>
-                </address>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="footer-copyright">
-                <p>&copy; 2026 Redline Golf Academy. All rights reserved.</p>
-            </div>
-            <div class="footer-socials">
-                <a href="https://www.facebook.com" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.youtube.com" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // NAVIGATION SCROLL
-        const navbar = document.getElementById('navbar');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // MOBILE NAVIGATION
-        const navToggle = document.getElementById('navToggle');
-        const mobileNav = document.getElementById('mobileNav');
-        const navOverlay = document.getElementById('navOverlay');
-        const navClose = document.getElementById('navClose');
-
-        navToggle.addEventListener('click', () => {
-            mobileNav.classList.add('open');
-            navOverlay.classList.add('open');
-        });
-
-        navClose.addEventListener('click', closeMobileNav);
-        navOverlay.addEventListener('click', closeMobileNav);
-
-        function closeMobileNav() {
-            mobileNav.classList.remove('open');
-            navOverlay.classList.remove('open');
-        }
-
-        // INTERSECTION OBSERVER FOR ANIMATIONS
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
-
-        // COUNTER ANIMATION FOR STATS
-        const counters = document.querySelectorAll('.stat-number[data-target]');
-        const counterOptions = {
-            threshold: 0.5
-        };
-
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-                    const target = parseInt(entry.target.getAttribute('data-target'));
-                    let current = 0;
-                    const increment = target / 30;
-
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            entry.target.textContent = target + '+';
-                            entry.target.classList.add('counted');
-                            clearInterval(timer);
-                        } else {
-                            entry.target.textContent = Math.floor(current);
-                        }
-                    }, 30);
-
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, counterOptions);
-
-        counters.forEach(counter => counterObserver.observe(counter));
-
-        // FAQ ACCORDION
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-
-            question.addEventListener('click', () => {
-                const isOpen = item.classList.contains('open');
-
-                faqItems.forEach(otherItem => {
-                    otherItem.classList.remove('open');
-                });
-
-                if (!isOpen) {
-                    item.classList.add('open');
-                }
-            });
-        });
-
-        // CONTACT FORM
-        function handleFormSubmit(event) {
-            event.preventDefault();
-
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                message: document.getElementById('message').value
-            };
-
-            console.log('Form submitted:', formData);
-
-            alert('Thank you for your inquiry! We will contact you soon at ' + formData.phone + ' to confirm your booking.');
-
-            document.getElementById('contactForm').reset();
-        }
-
-        // SMOOTH SCROLL FOR ANCHOR LINKS
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-    </script>
-
-    <!-- JSON-LD STRUCTURED DATA -->
-    <script type="application/ld+json">
+  <!-- JSON-LD SCHEMA MARKUP -->
+  <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Redline Golf Academy",
-        "image": "https://redlinegolfacademy.com/og-image.jpg",
-        "description": "Elite Golf Performance Training. Complete swing coaching plus strength training for measurable distance and scoring gains in Fort Myers, FL.",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "4429 Cleveland Avenue Suite 130",
-            "addressLocality": "Fort Myers",
-            "addressRegion": "FL",
-            "postalCode": "33901",
-            "addressCountry": "US"
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Redline Golf Academy",
+      "image": "logo_2.jpg",
+      "description": "Elite Golf Performance Training in Fort Myers. Expert swing coaching combined with golf-specific strength training.",
+      "url": "https://redlinegolfacademy.com",
+      "telephone": "+12396728143",
+      "email": "info@redlinegolfacademy.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Red Line Athletics",
+        "addressLocality": "Fort Myers",
+        "addressRegion": "FL",
+        "postalCode": "33901",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "26.6406",
+        "longitude": "-81.8723"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "06:00",
+          "closes": "19:00"
         },
-        "telephone": "(239) 672-8143",
-        "url": "https://redlinegolfacademy.com",
-        "priceRange": "$$",
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "15:00",
-                "closes": "21:00"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Saturday",
-                "opens": "08:00",
-                "closes": "11:00"
-            }
-        ],
-        "areaServed": {
-            "@type": "City",
-            "name": ["Fort Myers", "Naples", "Cape Coral", "Marco Island", "Estero", "Bonita Springs"]
-        },
-        "serviceType": ["Golf Instruction", "Golf Coaching", "Performance Training", "Strength Training"],
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "26.6406",
-            "longitude": "-81.8723"
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "07:00",
+          "closes": "17:00"
         }
+      ],
+      "priceRange": "$$",
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "26.6406",
+          "longitude": "-81.8723"
+        },
+        "geoRadius": "30"
+      },
+      "sameAs": [
+        "https://www.facebook.com/redlinegolfacademy",
+        "https://www.instagram.com/redlinegolfacademy"
+      ]
     }
-    </script>
+  </script>
 
-    <script type="application/ld+json">
+  <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What does a typical session include?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Each 1-hour session includes 40 minutes of expert swing coaching plus 20 minutes of golf-specific strength training. We focus on integrating swing mechanics improvements with the physical training needed to support your new swing pattern."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do I need to be a certain skill level to start?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. Our programs work for golfers of all skill levels, from complete beginners to scratch golfers. We customize the approach to match your current ability and goals."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How is this different from regular golf lessons?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Traditional golf lessons focus solely on swing mechanics. The complete golf performance system integrates swing coaching with strength training and mobility development. Every swing change is immediately reinforced with physical training."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How soon will I see results?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Many students notice improvements in feel and swing consistency within the first session. Measurable distance gains typically appear within 4 to 8 weeks of consistent training."
-                }
-            }
-        ]
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does a typical session include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each 60-minute session is structured as 40 minutes of expert swing coaching combined with 20 minutes of golf-specific strength training."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to be a certain skill level?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our training is designed for golfers at all skill levels, from beginners to experienced golfers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from regular golf lessons?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We integrate swing coaching with golf-specific strength and mobility training, addressing both technique and physical capability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are sessions held?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All sessions are held at Red Line Athletics in Fort Myers, Florida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I bring a training partner?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer 2-person training sessions at a reduced rate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly will I see results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many golfers notice improvements in swing mechanics within the first session. Measurable speed improvements appear within 3-4 sessions."
+          }
+        }
+      ]
     }
-    </script>
+  </script>
+
+  <script>
+    // NAVIGATION SCROLL EFFECT
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // MOBILE NAV DRAWER
+    const navHamburger = document.getElementById('navHamburger');
+    const navDrawer = document.getElementById('navDrawer');
+    const navOverlay = document.getElementById('navOverlay');
+    const navDrawerClose = document.getElementById('navDrawerClose');
+
+    navHamburger.addEventListener('click', function() {
+      navDrawer.classList.add('open');
+      navOverlay.classList.add('open');
+    });
+
+    navDrawerClose.addEventListener('click', function() {
+      navDrawer.classList.remove('open');
+      navOverlay.classList.remove('open');
+    });
+
+    navOverlay.addEventListener('click', function() {
+      navDrawer.classList.remove('open');
+      navOverlay.classList.remove('open');
+    });
+
+    function closeNavDrawer() {
+      navDrawer.classList.remove('open');
+      navOverlay.classList.remove('open');
+    }
+
+    // TABS FUNCTIONALITY
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const tabName = this.getAttribute('data-tab');
+
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        this.classList.add('active');
+        document.querySelector(`.tab-content[data-tab="${tabName}"]`).classList.add('active');
+      });
+    });
+
+    // FAQ ACCORDION
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const faqItem = this.parentElement;
+        faqItem.classList.toggle('open');
+      });
+    });
+
+    // FORM SUBMISSION
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+
+      const mailtoLink = `mailto:info@redlinegolfacademy.com?subject=Golf%20Training%20Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`)}`;
+
+      window.location.href = mailtoLink;
+      form.reset();
+    }
+  </script>
 </body>
 </html>
