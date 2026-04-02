@@ -105,6 +105,12 @@
       color: var(--white);
     }
 
+    .nav-logo {
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+
     .nav-logo img {
       height: 65px;
       width: auto;
@@ -207,76 +213,159 @@
       right: 0;
       top: 0;
       bottom: 0;
-      width: 80%;
-      max-width: 320px;
-      background: var(--navy);
+      width: 85%;
+      max-width: 340px;
+      background: linear-gradient(180deg, var(--navy) 0%, #0A1E3D 100%);
       z-index: 1001;
       transform: translateX(100%);
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       overflow-y: auto;
-      padding: 2rem 1.5rem;
+      padding: 0;
       box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
     }
 
     .nav-drawer.open {
       transform: translateX(0);
     }
 
+    .nav-drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 1.5rem 1.25rem;
+      border-bottom: 1px solid rgba(141, 200, 232, 0.1);
+    }
+
+    .nav-drawer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-drawer-brand img {
+      height: 40px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav-drawer-brand span {
+      font-family: var(--font-headline);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--sky-blue);
+      letter-spacing: 0.02em;
+    }
+
     .nav-drawer-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: none;
-      border: none;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
       color: var(--light-text);
-      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: color 0.3s ease;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
     }
 
     .nav-drawer-close:hover {
+      background: rgba(255,255,255,0.15);
       color: var(--teal);
     }
 
     .nav-drawer-links {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 3rem;
       list-style: none;
+      padding: 1rem 0;
+      flex: 1;
+    }
+
+    .nav-drawer-links li {
+      border-bottom: 1px solid rgba(141, 200, 232, 0.06);
     }
 
     .nav-drawer-links a {
       color: var(--light-text);
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
     }
 
     .nav-drawer-links a:hover {
       color: var(--teal);
+      background: rgba(14, 165, 233, 0.05);
+    }
+
+    .nav-drawer-links .drawer-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(141, 200, 232, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--sky-blue);
+      flex-shrink: 0;
+    }
+
+    .nav-drawer-footer {
+      padding: 1.25rem 1.5rem;
+      border-top: 1px solid rgba(141, 200, 232, 0.1);
+    }
+
+    .nav-drawer-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--light-text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      padding: 0.5rem 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav-drawer-phone:hover {
+      color: var(--teal);
+    }
+
+    .nav-drawer-phone i {
+      color: var(--teal);
     }
 
     .nav-drawer-cta {
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(232, 240, 232, 0.2);
+      display: block;
     }
 
     .nav-drawer-cta a {
       display: block;
       background: var(--teal);
       color: var(--white);
-      padding: 0.8rem 1.5rem;
-      border-radius: 4px;
       text-align: center;
+      padding: 1rem;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s ease;
     }
 
     .nav-drawer-cta a:hover {
-      opacity: 0.9;
+      background: #0990CC;
+      transform: translateY(-1px);
     }
 
     .nav-overlay {
@@ -1921,14 +2010,444 @@
         font-size: 1rem;
       }
     }
+
+    /* BOOKING MODAL */
+    .booking-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .booking-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .booking-modal {
+      background: var(--white);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      overflow-y: auto;
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    .booking-overlay.open .booking-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .booking-header {
+      background: linear-gradient(135deg, var(--navy), var(--forest-green));
+      padding: 2rem 2rem 1.5rem;
+      border-radius: 16px 16px 0 0;
+      position: relative;
+    }
+
+    .booking-header h3 {
+      font-family: var(--font-headline);
+      color: var(--white);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .booking-header p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    .booking-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: var(--white);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .booking-close:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    .booking-steps {
+      display: flex;
+      gap: 0.5rem;
+      padding: 1.25rem 2rem;
+      background: #F4F7FB;
+      border-bottom: 1px solid #E8ECF0;
+    }
+
+    .booking-step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #999;
+      flex: 1;
+    }
+
+    .booking-step .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #DDD;
+      color: #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .booking-step.active {
+      color: var(--navy);
+    }
+
+    .booking-step.active .step-num {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .booking-step.done .step-num {
+      background: var(--emerald);
+      color: var(--white);
+    }
+
+    .booking-step.done {
+      color: var(--emerald);
+    }
+
+    .booking-body {
+      padding: 2rem;
+    }
+
+    .booking-section {
+      display: none;
+    }
+
+    .booking-section.active {
+      display: block;
+    }
+
+    .booking-label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .booking-service-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .booking-service-card {
+      border: 2px solid #E8ECF0;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .booking-service-card:hover {
+      border-color: var(--teal);
+      background: rgba(14, 165, 233, 0.03);
+    }
+
+    .booking-service-card.selected {
+      border-color: var(--teal);
+      background: rgba(14, 165, 233, 0.06);
+      box-shadow: 0 0 0 1px var(--teal);
+    }
+
+    .booking-service-card .svc-name {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    .booking-service-card .svc-desc {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 0.15rem;
+    }
+
+    .booking-service-card .svc-price {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--emerald);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .guest-counter {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .guest-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #E8ECF0;
+      background: var(--white);
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      transition: all 0.2s ease;
+    }
+
+    .guest-btn:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .guest-count {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      min-width: 30px;
+      text-align: center;
+    }
+
+    .booking-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid #E8ECF0;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      color: var(--navy);
+      background: var(--white);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 1rem;
+    }
+
+    .booking-input:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
+    }
+
+    .booking-input::placeholder {
+      color: #AAA;
+    }
+
+    .booking-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .time-pills {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .time-pill {
+      padding: 0.6rem 1.25rem;
+      border: 2px solid #E8ECF0;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #555;
+      transition: all 0.2s ease;
+      background: var(--white);
+    }
+
+    .time-pill:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .time-pill.selected {
+      background: var(--teal);
+      color: var(--white);
+      border-color: var(--teal);
+    }
+
+    .booking-summary {
+      background: #F4F7FB;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .booking-summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+    }
+
+    .booking-summary-row:last-child {
+      border-top: 1px solid #DDD;
+      margin-top: 0.5rem;
+      padding-top: 0.75rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .booking-summary-row .sum-label {
+      color: #666;
+    }
+
+    .booking-summary-row .sum-value {
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .booking-nav {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .booking-btn {
+      flex: 1;
+      padding: 0.9rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.2s ease;
+      text-align: center;
+      border: none;
+    }
+
+    .booking-btn-primary {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .booking-btn-primary:hover {
+      background: #0990CC;
+      transform: translateY(-1px);
+    }
+
+    .booking-btn-secondary {
+      background: transparent;
+      border: 2px solid #DDD;
+      color: var(--navy);
+    }
+
+    .booking-btn-secondary:hover {
+      border-color: var(--navy);
+    }
+
+    .booking-success {
+      text-align: center;
+      padding: 3rem 2rem;
+      display: none;
+    }
+
+    .booking-success.show {
+      display: block;
+    }
+
+    .booking-success-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(45, 106, 79, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: var(--emerald);
+    }
+
+    .booking-success h3 {
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .booking-success p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .booking-success a {
+      color: var(--teal);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .booking-modal {
+        max-height: 95vh;
+        border-radius: 12px;
+      }
+      .booking-header {
+        padding: 1.5rem;
+        border-radius: 12px 12px 0 0;
+      }
+      .booking-body {
+        padding: 1.5rem;
+      }
+      .booking-steps {
+        padding: 1rem 1.5rem;
+      }
+      .booking-step span {
+        display: none;
+      }
+      .booking-row {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- NAVIGATION -->
   <nav id="navbar">
-    <div class="nav-logo">
+    <a href="#" class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
       <img src="logo_1-removebg-preview.png" alt="Hogan Elite Golf">
-    </div>
+    </a>
     <ul class="nav-links">
       <li><a href="#system">Why Us</a></li>
       <li><a href="#services">Services</a></li>
@@ -1938,7 +2457,7 @@
     </ul>
     <div class="nav-right">
       <a href="tel:+12396728143" class="nav-phone">(239) 672-8143</a>
-      <a href="#contact" class="nav-cta">Book Now</a>
+      <a href="#" class="nav-cta" onclick="openBooking();return false;">Book Now</a>
     </div>
     <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
       <i class="fas fa-bars"></i>
@@ -1948,18 +2467,123 @@
   <!-- MOBILE NAV DRAWER -->
   <div class="nav-overlay" id="navOverlay"></div>
   <div class="nav-drawer" id="navDrawer">
-    <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">
-      <i class="fas fa-times"></i>
-    </button>
+    <div class="nav-drawer-header">
+      <div class="nav-drawer-brand">
+        <img src="logo_1-removebg-preview.png" alt="Hogan Elite Golf">
+        <span>REDLINE</span>
+      </div>
+      <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
     <ul class="nav-drawer-links">
-      <li><a href="#system" onclick="closeNavDrawer()">Why Us</a></li>
-      <li><a href="#services" onclick="closeNavDrawer()">Services</a></li>
-      <li><a href="#science" onclick="closeNavDrawer()">Science</a></li>
-      <li><a href="#pricing" onclick="closeNavDrawer()">Pricing</a></li>
-      <li><a href="#faq" onclick="closeNavDrawer()">FAQ</a></li>
+      <li><a href="#system" onclick="closeNavDrawer()"><span class="drawer-icon"><i class="fas fa-trophy"></i></span>Why Us</a></li>
+      <li><a href="#services" onclick="closeNavDrawer()"><span class="drawer-icon"><i class="fas fa-golf-ball-tee"></i></span>Services</a></li>
+      <li><a href="#science" onclick="closeNavDrawer()"><span class="drawer-icon"><i class="fas fa-chart-line"></i></span>Science</a></li>
+      <li><a href="#pricing" onclick="closeNavDrawer()"><span class="drawer-icon"><i class="fas fa-tag"></i></span>Pricing</a></li>
+      <li><a href="#faq" onclick="closeNavDrawer()"><span class="drawer-icon"><i class="fas fa-circle-question"></i></span>FAQ</a></li>
     </ul>
-    <div class="nav-drawer-cta">
-      <a href="#contact" onclick="closeNavDrawer()">Book Your Session</a>
+    <div class="nav-drawer-footer">
+      <a href="tel:+12396728143" class="nav-drawer-phone"><i class="fas fa-phone"></i>(239) 672-8143</a>
+      <div class="nav-drawer-cta">
+        <a href="#" onclick="closeNavDrawer();openBooking();return false;">Book Your Session</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="booking-overlay" id="bookingOverlay">
+    <div class="booking-modal">
+      <div class="booking-header">
+        <h3>Book Your Session</h3>
+        <p>Redline Golf Academy</p>
+        <button class="booking-close" onclick="closeBooking()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="booking-steps">
+        <div class="booking-step active" id="bStep1"><span class="step-num">1</span><span>Select Service</span></div>
+        <div class="booking-step" id="bStep2"><span class="step-num">2</span><span>Date & Time</span></div>
+        <div class="booking-step" id="bStep3"><span class="step-num">3</span><span>Your Info</span></div>
+      </div>
+      <div class="booking-body" id="bookingBody">
+        <!-- STEP 1: Service Selection -->
+        <div class="booking-section active" id="bookingStep1">
+          <label class="booking-label">Choose Your Package</label>
+          <div class="booking-service-options">
+            <div class="booking-service-card" onclick="selectService(this, 'Single Session', 200)" data-service="single">
+              <div><div class="svc-name">Single Session</div><div class="svc-desc">1 hour: 40 min coaching + 20 min strength</div></div>
+              <div class="svc-price">$200</div>
+            </div>
+            <div class="booking-service-card" onclick="selectService(this, '3-Session Package', 550)" data-service="3pack">
+              <div><div class="svc-name">3-Session Package</div><div class="svc-desc">3 x 1 hour sessions (save $50)</div></div>
+              <div class="svc-price">$550</div>
+            </div>
+            <div class="booking-service-card" onclick="selectService(this, 'Monthly Program', 700)" data-service="monthly">
+              <div><div class="svc-name">Monthly Program</div><div class="svc-desc">4 sessions/month, scheduled up front</div></div>
+              <div class="svc-price">$700<span style="font-size:0.7em;color:#999">/mo</span></div>
+            </div>
+          </div>
+          <label class="booking-label">Training Partners</label>
+          <div class="guest-counter">
+            <button class="guest-btn" onclick="changeGuests(-1)"><i class="fas fa-minus"></i></button>
+            <span class="guest-count" id="guestCount">1</span>
+            <button class="guest-btn" onclick="changeGuests(1)"><i class="fas fa-plus"></i></button>
+            <span style="font-size:0.85rem;color:#777;">person(s)</span>
+          </div>
+          <div class="booking-nav">
+            <button class="booking-btn booking-btn-primary" onclick="goToStep(2)">Continue <i class="fas fa-arrow-right" style="margin-left:0.5rem"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Date & Time -->
+        <div class="booking-section" id="bookingStep2">
+          <label class="booking-label">Preferred Date</label>
+          <input type="date" class="booking-input" id="bookingDate" min="">
+          <label class="booking-label">Preferred Time</label>
+          <div class="time-pills">
+            <div class="time-pill" onclick="selectTime(this, '3:00 PM')">3:00 PM</div>
+            <div class="time-pill" onclick="selectTime(this, '4:00 PM')">4:00 PM</div>
+            <div class="time-pill" onclick="selectTime(this, '5:00 PM')">5:00 PM</div>
+            <div class="time-pill" onclick="selectTime(this, '6:00 PM')">6:00 PM</div>
+            <div class="time-pill" onclick="selectTime(this, '7:00 PM')">7:00 PM</div>
+            <div class="time-pill" onclick="selectTime(this, '8:00 PM')">8:00 PM</div>
+          </div>
+          <label class="booking-label">Special Requests (Optional)</label>
+          <textarea class="booking-input" rows="3" id="bookingNotes" placeholder="Any goals, injuries, or preferences..."></textarea>
+          <div class="booking-nav">
+            <button class="booking-btn booking-btn-secondary" onclick="goToStep(1)"><i class="fas fa-arrow-left" style="margin-right:0.5rem"></i> Back</button>
+            <button class="booking-btn booking-btn-primary" onclick="goToStep(3)">Continue <i class="fas fa-arrow-right" style="margin-left:0.5rem"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Your Info + Summary -->
+        <div class="booking-section" id="bookingStep3">
+          <div class="booking-summary" id="bookingSummary">
+            <div class="booking-summary-row"><span class="sum-label">Package</span><span class="sum-value" id="sumService">-</span></div>
+            <div class="booking-summary-row"><span class="sum-label">Date</span><span class="sum-value" id="sumDate">-</span></div>
+            <div class="booking-summary-row"><span class="sum-label">Time</span><span class="sum-value" id="sumTime">-</span></div>
+            <div class="booking-summary-row"><span class="sum-label">People</span><span class="sum-value" id="sumGuests">1</span></div>
+            <div class="booking-summary-row"><span class="sum-label">Total</span><span class="sum-value" id="sumTotal">$200</span></div>
+          </div>
+          <label class="booking-label">Your Details</label>
+          <input type="text" class="booking-input" id="bookingName" placeholder="Full Name" required>
+          <div class="booking-row">
+            <input type="email" class="booking-input" id="bookingEmail" placeholder="Email" required>
+            <input type="tel" class="booking-input" id="bookingPhone" placeholder="Phone" required>
+          </div>
+          <div class="booking-nav">
+            <button class="booking-btn booking-btn-secondary" onclick="goToStep(2)"><i class="fas fa-arrow-left" style="margin-right:0.5rem"></i> Back</button>
+            <button class="booking-btn booking-btn-primary" onclick="submitBooking()">Send Request <i class="fas fa-check" style="margin-left:0.5rem"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success State -->
+      <div class="booking-success" id="bookingSuccess">
+        <div class="booking-success-icon"><i class="fas fa-check"></i></div>
+        <h3>Request Received!</h3>
+        <p>We will be in touch within a few hours to confirm your session. If you need immediate assistance, call us directly.</p>
+        <a href="tel:+12396728143"><i class="fas fa-phone" style="margin-right:0.5rem"></i>(239) 672-8143</a>
+      </div>
     </div>
   </div>
 
@@ -1970,7 +2594,7 @@
       <h1>Elite Golf Performance Training in Fort Myers</h1>
       <p class="hero-subtitle">40 minutes of expert swing coaching. 20 minutes of golf-specific strength training. One integrated system for measurable gains.</p>
       <div class="hero-ctas">
-        <button class="cta-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Book Your Session</button>
+        <button class="cta-primary" onclick="openBooking()">Book Your Session</button>
         <button class="cta-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">View Programs</button>
       </div>
     </div>
@@ -2723,6 +3347,138 @@
       window.location.href = mailtoLink;
       form.reset();
     }
+
+    // BOOKING MODAL
+    let selectedService = 'Single Session';
+    let selectedPrice = 200;
+    let guestCount = 1;
+    let selectedTime = '';
+
+    function openBooking() {
+      document.getElementById('bookingOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      // Set min date to tomorrow
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      document.getElementById('bookingDate').min = tomorrow.toISOString().split('T')[0];
+      // Reset to step 1
+      goToStep(1);
+    }
+
+    function closeBooking() {
+      document.getElementById('bookingOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('bookingOverlay').addEventListener('click', function(e) {
+      if (e.target === this) closeBooking();
+    });
+
+    function selectService(el, name, price) {
+      document.querySelectorAll('.booking-service-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedService = name;
+      selectedPrice = price;
+      updateSummary();
+    }
+
+    function changeGuests(delta) {
+      guestCount = Math.max(1, Math.min(2, guestCount + delta));
+      document.getElementById('guestCount').textContent = guestCount;
+      // Update prices for 2 people
+      if (guestCount === 2) {
+        const sel = document.querySelector('.booking-service-card.selected');
+        if (sel) {
+          const svc = sel.dataset.service;
+          if (svc === 'single') selectedPrice = 300;
+          else if (svc === '3pack') selectedPrice = 700;
+          else if (svc === 'monthly') selectedPrice = 1000;
+        }
+      } else {
+        const sel = document.querySelector('.booking-service-card.selected');
+        if (sel) {
+          const svc = sel.dataset.service;
+          if (svc === 'single') selectedPrice = 200;
+          else if (svc === '3pack') selectedPrice = 550;
+          else if (svc === 'monthly') selectedPrice = 700;
+        }
+      }
+      updateSummary();
+    }
+
+    function selectTime(el, time) {
+      document.querySelectorAll('.time-pill').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedTime = time;
+      updateSummary();
+    }
+
+    function updateSummary() {
+      document.getElementById('sumService').textContent = selectedService;
+      document.getElementById('sumDate').textContent = document.getElementById('bookingDate').value || '-';
+      document.getElementById('sumTime').textContent = selectedTime || '-';
+      document.getElementById('sumGuests').textContent = guestCount;
+      document.getElementById('sumTotal').textContent = '$' + selectedPrice.toLocaleString();
+    }
+
+    function goToStep(step) {
+      // Update step indicators
+      for (let i = 1; i <= 3; i++) {
+        const el = document.getElementById('bStep' + i);
+        el.classList.remove('active', 'done');
+        if (i < step) el.classList.add('done');
+        if (i === step) el.classList.add('active');
+      }
+      // Show/hide sections
+      for (let i = 1; i <= 3; i++) {
+        const sec = document.getElementById('bookingStep' + i);
+        sec.classList.remove('active');
+        if (i === step) sec.classList.add('active');
+      }
+      // Update summary when reaching step 3
+      if (step === 3) updateSummary();
+      // Scroll modal to top
+      document.querySelector('.booking-modal').scrollTop = 0;
+    }
+
+    function submitBooking() {
+      const name = document.getElementById('bookingName').value;
+      const email = document.getElementById('bookingEmail').value;
+      const phone = document.getElementById('bookingPhone').value;
+      const date = document.getElementById('bookingDate').value;
+      const notes = document.getElementById('bookingNotes').value;
+
+      if (!name || !email || !phone) {
+        alert('Please fill in your name, email, and phone number.');
+        return;
+      }
+
+      // Hide the form, show success
+      document.getElementById('bookingBody').style.display = 'none';
+      document.querySelector('.booking-steps').style.display = 'none';
+      document.getElementById('bookingSuccess').classList.add('show');
+
+      // Send via mailto (will be replaced with Calendly integration later)
+      const subject = encodeURIComponent('Golf Training Booking Request - ' + selectedService);
+      const body = encodeURIComponent(
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Phone: ' + phone + '\n' +
+        'Service: ' + selectedService + '\n' +
+        'Date: ' + date + '\n' +
+        'Time: ' + selectedTime + '\n' +
+        'People: ' + guestCount + '\n' +
+        'Price: $' + selectedPrice + '\n' +
+        'Notes: ' + notes
+      );
+      // Open mailto in background
+      const mailLink = document.createElement('a');
+      mailLink.href = 'mailto:info@redlinegolfacademy.com?subject=' + subject + '&body=' + body;
+      mailLink.click();
+    }
+
+    // Select first service by default
+    document.querySelector('.booking-service-card').click();
   </script>
 </body>
 </html>
