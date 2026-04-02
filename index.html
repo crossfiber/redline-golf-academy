@@ -891,13 +891,13 @@
     }
 
     .science-content {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
     .science-header {
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
     }
 
     .science-header h2 {
@@ -905,138 +905,139 @@
       font-size: 3rem;
       font-weight: 700;
       line-height: 1.2;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       letter-spacing: -0.03em;
     }
 
-    .science-equation {
-      background: rgba(45, 106, 79, 0.2);
-      border: 2px solid var(--forest-green);
-      border-radius: 4px;
-      padding: 2rem;
+    .science-header p {
+      font-size: 1.1rem;
+      color: rgba(232, 240, 232, 0.7);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .science-callout {
       text-align: center;
       margin-bottom: 4rem;
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+
+    .science-callout .callout-number {
       font-family: var(--font-mono);
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--sky-blue);
-      animation: fadeIn 0.8s ease 0.2s both;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .science-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .stat-box {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(141, 200, 232, 0.08);
-      border-radius: 4px;
-      border: 1px solid rgba(141, 200, 232, 0.2);
-    }
-
-    .stat-number {
-      font-family: var(--font-mono);
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: var(--sky-blue);
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
       margin-bottom: 0.5rem;
-      animation: snapIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    @keyframes snapIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    .science-callout .callout-label {
+      font-size: 1.15rem;
+      color: var(--sky-blue);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
     }
 
-    .stat-label {
-      font-size: 0.95rem;
-      color: var(--light-text);
-      opacity: 0.85;
-    }
-
-    .comparison-visual {
-      background: rgba(141, 200, 232, 0.1);
-      border-radius: 4px;
-      padding: 2rem;
-      margin-top: 3rem;
-    }
-
-    .comparison-title {
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .bar-comparison {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
-    .bar-item {
-      text-align: center;
-    }
-
-    .bar-item-label {
+    .science-callout .callout-sub {
       font-size: 0.9rem;
-      margin-bottom: 1rem;
-      opacity: 0.85;
+      color: rgba(232, 240, 232, 0.5);
     }
 
-    .bar-visual {
-      background: rgba(141, 200, 232, 0.2);
-      border-radius: 4px;
-      height: 40px;
+    .science-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .science-col {
+      padding: 2rem 1.5rem;
+      border-left: 3px solid var(--teal);
+      transition: border-color 0.3s ease;
+    }
+
+    .science-col:nth-child(2) {
+      border-left-color: var(--emerald);
+    }
+
+    .science-col:nth-child(3) {
+      border-left-color: var(--sky-blue);
+    }
+
+    .science-col .col-stat {
+      font-family: var(--font-mono);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+
+    .science-col .col-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--sky-blue);
+      margin-bottom: 0.65rem;
+    }
+
+    .science-col .col-desc {
+      font-size: 0.88rem;
+      color: rgba(232, 240, 232, 0.6);
+      line-height: 1.6;
+    }
+
+    .science-bottom {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      padding-right: 1rem;
-      position: relative;
-      overflow: hidden;
+      justify-content: center;
+      gap: 3rem;
+      padding: 2rem;
+      background: rgba(141, 200, 232, 0.06);
+      border-radius: 8px;
     }
 
-    .bar-fill {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      background: linear-gradient(90deg, var(--sky-blue), var(--emerald));
-      animation: barExpand 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    .science-bottom-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
-    @keyframes barExpand {
-      from {
-        width: 0;
+    .science-bottom-item i {
+      font-size: 1.5rem;
+      color: var(--teal);
+    }
+
+    .science-bottom-item .sbi-text {
+      font-size: 0.9rem;
+      color: rgba(232, 240, 232, 0.75);
+      line-height: 1.5;
+    }
+
+    .science-bottom-item .sbi-text strong {
+      color: var(--white);
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .science-columns {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
-      to {
-        width: 100%;
+      .science-callout .callout-number {
+        font-size: 3.5rem;
       }
-    }
-
-    .bar-text {
-      position: relative;
-      z-index: 2;
-      font-weight: 600;
-      font-family: var(--font-mono);
+      .science-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+      .science-bottom-item {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
 
     /* PRICING SECTION */
@@ -2043,7 +2044,7 @@
     }
 
     .booking-modal {
-      background: var(--white);
+      background: var(--navy);
       border-radius: 16px;
       width: 100%;
       max-width: 520px;
@@ -2156,6 +2157,7 @@
       padding: 2rem;
       overflow-y: auto;
       flex: 1;
+      background: var(--white);
     }
 
     .booking-section {
@@ -2741,45 +2743,42 @@
     <div class="science-content">
       <div class="science-header">
         <h2>The Science Behind More Distance</h2>
+        <p>Every mph of clubhead speed translates directly to yards on the course. Our training targets the physical and mechanical factors that actually move the needle.</p>
       </div>
-      <div class="science-equation">
-        +1 mph clubhead speed = +2-3 yards carry distance
+      <div class="science-callout">
+        <div class="callout-number">+2-3 yds</div>
+        <div class="callout-label">gained per 1 mph of clubhead speed</div>
+        <div class="callout-sub">This is the formula PGA Tour players train around</div>
       </div>
-      <div class="science-stats">
-        <div class="stat-box">
-          <div class="stat-number">300+</div>
-          <div class="stat-label">Yards Avg PGA Drive</div>
+      <div class="science-columns">
+        <div class="science-col">
+          <div class="col-stat">+5-10 mph</div>
+          <div class="col-title">Typical Speed Gains</div>
+          <div class="col-desc">Most golfers have untapped speed potential. Targeted rotational training and biomechanical adjustments unlock it within weeks.</div>
         </div>
-        <div class="stat-box">
-          <div class="stat-number">+5-10</div>
-          <div class="stat-label">mph Speed Gains</div>
+        <div class="science-col">
+          <div class="col-stat">+10-20 yds</div>
+          <div class="col-title">Added Carry Distance</div>
+          <div class="col-desc">More speed means shorter approach shots, more greens in regulation, and lower scores without changing your swing.</div>
         </div>
-        <div class="stat-box">
-          <div class="stat-number">+10-20</div>
-          <div class="stat-label">Yards Gained</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">40+20</div>
-          <div class="stat-label">Minutes Per Session</div>
+        <div class="science-col">
+          <div class="col-stat">40+20 min</div>
+          <div class="col-title">Session Breakdown</div>
+          <div class="col-desc">Every session pairs 40 minutes of focused coaching with 20 minutes of golf-specific strength and mobility work.</div>
         </div>
       </div>
-      <div class="comparison-visual">
-        <div class="comparison-title">Approach Proximity Impact</div>
-        <div class="bar-comparison">
-          <div class="bar-item">
-            <div class="bar-item-label">Without Speed Training</div>
-            <div class="bar-visual">
-              <div class="bar-fill" style="width: 60%;"></div>
-              <div class="bar-text">150 yds</div>
-            </div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-item-label">With Speed Training</div>
-            <div class="bar-visual">
-              <div class="bar-fill" style="animation-delay: 0.2s;"></div>
-              <div class="bar-text">165 yds</div>
-            </div>
-          </div>
+      <div class="science-bottom">
+        <div class="science-bottom-item">
+          <i class="fas fa-tachometer-alt"></i>
+          <div class="sbi-text"><strong>Speed Measured Every Session</strong>Clubhead and ball speed tracked so you see real progress</div>
+        </div>
+        <div class="science-bottom-item">
+          <i class="fas fa-bullseye"></i>
+          <div class="sbi-text"><strong>300+ Yard Avg PGA Drive</strong>Tour-level methods adapted for every skill level</div>
+        </div>
+        <div class="science-bottom-item">
+          <i class="fas fa-chart-line"></i>
+          <div class="sbi-text"><strong>Data-Driven Improvement</strong>No guesswork, just measurable gains session over session</div>
         </div>
       </div>
     </div>
