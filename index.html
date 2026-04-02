@@ -104,9 +104,15 @@
     }
 
     .nav-logo img {
-      height: 45px;
+      height: 65px;
       width: auto;
       display: block;
+      filter: brightness(0) invert(1);
+      transition: filter 0.4s ease;
+    }
+
+    nav.scrolled .nav-logo img {
+      filter: none;
     }
 
     .nav-links {
@@ -331,12 +337,15 @@
       position: absolute;
       top: 50%;
       right: 5%;
-      opacity: 0.05;
+      opacity: 0.12;
       z-index: 0;
-      font-size: 20rem;
-      font-weight: 700;
-      color: var(--light-text);
       transform: translateY(-50%);
+    }
+
+    .hero-watermark img {
+      height: 500px;
+      width: auto;
+      filter: brightness(0) invert(1);
     }
 
     .hero-content {
@@ -426,60 +435,81 @@
     .credentials {
       position: relative;
       z-index: 10;
-      margin: -3rem 2rem 0;
-      background: var(--white);
-      border-left: 5px solid var(--forest-green);
-      padding: 2rem;
-      border-radius: 4px;
-      box-shadow: 0 8px 24px rgba(11, 37, 69, 0.12);
+      margin: -3rem auto 0;
+      max-width: 1100px;
+      padding: 0 2rem;
     }
 
     .credentials-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(11, 37, 69, 0.15);
+      overflow: hidden;
     }
 
     .credential-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-right: 1px solid rgba(11, 37, 69, 0.08);
+      transition: background 0.3s ease;
+    }
+
+    .credential-item:last-child {
+      border-right: none;
+    }
+
+    .credential-item:hover {
+      background: rgba(45, 106, 79, 0.04);
     }
 
     .credential-icon {
-      color: var(--forest-green);
-      font-size: 1.5rem;
-      flex-shrink: 0;
-      margin-top: 0.25rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.1rem;
     }
 
-    .credential-text {
-      flex: 1;
+    .credential-icon.green {
+      background: rgba(45, 106, 79, 0.1);
+      color: var(--emerald);
+    }
+
+    .credential-icon.blue {
+      background: rgba(14, 165, 233, 0.1);
+      color: var(--teal);
     }
 
     .credential-text h3 {
       font-family: var(--font-headline);
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--navy);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
       letter-spacing: -0.02em;
     }
 
     .credential-text p {
-      font-size: 0.9rem;
-      color: #666;
+      font-size: 0.85rem;
+      color: #777;
+      line-height: 1.5;
     }
 
-    .credential-logo {
-      grid-column: span 1;
+    .credential-logo-inline {
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 1rem;
     }
 
-    .credential-logo img {
-      max-height: 60px;
+    .credential-logo-inline img {
+      height: 36px;
       width: auto;
     }
 
@@ -1605,6 +1635,10 @@
         font-size: 1.05rem;
       }
 
+      .hero-watermark {
+        display: none;
+      }
+
       .hero-ctas {
         flex-direction: column;
       }
@@ -1615,12 +1649,27 @@
       }
 
       .credentials {
-        margin: -2rem 1.5rem 0;
+        margin: -2rem 1rem 0;
+        padding: 0 1rem;
       }
 
       .credentials-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+
+      .credential-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(11, 37, 69, 0.08);
+        padding: 1.5rem 1rem;
+      }
+
+      .credential-item:nth-child(odd) {
+        border-right: 1px solid rgba(11, 37, 69, 0.08);
+      }
+
+      .credential-item:nth-child(n+3) {
+        border-bottom: none;
       }
 
       .system-content {
@@ -1780,7 +1829,7 @@
   <!-- NAVIGATION -->
   <nav id="navbar">
     <div class="nav-logo">
-      <img src="logo_1.jpg" alt="Hogan Elite Golf">
+      <img src="logo_1-removebg-preview.png" alt="Hogan Elite Golf">
     </div>
     <ul class="nav-links">
       <li><a href="#system">Why Us</a></li>
@@ -1818,7 +1867,7 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <div class="hero-watermark">H</div>
+    <div class="hero-watermark"><img src="logo_1-removebg-preview.png" alt=""></div>
     <div class="hero-content">
       <h1>Elite Golf Performance Training in Fort Myers</h1>
       <p class="hero-subtitle">40 minutes of expert swing coaching. 20 minutes of golf-specific strength training. One integrated system for measurable gains.</p>
@@ -1833,33 +1882,33 @@
   <section class="credentials">
     <div class="credentials-grid">
       <div class="credential-item">
-        <div class="credential-icon"><i class="fas fa-star"></i></div>
+        <div class="credential-icon green"><i class="fas fa-golf-ball-tee"></i></div>
         <div class="credential-text">
-          <h3>PGA-Level Training Methods</h3>
-          <p>Proven techniques used by professional golfers</p>
+          <h3>Tour-Level Methods</h3>
+          <p>The same techniques used by professional golfers on tour</p>
         </div>
       </div>
       <div class="credential-item">
-        <div class="credential-text">
-          <h3>Red Line Athletics Facility</h3>
-          <p>State-of-the-art training equipment</p>
-        </div>
-        <div class="credential-logo">
+        <div class="credential-logo-inline">
           <img src="https://redlineathletics.com/wp-content/uploads/2025/08/Redline-Logo-V1.png" alt="Red Line Athletics">
         </div>
-      </div>
-      <div class="credential-item">
-        <div class="credential-icon"><i class="fas fa-map-marker-alt"></i></div>
         <div class="credential-text">
-          <h3>Southwest Florida</h3>
-          <p>Serving golfers across the region</p>
+          <h3>Elite Training Facility</h3>
+          <p>8,000+ sq ft of pro-grade equipment</p>
         </div>
       </div>
       <div class="credential-item">
-        <div class="credential-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="credential-icon blue"><i class="fas fa-location-dot"></i></div>
         <div class="credential-text">
-          <h3>Results-Driven Approach</h3>
-          <p>Measurable improvements you can track</p>
+          <h3>Southwest Florida</h3>
+          <p>Fort Myers, Naples, Cape Coral, Marco Island, Estero</p>
+        </div>
+      </div>
+      <div class="credential-item">
+        <div class="credential-icon green"><i class="fas fa-bolt"></i></div>
+        <div class="credential-text">
+          <h3>Measurable Gains</h3>
+          <p>Track clubhead speed, ball speed, and carry distance</p>
         </div>
       </div>
     </div>
@@ -1889,7 +1938,7 @@
       </div>
     </div>
     <div class="system-logo">
-      <img src="logo_2.jpg" alt="Hogan Elite Golf Instruction">
+      <img src="download.png" alt="Hogan Elite Golf Instruction">
     </div>
   </section>
 
@@ -2317,7 +2366,7 @@
     <div class="footer-content">
       <div class="footer-section">
         <div class="footer-logo">
-          <img src="logo_2.jpg" alt="Hogan Elite Golf Instruction">
+          <img src="download.png" alt="Hogan Elite Golf Instruction">
         </div>
         <p>Elite Golf Performance Training in Fort Myers, Florida.</p>
         <div class="footer-socials">
@@ -2378,7 +2427,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Redline Golf Academy",
-      "image": "logo_2.jpg",
+      "image": "download.png",
       "description": "Elite Golf Performance Training in Fort Myers. Expert swing coaching combined with golf-specific strength training.",
       "url": "https://redlinegolfacademy.com",
       "telephone": "+12396728143",
