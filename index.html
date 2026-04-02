@@ -2169,7 +2169,7 @@
     }
 
     .booking-service-card {
-      border: 2px solid #E8ECF0;
+      border: 1.5px solid #E2E6EA;
       border-radius: 12px;
       padding: 1rem 1.25rem;
       cursor: pointer;
@@ -2177,17 +2177,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: var(--white);
     }
 
     .booking-service-card:hover {
-      border-color: var(--teal);
-      background: rgba(14, 165, 233, 0.03);
+      border-color: #B0C4D8;
+      background: #F8FAFB;
     }
 
     .booking-service-card.selected {
       border-color: var(--teal);
-      background: rgba(14, 165, 233, 0.06);
-      box-shadow: 0 0 0 1px var(--teal);
+      background: rgba(14, 165, 233, 0.05);
     }
 
     .booking-service-card .svc-name {
@@ -2221,7 +2221,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      border: 2px solid #E8ECF0;
+      border: 1.5px solid #E2E6EA;
       background: var(--white);
       cursor: pointer;
       font-size: 1.1rem;
@@ -2249,7 +2249,7 @@
     .booking-input {
       width: 100%;
       padding: 0.85rem 1rem;
-      border: 2px solid #E8ECF0;
+      border: 1.5px solid #E2E6EA;
       border-radius: 10px;
       font-size: 0.95rem;
       font-family: var(--font-body);
@@ -2509,15 +2509,15 @@
         <div class="booking-section active" id="bookingStep1">
           <label class="booking-label">Choose Your Package</label>
           <div class="booking-service-options">
-            <div class="booking-service-card" onclick="selectService(this, 'Single Session', 200)" data-service="single">
+            <div class="booking-service-card" onclick="selectService(this)" data-service="single">
               <div><div class="svc-name">Single Session</div><div class="svc-desc">1 hour: 40 min coaching + 20 min strength</div></div>
               <div class="svc-price">$200</div>
             </div>
-            <div class="booking-service-card" onclick="selectService(this, '3-Session Package', 550)" data-service="3pack">
+            <div class="booking-service-card" onclick="selectService(this)" data-service="3pack">
               <div><div class="svc-name">3-Session Package</div><div class="svc-desc">3 x 1 hour sessions (save $50)</div></div>
               <div class="svc-price">$550</div>
             </div>
-            <div class="booking-service-card" onclick="selectService(this, 'Monthly Program', 700)" data-service="monthly">
+            <div class="booking-service-card" onclick="selectService(this)" data-service="monthly">
               <div><div class="svc-name">Monthly Program</div><div class="svc-desc">4 sessions/month, scheduled up front</div></div>
               <div class="svc-price">$700<span style="font-size:0.7em;color:#999">/mo</span></div>
             </div>
@@ -3374,34 +3374,45 @@
       if (e.target === this) closeBooking();
     });
 
-    function selectService(el, name, price) {
+    const pricingData = {
+      single:  { solo: 200, pair: 300, name: 'Single Session' },
+      '3pack': { solo: 550, pair: 700, name: '3-Session Package' },
+      monthly: { solo: 700, pair: 1000, name: 'Monthly Program' }
+    };
+
+    function selectService(el) {
       document.querySelectorAll('.booking-service-card').forEach(c => c.classList.remove('selected'));
       el.classList.add('selected');
-      selectedService = name;
-      selectedPrice = price;
+      const svc = el.dataset.service;
+      selectedService = pricingData[svc].name;
+      selectedPrice = guestCount === 2 ? pricingData[svc].pair : pricingData[svc].solo;
       updateSummary();
+    }
+
+    function updateCardPrices() {
+      document.querySelectorAll('.booking-service-card').forEach(card => {
+        const svc = card.dataset.service;
+        const p = pricingData[svc];
+        const price = guestCount === 2 ? p.pair : p.solo;
+        const priceEl = card.querySelector('.svc-price');
+        if (svc === 'monthly') {
+          priceEl.innerHTML = '$' + price.toLocaleString() + '<span style="font-size:0.7em;color:#999">/mo</span>';
+        } else {
+          priceEl.textContent = '$' + price.toLocaleString();
+        }
+      });
     }
 
     function changeGuests(delta) {
       guestCount = Math.max(1, Math.min(2, guestCount + delta));
       document.getElementById('guestCount').textContent = guestCount;
-      // Update prices for 2 people
-      if (guestCount === 2) {
-        const sel = document.querySelector('.booking-service-card.selected');
-        if (sel) {
-          const svc = sel.dataset.service;
-          if (svc === 'single') selectedPrice = 300;
-          else if (svc === '3pack') selectedPrice = 700;
-          else if (svc === 'monthly') selectedPrice = 1000;
-        }
-      } else {
-        const sel = document.querySelector('.booking-service-card.selected');
-        if (sel) {
-          const svc = sel.dataset.service;
-          if (svc === 'single') selectedPrice = 200;
-          else if (svc === '3pack') selectedPrice = 550;
-          else if (svc === 'monthly') selectedPrice = 700;
-        }
+      // Update displayed prices on all cards
+      updateCardPrices();
+      // Update selected price
+      const sel = document.querySelector('.booking-service-card.selected');
+      if (sel) {
+        const svc = sel.dataset.service;
+        selectedPrice = guestCount === 2 ? pricingData[svc].pair : pricingData[svc].solo;
       }
       updateSummary();
     }
