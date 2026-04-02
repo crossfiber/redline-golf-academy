@@ -925,24 +925,26 @@
     }
 
     .science-callout .callout-number {
-      font-family: var(--font-mono);
-      font-size: 4.5rem;
+      font-family: var(--font-headline);
+      font-size: 3.5rem;
       font-weight: 700;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .science-callout .callout-number span {
       color: var(--teal);
-      line-height: 1;
-      margin-bottom: 0.5rem;
     }
 
     .science-callout .callout-label {
-      font-size: 1.15rem;
-      color: var(--sky-blue);
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-
-    .science-callout .callout-sub {
-      font-size: 0.9rem;
-      color: rgba(232, 240, 232, 0.5);
+      font-size: 1.1rem;
+      color: rgba(232, 240, 232, 0.65);
+      font-weight: 400;
+      max-width: 400px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
     .science-columns {
@@ -1869,14 +1871,8 @@
         font-size: 2rem;
       }
 
-      .science-equation {
-        font-size: 1.2rem;
-        padding: 1.5rem;
-      }
-
-      .bar-comparison {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+      .science-callout .callout-number {
+        font-size: 2rem;
       }
 
       .pricing-header h2 {
@@ -1955,12 +1951,12 @@
         padding: 0 0.5rem;
       }
 
-      .science-equation {
-        font-size: 1rem;
+      .science-callout .callout-number {
+        font-size: 1.65rem;
       }
 
-      .stat-number {
-        font-size: 2rem;
+      .science-col .col-stat {
+        font-size: 1.8rem;
       }
 
       nav {
@@ -2612,7 +2608,7 @@
       <p class="hero-subtitle">40 minutes of expert swing coaching. 20 minutes of golf-specific strength training. One integrated system for measurable gains.</p>
       <div class="hero-ctas">
         <button class="cta-primary" onclick="openBooking()">Book Your Session</button>
-        <button class="cta-secondary" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">View Programs</button>
+        <button class="cta-secondary" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">View Packages</button>
       </div>
     </div>
   </section>
@@ -2746,9 +2742,8 @@
         <p>Every mph of clubhead speed translates directly to yards on the course. Our training targets the physical and mechanical factors that actually move the needle.</p>
       </div>
       <div class="science-callout">
-        <div class="callout-number">+2-3 yds</div>
-        <div class="callout-label">gained per 1 mph of clubhead speed</div>
-        <div class="callout-sub">This is the formula PGA Tour players train around</div>
+        <div class="callout-number">Every <span>1 mph</span> of clubhead speed adds <span>2-3 yards</span> of carry</div>
+        <div class="callout-label">This is the formula PGA Tour players build their training around. Our system targets the same gains for every skill level.</div>
       </div>
       <div class="science-columns">
         <div class="science-col">
