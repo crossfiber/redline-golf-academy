@@ -191,7 +191,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
     }
 
     body {
@@ -224,9 +224,7 @@
       justify-content: space-between;
       padding: 1.5rem 2rem;
       background: transparent;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      transform: translateZ(0);
-      -webkit-transform: translateZ(0);
+      transition: background 0.3s ease;
     }
 
     nav.scrolled {
@@ -515,7 +513,7 @@
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.6);
-      z-index: 1000;
+      z-index: 999;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -682,7 +680,7 @@
       gap: 0;
       background: var(--white);
       border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(11, 37, 69, 0.15);
+      box-shadow: 0 8px 24px rgba(11, 37, 69, 0.1);
       overflow: hidden;
     }
 
@@ -690,15 +688,10 @@
       padding: 2rem 1.5rem;
       text-align: center;
       border-right: 1px solid rgba(11, 37, 69, 0.08);
-      transition: background 0.3s ease;
     }
 
     .credential-item:last-child {
       border-right: none;
-    }
-
-    .credential-item:hover {
-      background: rgba(45, 106, 79, 0.04);
     }
 
     .credential-icon {
@@ -1926,10 +1919,8 @@
 
       .hero {
         padding: 8rem 1.5rem 6rem;
-        min-height: 100svh;
+        min-height: 100vh;
         overflow: visible;
-        transform: translateZ(0);
-        -webkit-transform: translateZ(0);
       }
 
       .hero h1 {
@@ -1962,25 +1953,20 @@
       .credentials {
         margin: 0;
         padding: 1.5rem 1rem;
-        z-index: 1;
+        z-index: auto;
+        position: static;
       }
 
       .credentials-grid {
         grid-template-columns: 1fr 1fr;
         gap: 0;
-        box-shadow: 0 4px 16px rgba(11, 37, 69, 0.08);
-        transform: translateZ(0);
+        box-shadow: none;
       }
 
       .credential-item {
         border-right: none;
         border-bottom: 1px solid rgba(11, 37, 69, 0.08);
         padding: 1.5rem 1rem;
-        transition: none;
-      }
-
-      .credential-item:hover {
-        background: transparent;
       }
 
       .credential-item:nth-child(odd) {
@@ -2250,8 +2236,6 @@
       align-items: center;
       justify-content: center;
       padding: 1rem;
-      overscroll-behavior: contain;
-      -webkit-overflow-scrolling: touch;
     }
 
     .booking-overlay.open {
@@ -2659,7 +2643,7 @@
         touch-action: none;
       }
       .booking-modal {
-        max-height: 85svh;
+        max-height: 85vh;
         border-radius: 14px;
         touch-action: none;
       }
@@ -2891,7 +2875,7 @@
       <p class="hero-subtitle">40 minutes of expert swing coaching. 20 minutes of golf-specific strength training. One integrated system for measurable gains.</p>
       <div class="hero-ctas">
         <button class="cta-primary" onclick="openBooking()">Book Your Session</button>
-        <button class="cta-secondary" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">View Packages</button>
+        <button class="cta-secondary" onclick="var el=document.getElementById('pricing');var y=el.getBoundingClientRect().top+window.pageYOffset-80;window.scrollTo({top:y,behavior:'smooth'})">View Packages</button>
       </div>
     </div>
   </section>
