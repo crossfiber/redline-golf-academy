@@ -2048,10 +2048,12 @@
       width: 100%;
       max-width: 520px;
       max-height: 90vh;
-      overflow-y: auto;
+      overflow: hidden;
       transform: translateY(20px) scale(0.97);
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
     }
 
     .booking-overlay.open .booking-modal {
@@ -2061,8 +2063,8 @@
     .booking-header {
       background: linear-gradient(135deg, var(--navy), var(--forest-green));
       padding: 2rem 2rem 1.5rem;
-      border-radius: 16px 16px 0 0;
       position: relative;
+      flex-shrink: 0;
     }
 
     .booking-header h3 {
@@ -2152,6 +2154,8 @@
 
     .booking-body {
       padding: 2rem;
+      overflow-y: auto;
+      flex: 1;
     }
 
     .booking-section {
@@ -3460,7 +3464,7 @@
       // Update summary when reaching step 3
       if (step === 3) updateSummary();
       // Scroll modal to top
-      document.querySelector('.booking-modal').scrollTop = 0;
+      document.getElementById('bookingBody').scrollTop = 0;
     }
 
     function submitBooking() {
