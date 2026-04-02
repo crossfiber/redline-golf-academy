@@ -1933,6 +1933,11 @@
         font-size: 1.05rem;
       }
 
+      .hero::before {
+        animation: none;
+        display: none;
+      }
+
       .hero-watermark {
         display: none;
       }
@@ -2003,16 +2008,28 @@
         grid-template-columns: 1fr;
       }
 
-      .distance-science {
-        padding: 8rem 1.5rem;
+      .the-system {
+        padding: 4rem 1.5rem 5rem;
+        clip-path: none;
+        margin-top: 0;
       }
 
-      .the-system {
-        padding: 6rem 1.5rem 8rem;
+      .distance-science {
+        padding: 4rem 1.5rem;
+        clip-path: none;
+        margin-top: 0;
       }
 
       .training-detail {
-        padding: 8rem 1.5rem;
+        padding: 4rem 1.5rem;
+        clip-path: none;
+        margin-top: 0;
+      }
+
+      .contact {
+        clip-path: none;
+        margin-top: 0;
+        padding: 4rem 1.5rem;
       }
 
       .system-logo img {
@@ -2613,34 +2630,34 @@
 
     @media (max-width: 600px) {
       .booking-overlay {
-        padding: 0;
-        align-items: stretch;
+        padding: 0.75rem;
       }
       .booking-modal {
-        max-height: 100vh;
-        max-height: 100dvh;
-        height: 100%;
-        border-radius: 0;
-        max-width: 100%;
+        max-height: 85vh;
+        max-height: 85dvh;
+        border-radius: 14px;
       }
       .booking-header {
         padding: 1.25rem 1.5rem;
-        border-radius: 0;
+        border-radius: 14px 14px 0 0;
       }
       .booking-header h3 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
       }
       .booking-body {
-        padding: 1.5rem;
+        padding: 1.25rem;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
+      }
+      .booking-service-card {
+        padding: 0.75rem 1rem;
       }
       .booking-service-card .svc-price {
         font-size: 0.85rem;
         margin-left: 0.75rem;
       }
       .booking-steps {
-        padding: 0.75rem 1.5rem;
+        padding: 0.6rem 1.25rem;
       }
       .booking-step span:not(.step-num) {
         display: none;
@@ -2649,11 +2666,43 @@
         grid-template-columns: 1fr;
       }
       .booking-close {
-        top: 1rem;
-        right: 1rem;
+        top: 0.85rem;
+        right: 0.85rem;
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
       }
-      .booking-nav {
-        padding-bottom: env(safe-area-inset-bottom, 0);
+      .booking-label {
+        font-size: 0.75rem;
+        margin-bottom: 0.35rem;
+      }
+      .booking-input {
+        padding: 0.7rem 0.85rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+      }
+      .time-pills {
+        gap: 0.35rem;
+        margin-bottom: 1rem;
+      }
+      .time-pill {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.8rem;
+      }
+      .booking-summary {
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+      .booking-btn {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+      .guest-counter {
+        margin-bottom: 1rem;
+      }
+      .booking-service-options {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
       }
     }
   </style>
@@ -3485,10 +3534,6 @@
     function openBooking(preselect) {
       document.getElementById('bookingOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-      document.body.style.top = '-' + window.scrollY + 'px';
-      document.body.dataset.scrollY = window.scrollY;
       // Set min date to tomorrow
       const tomorrow = new Date();
       tomorrow.setDate(tomorrow.getDate() + 1);
@@ -3507,12 +3552,7 @@
 
     function closeBooking() {
       document.getElementById('bookingOverlay').classList.remove('open');
-      var scrollY = document.body.dataset.scrollY || 0;
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY));
     }
 
     document.getElementById('bookingOverlay').addEventListener('click', function(e) {
