@@ -1919,8 +1919,9 @@
       }
 
       .hero {
-        padding: 8rem 1.5rem 4rem;
-        min-height: auto;
+        padding: 8rem 1.5rem 6rem;
+        min-height: 100vh;
+        min-height: 100dvh;
       }
 
       .hero h1 {
@@ -1946,41 +1947,13 @@
       }
 
       .credentials {
-        margin: 0;
-        padding: 2rem 1rem;
-        background: linear-gradient(180deg, var(--forest-green) 0%, var(--navy) 100%);
+        margin: -2rem 1rem 0;
+        padding: 0 0.5rem;
       }
 
       .credentials-grid {
         grid-template-columns: 1fr 1fr;
         gap: 0;
-        border-radius: 12px;
-        box-shadow: none;
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.1);
-      }
-
-      .credential-item {
-        border-color: rgba(255,255,255,0.08) !important;
-      }
-
-      .credential-item h3,
-      .credential-item p {
-        color: var(--light-text) !important;
-      }
-
-      .credential-item p {
-        color: rgba(232, 240, 232, 0.65) !important;
-      }
-
-      .credential-icon {
-        background: rgba(255,255,255,0.1) !important;
-      }
-
-      .credential-icon.green,
-      .credential-icon.blue,
-      .credential-icon.gold {
-        color: var(--sky-blue) !important;
       }
 
       .credential-item {
@@ -2235,6 +2208,8 @@
       align-items: center;
       justify-content: center;
       padding: 1rem;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
     }
 
     .booking-overlay.open {
@@ -2636,30 +2611,49 @@
       text-decoration: none;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
+      .booking-overlay {
+        padding: 0;
+        align-items: stretch;
+      }
       .booking-modal {
-        max-height: 95vh;
-        border-radius: 12px;
+        max-height: 100vh;
+        max-height: 100dvh;
+        height: 100%;
+        border-radius: 0;
+        max-width: 100%;
       }
       .booking-header {
-        padding: 1.5rem;
-        border-radius: 12px 12px 0 0;
+        padding: 1.25rem 1.5rem;
+        border-radius: 0;
+      }
+      .booking-header h3 {
+        font-size: 1.25rem;
       }
       .booking-body {
         padding: 1.5rem;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
       .booking-service-card .svc-price {
         font-size: 0.85rem;
         margin-left: 0.75rem;
       }
       .booking-steps {
-        padding: 1rem 1.5rem;
+        padding: 0.75rem 1.5rem;
       }
-      .booking-step span {
+      .booking-step span:not(.step-num) {
         display: none;
       }
       .booking-row {
         grid-template-columns: 1fr;
+      }
+      .booking-close {
+        top: 1rem;
+        right: 1rem;
+      }
+      .booking-nav {
+        padding-bottom: env(safe-area-inset-bottom, 0);
       }
     }
   </style>
@@ -3491,6 +3485,10 @@
     function openBooking(preselect) {
       document.getElementById('bookingOverlay').classList.add('open');
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = '-' + window.scrollY + 'px';
+      document.body.dataset.scrollY = window.scrollY;
       // Set min date to tomorrow
       const tomorrow = new Date();
       tomorrow.setDate(tomorrow.getDate() + 1);
@@ -3509,7 +3507,12 @@
 
     function closeBooking() {
       document.getElementById('bookingOverlay').classList.remove('open');
+      var scrollY = document.body.dataset.scrollY || 0;
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      window.scrollTo(0, parseInt(scrollY));
     }
 
     document.getElementById('bookingOverlay').addEventListener('click', function(e) {
