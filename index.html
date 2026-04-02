@@ -23,7 +23,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -45,8 +45,8 @@
       --dark-text: #1A1A1A;
       --gold: #D4A855;
 
-      --font-headline: 'Space Grotesk', sans-serif;
-      --font-body: 'Inter', sans-serif;
+      --font-headline: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
 
@@ -517,7 +517,7 @@
     .the-system {
       background: var(--forest-green);
       color: var(--light-text);
-      padding: 6rem 2rem;
+      padding: 8rem 2rem 10rem;
       position: relative;
       clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
     }
@@ -630,8 +630,9 @@
     }
 
     .system-logo img {
-      max-height: 80px;
+      max-height: 180px;
       width: auto;
+      opacity: 0.9;
     }
 
     /* SERVICES SECTION */
@@ -754,7 +755,7 @@
     .distance-science {
       background: var(--navy);
       color: var(--light-text);
-      padding: 6rem 2rem;
+      padding: 10rem 2rem;
       position: relative;
       clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
     }
@@ -1065,7 +1066,7 @@
     .training-detail {
       background: var(--emerald);
       color: var(--light-text);
-      padding: 6rem 2rem;
+      padding: 10rem 2rem;
       position: relative;
       clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
     }
@@ -1332,7 +1333,7 @@
     .contact {
       background: var(--navy);
       color: var(--light-text);
-      padding: 6rem 2rem;
+      padding: 10rem 2rem;
       position: relative;
       clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
     }
@@ -1627,8 +1628,8 @@
       }
 
       .hero h1 {
-        font-size: 2.5rem;
-        word-spacing: 100vw;
+        font-size: 2.8rem;
+        line-height: 1.15;
       }
 
       .hero-subtitle {
@@ -1701,7 +1702,23 @@
       }
 
       .distance-science {
-        padding: 4rem 1.5rem;
+        padding: 8rem 1.5rem;
+      }
+
+      .the-system {
+        padding: 6rem 1.5rem 8rem;
+      }
+
+      .training-detail {
+        padding: 8rem 1.5rem;
+      }
+
+      .contact {
+        padding: 8rem 1.5rem;
+      }
+
+      .system-logo img {
+        max-height: 140px;
       }
 
       .science-header h2 {
@@ -1779,11 +1796,13 @@
       }
 
       .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
+        line-height: 1.15;
       }
 
       .hero-subtitle {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        padding: 0 0.5rem;
       }
 
       .science-equation {
@@ -1798,12 +1817,34 @@
         padding: 1rem 1rem;
       }
 
+      .nav-logo img {
+        height: 55px;
+      }
+
       .nav-phone {
         display: none;
       }
 
       .nav-right {
-        gap: 1rem;
+        gap: 0.75rem;
+      }
+
+      .nav-cta {
+        font-size: 0.8rem;
+        padding: 0.6rem 1rem;
+      }
+
+      .credentials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .credential-item {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(11, 37, 69, 0.08);
+      }
+
+      .credential-item:last-child {
+        border-bottom: none;
       }
 
       .pricing-price {
@@ -1884,8 +1925,8 @@
       <div class="credential-item">
         <div class="credential-icon green"><i class="fas fa-golf-ball-tee"></i></div>
         <div class="credential-text">
-          <h3>Tour-Level Methods</h3>
-          <p>The same techniques used by professional golfers on tour</p>
+          <h3>PGA-Level Training Methods</h3>
+          <p>Proven techniques used by professional golfers</p>
         </div>
       </div>
       <div class="credential-item">
