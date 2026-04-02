@@ -618,6 +618,10 @@
       margin-right: auto;
     }
 
+    .mobile-br {
+      display: none;
+    }
+
     .hero-ctas {
       display: flex;
       gap: 1.5rem;
@@ -1922,8 +1926,8 @@
 
       .hero {
         padding: 8rem 1.5rem 6rem;
-        min-height: 100vh;
-        min-height: 100dvh;
+        min-height: 100svh;
+        overflow: visible;
         transform: translateZ(0);
         -webkit-transform: translateZ(0);
       }
@@ -1935,6 +1939,11 @@
 
       .hero-subtitle {
         font-size: 1.05rem;
+        line-height: 2;
+      }
+
+      .mobile-br {
+        display: block;
       }
 
       .hero::before {
@@ -2869,7 +2878,7 @@
     <div class="hero-watermark"><img src="logo_1-removebg-preview.png" alt=""></div>
     <div class="hero-content">
       <h1>Elite Golf Performance Training in Fort Myers</h1>
-      <p class="hero-subtitle">40 minutes of expert swing coaching. 20 minutes of golf-specific strength training. One integrated system for measurable gains.</p>
+      <p class="hero-subtitle">40 minutes of expert swing coaching.<br class="mobile-br"> 20 minutes of golf-specific strength training.<br class="mobile-br"> One integrated system for measurable gains.</p>
       <div class="hero-ctas">
         <button class="cta-primary" onclick="openBooking()">Book Your Session</button>
         <button class="cta-secondary" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">View Packages</button>
@@ -2959,7 +2968,7 @@
   <!-- PRICING SECTION -->
   <section class="pricing" id="pricing">
     <div class="pricing-header">
-      <h2>Golf Lesson Packages & Pricing</h2>
+      <h2>Golf Lesson<br class="mobile-br"> Packages & Pricing</h2>
       <p>Flexible options for every golfer</p>
     </div>
     <div class="pricing-grid">
