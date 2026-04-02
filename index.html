@@ -1939,11 +1939,6 @@
 
       .hero-subtitle {
         font-size: 1.05rem;
-        line-height: 2;
-      }
-
-      .mobile-br {
-        display: block;
       }
 
       .hero::before {
@@ -2065,8 +2060,17 @@
         font-size: 2rem;
       }
 
+      .pricing {
+        padding: 3rem 1.5rem;
+      }
+
+      .pricing-header {
+        margin: 0 auto 1.5rem;
+      }
+
       .pricing-header h2 {
         font-size: 2rem;
+        margin-bottom: 0.5rem;
       }
 
       .pricing-grid {
@@ -2652,23 +2656,29 @@
     @media (max-width: 600px) {
       .booking-overlay {
         padding: 0.75rem;
+        touch-action: none;
       }
       .booking-modal {
-        max-height: 85vh;
-        max-height: 85dvh;
+        max-height: 85svh;
         border-radius: 14px;
+        touch-action: none;
       }
       .booking-header {
         padding: 1.25rem 1.5rem;
         border-radius: 14px 14px 0 0;
+        touch-action: none;
       }
       .booking-header h3 {
         font-size: 1.2rem;
+      }
+      .booking-steps {
+        touch-action: none;
       }
       .booking-body {
         padding: 1.25rem;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
+        touch-action: pan-y;
       }
       .booking-service-card {
         padding: 0.75rem 1rem;
@@ -2878,7 +2888,7 @@
     <div class="hero-watermark"><img src="logo_1-removebg-preview.png" alt=""></div>
     <div class="hero-content">
       <h1>Elite Golf Performance Training in Fort Myers</h1>
-      <p class="hero-subtitle">40 minutes of expert swing coaching.<br class="mobile-br"> 20 minutes of golf-specific strength training.<br class="mobile-br"> One integrated system for measurable gains.</p>
+      <p class="hero-subtitle">40 minutes of expert swing coaching. 20 minutes of golf-specific strength training. One integrated system for measurable gains.</p>
       <div class="hero-ctas">
         <button class="cta-primary" onclick="openBooking()">Book Your Session</button>
         <button class="cta-secondary" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">View Packages</button>
@@ -3586,6 +3596,18 @@
     document.getElementById('bookingOverlay').addEventListener('click', function(e) {
       if (e.target === this) closeBooking();
     });
+
+    // Prevent modal from being dragged around on mobile
+    // Block touchmove on overlay, header, and steps; allow only on booking-body
+    (function() {
+      var overlay = document.getElementById('bookingOverlay');
+      overlay.addEventListener('touchmove', function(e) {
+        var body = document.getElementById('bookingBody');
+        if (!body.contains(e.target)) {
+          e.preventDefault();
+        }
+      }, {passive: false});
+    })();
 
     const pricingData = {
       single:  { solo: 200, pair: 300, name: 'Single Session' },
