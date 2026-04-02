@@ -1386,6 +1386,10 @@
 
     .contact-form-wrapper {
       flex: 1;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 2.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(232, 240, 232, 0.1);
     }
 
     .contact-form-title {
@@ -1464,7 +1468,7 @@
     .contact-info {
       background: rgba(255, 255, 255, 0.05);
       padding: 2.5rem;
-      border-radius: 4px;
+      border-radius: 8px;
       border: 1px solid rgba(232, 240, 232, 0.1);
     }
 
@@ -1756,10 +1760,6 @@
         padding: 8rem 1.5rem;
       }
 
-      .contact {
-        padding: 8rem 1.5rem;
-      }
-
       .system-logo img {
         max-height: 140px;
       }
@@ -1813,10 +1813,16 @@
       .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 0 0.5rem;
+      }
+
+      .contact-form-wrapper,
+      .contact-info {
+        max-width: 100%;
       }
 
       .contact {
-        padding: 8rem 1.5rem 4rem;
+        padding: 8rem 1.25rem 4rem;
       }
 
       .footer-content {
@@ -1892,6 +1898,14 @@
 
       .pricing-price {
         font-size: 2rem;
+      }
+
+      .contact-form-wrapper {
+        padding: 1.5rem;
+      }
+
+      .contact-info {
+        padding: 1.5rem;
       }
 
       .form-group {
