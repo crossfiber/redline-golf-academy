@@ -547,81 +547,112 @@
       opacity: 0.95;
     }
 
-    .system-visual {
+    .system-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .pillar-card {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(141, 200, 232, 0.15);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
     }
 
-    .system-circle {
+    .pillar-card::before {
+      content: '';
       position: absolute;
-      border-radius: 50%;
-      border: 3px solid var(--sky-blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .system-circle-1 {
-      width: 180px;
-      height: 180px;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(45, 106, 79, 0.3);
-    }
-
-    .system-circle-2 {
-      width: 180px;
-      height: 180px;
-      bottom: 0;
       left: 0;
-      background: rgba(141, 200, 232, 0.2);
-    }
-
-    .system-circle-3 {
-      width: 180px;
-      height: 180px;
+      top: 0;
       bottom: 0;
-      right: 0;
-      background: rgba(45, 106, 79, 0.2);
+      width: 4px;
+      background: var(--teal);
+      border-radius: 4px 0 0 4px;
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
     }
 
-    .system-connector {
-      position: absolute;
-      background: var(--sky-blue);
+    .pillar-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateX(4px);
+    }
+
+    .pillar-card:hover::before {
+      transform: scaleY(1);
+    }
+
+    .pillar-number {
+      font-family: var(--font-mono);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--sky-blue);
       opacity: 0.3;
+      line-height: 1;
+      flex-shrink: 0;
+      width: 50px;
     }
 
-    .connector-1 {
-      width: 3px;
-      height: 120px;
-      top: 180px;
-      left: 50%;
-      transform: translateX(-50%);
+    .pillar-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
     }
 
-    .connector-2 {
-      width: 3px;
-      height: 120px;
-      top: 50%;
-      left: 25%;
-      transform: rotate(-35deg) translateY(-50%);
-      transform-origin: top;
+    .pillar-icon.icon-blue {
+      background: rgba(14, 165, 233, 0.15);
+      color: var(--sky-blue);
     }
 
-    .connector-3 {
-      width: 3px;
-      height: 120px;
-      top: 50%;
-      right: 25%;
-      transform: rotate(35deg) translateY(-50%);
-      transform-origin: top;
+    .pillar-icon.icon-green {
+      background: rgba(141, 200, 232, 0.12);
+      color: var(--light-text);
+    }
+
+    .pillar-icon.icon-gold {
+      background: rgba(212, 168, 85, 0.15);
+      color: var(--gold);
+    }
+
+    .pillar-info {
+      flex: 1;
+    }
+
+    .pillar-info h3 {
+      font-family: var(--font-headline);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--white);
+    }
+
+    .pillar-info p {
+      font-size: 0.9rem;
+      opacity: 0.75;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .pillar-time {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--sky-blue);
+      background: rgba(14, 165, 233, 0.1);
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
 
     .system-logo {
@@ -1682,15 +1713,20 @@
         font-size: 2rem;
       }
 
-      .system-visual {
-        height: 300px;
+      .pillar-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        gap: 1rem;
       }
 
-      .system-circle-1,
-      .system-circle-2,
-      .system-circle-3 {
-        width: 120px;
-        height: 120px;
+      .pillar-number {
+        font-size: 1.5rem;
+        width: auto;
+      }
+
+      .pillar-time {
+        margin-top: 0.5rem;
       }
 
       .services-header h2 {
@@ -1963,18 +1999,33 @@
         <p>Elite Golf Performance Training combines expert swing mechanics coaching with golf-specific strength and mobility training. This integrated approach addresses both technique and physical capability, ensuring you're not leaving distance or consistency on the table.</p>
         <p>Every session is designed to improve your game while building the physical foundation that separates amateurs from serious golfers.</p>
       </div>
-      <div class="system-visual">
-        <div class="system-connector connector-1"></div>
-        <div class="system-connector connector-2"></div>
-        <div class="system-connector connector-3"></div>
-        <div class="system-circle system-circle-1">
-          <div>Swing Mechanics</div>
+      <div class="system-pillars">
+        <div class="pillar-card">
+          <span class="pillar-number">01</span>
+          <div class="pillar-icon icon-blue"><i class="fas fa-crosshairs"></i></div>
+          <div class="pillar-info">
+            <h3>Swing Mechanics</h3>
+            <p>Expert analysis and correction of your swing path, face angle, and sequencing for consistent ball striking</p>
+          </div>
+          <span class="pillar-time">40 min</span>
         </div>
-        <div class="system-circle system-circle-2">
-          <div>Strength & Mobility</div>
+        <div class="pillar-card">
+          <span class="pillar-number">02</span>
+          <div class="pillar-icon icon-green"><i class="fas fa-dumbbell"></i></div>
+          <div class="pillar-info">
+            <h3>Strength & Mobility</h3>
+            <p>Golf-specific exercises targeting hip rotation, thoracic spine mobility, and force production</p>
+          </div>
+          <span class="pillar-time">20 min</span>
         </div>
-        <div class="system-circle system-circle-3">
-          <div>Speed Training</div>
+        <div class="pillar-card">
+          <span class="pillar-number">03</span>
+          <div class="pillar-icon icon-gold"><i class="fas fa-bolt"></i></div>
+          <div class="pillar-info">
+            <h3>Speed Training</h3>
+            <p>Structured protocols to increase clubhead speed, ball speed, and rotational power safely</p>
+          </div>
+          <span class="pillar-time">Integrated</span>
         </div>
       </div>
     </div>
