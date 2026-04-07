@@ -1918,6 +1918,10 @@
       color: var(--navy);
     }
 
+    .footer-links-wrap {
+      display: contents;
+    }
+
     .footer-bottom {
       max-width: 1200px;
       margin: 0 auto;
@@ -2161,7 +2165,15 @@
       }
 
       .training-header {
-        margin: 0 auto 1.5rem;
+        margin: 0 auto 1rem;
+      }
+
+      .training-header p {
+        font-size: 0.95rem;
+      }
+
+      .expect-cta-wrap {
+        margin-top: 1.5rem !important;
       }
 
       .pricing {
@@ -2307,6 +2319,73 @@
       .contact-form-wrapper,
       .contact-info {
         max-width: 100%;
+        padding: 1.5rem;
+      }
+
+      .contact-form-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .contact-form-wrapper > p {
+        margin-bottom: 1rem !important;
+        font-size: 0.85rem !important;
+      }
+
+      .form-group {
+        margin-bottom: 0.75rem;
+      }
+
+      .form-group label {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 0.65rem;
+        font-size: 0.9rem;
+      }
+
+      .form-group textarea {
+        min-height: 80px;
+      }
+
+      .contact-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-line {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .contact-hours {
+        margin-bottom: 1rem;
+        padding-top: 1rem;
+      }
+
+      .contact-hours strong {
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-hours p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .contact-map {
+        height: 180px;
+        margin-top: 1rem;
+      }
+
+      .contact-logo {
+        margin-top: 1rem;
+      }
+
+      .contact-logo img {
+        max-height: 50px;
       }
 
       .contact {
@@ -2314,31 +2393,87 @@
       }
 
       footer {
-        padding: 2.5rem 1.5rem 1.5rem;
+        padding: 2rem 1.5rem 1.5rem;
       }
 
       .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 1rem;
+      }
+
+      /* Logo/tagline/socials centered at top */
+      .footer-content > .footer-section:first-child {
+        text-align: center;
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid rgba(232, 240, 232, 0.1);
+      }
+
+      .footer-logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-logo img {
+        max-height: 50px;
+      }
+
+      .footer-content > .footer-section:first-child p {
+        font-size: 0.85rem;
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+
+      .footer-socials {
+        justify-content: center;
+        margin-top: 0.75rem;
+        gap: 0.75rem;
+      }
+
+      .footer-socials a {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+      }
+
+      /* Links sections - 2-col grid */
+      .footer-links-wrap {
+        display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-        margin-bottom: 1.5rem;
+        gap: 1.25rem 1.5rem;
       }
 
       .footer-section h4 {
-        margin-bottom: 0.75rem;
-        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
       }
 
       .footer-section ul li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
+        font-size: 0.85rem;
       }
 
       .footer-bottom {
         flex-direction: column;
         text-align: center;
+        padding-top: 1rem;
+        gap: 0.5rem;
+      }
+
+      .footer-bottom-text {
+        font-size: 0.8rem;
       }
 
       .footer-bottom-links {
         justify-content: center;
+        gap: 1rem;
+      }
+
+      .footer-bottom-links a {
+        font-size: 0.8rem;
       }
     }
 
@@ -2470,16 +2605,8 @@
         line-height: 1.5;
       }
 
-      .contact-form-wrapper {
-        padding: 1.5rem;
-      }
-
-      .contact-info {
-        padding: 1.5rem;
-      }
-
       .form-group {
-        margin-bottom: 1rem;
+        margin-bottom: 0.65rem;
       }
 
       .contact-map {
@@ -3387,25 +3514,25 @@
       <div class="expect-card">
         <div class="expect-number">01</div>
         <h3>Assessment</h3>
-        <p>We evaluate your current swing, mobility, and physical capability to identify the fastest path to improvement.</p>
+        <p>We evaluate your swing, mobility, and physical capability to find the fastest path to improvement.</p>
       </div>
       <div class="expect-card">
         <div class="expect-number">02</div>
-        <h3>Swing Coaching <span class="expect-time">40 min</span></h3>
-        <p>Targeted work on your mechanics, sequencing, and ball striking with real-time feedback and video analysis.</p>
+        <h3>Swing Coaching</h3>
+        <p>Targeted work on your mechanics, sequencing, and ball striking with real-time video analysis.</p>
       </div>
       <div class="expect-card">
         <div class="expect-number">03</div>
-        <h3>Strength & Speed <span class="expect-time">20 min</span></h3>
-        <p>Golf-specific exercises for hip rotation, core stability, and rotational power that directly support your swing improvements.</p>
+        <h3>Strength & Speed</h3>
+        <p>Golf-specific exercises for hip rotation, core stability, and rotational power.</p>
       </div>
       <div class="expect-card">
         <div class="expect-number">04</div>
         <h3>Measurement</h3>
-        <p>Clubhead speed and ball speed tracked every session so you leave with concrete data on your progress.</p>
+        <p>Clubhead and ball speed tracked every session so you leave with concrete data.</p>
       </div>
     </div>
-    <div style="text-align: center; margin-top: 3rem;">
+    <div class="expect-cta-wrap" style="text-align: center; margin-top: 3rem;">
       <button class="cta-primary" onclick="openBooking()">Book Your First Session</button>
     </div>
   </section>
@@ -3597,37 +3724,39 @@
         </div>
       </div>
 
-      <div class="footer-section">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="#system">Why Us</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#science">Science</a></li>
-          <li><a href="#training">Training</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
+      <div class="footer-links-wrap">
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#system">Why Us</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#science">Science</a></li>
+            <li><a href="#training">Training</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
 
-      <div class="footer-section">
-        <h4>Programs</h4>
-        <ul>
-          <li><a href="#system">Swing Coaching</a></li>
-          <li><a href="#system">Strength & Mobility</a></li>
-          <li><a href="#system">Speed Training</a></li>
-          <li><a href="#pricing">Single Sessions</a></li>
-          <li><a href="#pricing">3-Session Package</a></li>
-          <li><a href="#pricing">Monthly Program</a></li>
-        </ul>
-      </div>
+        <div class="footer-section">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="#system">Swing Coaching</a></li>
+            <li><a href="#system">Strength & Mobility</a></li>
+            <li><a href="#system">Speed Training</a></li>
+            <li><a href="#pricing">Single Sessions</a></li>
+            <li><a href="#pricing">3-Session Package</a></li>
+            <li><a href="#pricing">Monthly Program</a></li>
+          </ul>
+        </div>
 
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul>
-          <li><strong>Phone</strong><br><a href="tel:+12396728143">(239) 672-8143</a></li>
-          <li><strong>Email</strong><br><a href="mailto:info@redlinegolfacademy.com">info@redlinegolfacademy.com</a></li>
-          <li><strong>Location</strong><br>Red Line Athletics<br>Fort Myers, FL</li>
-        </ul>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+12396728143">(239) 672-8143</a></li>
+            <li><a href="mailto:info@redlinegolfacademy.com">info@redlinegolfacademy.com</a></li>
+            <li>Red Line Athletics, Fort Myers, FL</li>
+          </ul>
+        </div>
       </div>
     </div>
 
