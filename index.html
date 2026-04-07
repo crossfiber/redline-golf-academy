@@ -192,6 +192,7 @@
 
     html {
       scroll-behavior: auto;
+      overflow-x: hidden;
     }
 
     body {
@@ -877,6 +878,10 @@
       white-space: nowrap;
     }
 
+    .pillar-expand-icon {
+      display: none;
+    }
+
     .system-logo {
       text-align: center;
       margin-top: 4rem;
@@ -1155,19 +1160,64 @@
     @media (max-width: 768px) {
       .science-columns {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 0;
+      }
+      .science-col {
+        padding: 1rem 1.25rem;
+        display: flex;
+        align-items: baseline;
+        gap: 0.75rem;
+        border-left: 3px solid var(--teal);
+      }
+      .science-col .col-stat {
+        font-size: 1.5rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+        margin-bottom: 0;
+      }
+      .science-col .col-title {
+        font-size: 0.85rem;
+        margin-bottom: 0.15rem;
+      }
+      .science-col .col-desc {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        display: none;
       }
       .science-callout .callout-number {
-        font-size: 3.5rem;
+        font-size: 2rem;
+      }
+      .science-callout .callout-label {
+        font-size: 0.9rem;
+      }
+      .science-callout {
+        padding: 0.5rem 1rem;
+        margin-bottom: 0.75rem;
       }
       .science-bottom {
         flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
+        gap: 0.5rem;
+        text-align: left;
+        padding: 1rem;
       }
       .science-bottom-item {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: row;
+        gap: 0.75rem;
+        align-items: center;
+      }
+      .science-bottom-item i {
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        width: 20px;
+        text-align: center;
+      }
+      .science-bottom-item .sbi-text {
+        font-size: 0.8rem;
+      }
+      .science-bottom-item .sbi-text strong {
+        font-size: 0.85rem;
+        display: inline;
+        margin-right: 0.25rem;
       }
     }
 
@@ -1924,7 +1974,7 @@
       .hero {
         padding: 7rem 1.5rem 4rem;
         min-height: 100vh;
-        overflow: visible;
+        overflow: hidden;
       }
 
       .hero h1 {
@@ -1988,22 +2038,90 @@
 
       .system-text h2 {
         font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .system-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+      }
+
+      .system-logo {
+        margin-top: 2rem;
+      }
+
+      .system-logo img {
+        max-height: 100px;
       }
 
       .pillar-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1rem 1.25rem;
+        gap: 0;
+        cursor: pointer;
+      }
+
+      .pillar-card .pillar-number {
+        display: none;
+      }
+
+      .pillar-card .pillar-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        border-radius: 10px;
+        margin-right: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      .pillar-card .pillar-info h3 {
+        font-size: 1.05rem;
+        margin-bottom: 0;
+      }
+
+      .pillar-card .pillar-info p {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        margin: 0;
+        transition: max-height 0.3s ease, opacity 0.25s ease, margin 0.3s ease;
+        font-size: 0.85rem;
+      }
+
+      .pillar-card.expanded .pillar-info p {
+        max-height: 100px;
+        opacity: 1;
+        margin-top: 0.4rem;
+      }
+
+      .pillar-card .pillar-time {
+        margin-left: auto;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+      }
+
+      .pillar-expand-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        margin-left: 0.5rem;
+        color: var(--sky-blue);
+        font-size: 0.7rem;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+      }
+
+      .pillar-card.expanded .pillar-expand-icon {
+        transform: rotate(180deg);
+      }
+
+      .system-pillars {
         gap: 0.75rem;
-      }
-
-      .pillar-number {
-        font-size: 1.5rem;
-        width: auto;
-      }
-
-      .pillar-time {
-        margin-top: 0.5rem;
       }
 
       .services-header h2 {
@@ -2040,31 +2158,6 @@
 
       .system-logo img {
         max-height: 140px;
-      }
-
-      .science-header h2 {
-        font-size: 2rem;
-      }
-
-      .science-header {
-        margin-bottom: 1.5rem;
-      }
-
-      .science-callout {
-        margin-bottom: 1.5rem;
-      }
-
-      .science-callout .callout-number {
-        font-size: 2rem;
-      }
-
-      .science-columns {
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .science-bottom {
-        gap: 0.75rem;
       }
 
       .training-header {
@@ -2265,11 +2358,11 @@
       }
 
       .science-callout .callout-number {
-        font-size: 1.65rem;
+        font-size: 1.5rem;
       }
 
       .science-col .col-stat {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
       }
 
       nav {
@@ -2317,16 +2410,36 @@
       }
 
       .credentials-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
       .credential-item {
-        border-right: none !important;
-        border-bottom: 1px solid rgba(11, 37, 69, 0.08);
+        padding: 0.75rem 0.5rem;
       }
 
-      .credential-item:last-child {
-        border-bottom: none;
+      .credential-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .credential-logo-inline {
+        margin-bottom: 0.5rem;
+      }
+
+      .credential-logo-inline img {
+        height: 28px;
+      }
+
+      .credential-text h3 {
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .credential-text p {
+        font-size: 0.7rem;
+        line-height: 1.4;
       }
 
       .pricing-price {
@@ -3076,12 +3189,12 @@
   <section class="the-system" id="system">
     <div class="system-content">
       <div class="system-text">
-        <h2>Not Just Lessons. A Complete Performance System.</h2>
-        <p>Elite Golf Performance Training combines expert swing mechanics coaching with golf-specific strength and mobility training. This integrated approach addresses both technique and physical capability, ensuring you're not leaving distance or consistency on the table.</p>
-        <p>Every session is designed to improve your game while building the physical foundation that separates amateurs from serious golfers.</p>
+        <h2>Not Just Golf Lessons. A Complete Performance System.</h2>
+        <p>Redline Golf Academy combines expert swing coaching with golf-specific strength and mobility training in every session. Technique and physical capability, addressed together, so you stop leaving distance and consistency on the table.</p>
+        <p>Each 60-minute session builds the foundation that separates recreational golfers from serious competitors in Fort Myers and Southwest Florida.</p>
       </div>
       <div class="system-pillars">
-        <div class="pillar-card">
+        <div class="pillar-card" onclick="togglePillar(this)">
           <span class="pillar-number">01</span>
           <div class="pillar-icon icon-blue"><i class="fas fa-crosshairs"></i></div>
           <div class="pillar-info">
@@ -3089,8 +3202,9 @@
             <p>Expert analysis and correction of your swing path, face angle, and sequencing for consistent ball striking</p>
           </div>
           <span class="pillar-time">40 min</span>
+          <span class="pillar-expand-icon"><i class="fas fa-chevron-down"></i></span>
         </div>
-        <div class="pillar-card">
+        <div class="pillar-card" onclick="togglePillar(this)">
           <span class="pillar-number">02</span>
           <div class="pillar-icon icon-green"><i class="fas fa-dumbbell"></i></div>
           <div class="pillar-info">
@@ -3098,8 +3212,9 @@
             <p>Golf-specific exercises targeting hip rotation, thoracic spine mobility, and force production</p>
           </div>
           <span class="pillar-time">20 min</span>
+          <span class="pillar-expand-icon"><i class="fas fa-chevron-down"></i></span>
         </div>
-        <div class="pillar-card">
+        <div class="pillar-card" onclick="togglePillar(this)">
           <span class="pillar-number">03</span>
           <div class="pillar-icon icon-gold"><i class="fas fa-bolt"></i></div>
           <div class="pillar-info">
@@ -3107,6 +3222,7 @@
             <p>Structured protocols to increase clubhead speed, ball speed, and rotational power safely</p>
           </div>
           <span class="pillar-time">Integrated</span>
+          <span class="pillar-expand-icon"><i class="fas fa-chevron-down"></i></span>
         </div>
       </div>
     </div>
@@ -3711,6 +3827,11 @@
     let selectedPrice = 200;
     let guestCount = 1;
     let selectedTime = '';
+
+    function togglePillar(card) {
+      if (window.innerWidth > 768) return;
+      card.classList.toggle('expanded');
+    }
 
     function togglePricingCard(btn) {
       var card = btn.closest('.pricing-card');
