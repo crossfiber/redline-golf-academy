@@ -848,6 +848,11 @@
       color: var(--sky-blue);
     }
 
+    .pillar-icon.icon-teal {
+      background: rgba(14, 165, 233, 0.25);
+      color: var(--teal);
+    }
+
     .pillar-info {
       flex: 1;
     }
@@ -3324,12 +3329,22 @@
     <div class="system-content">
       <div class="system-text">
         <h2>Not Just Golf Lessons. A Complete Performance System.</h2>
-        <p>Redline Golf Academy combines expert swing coaching with golf-specific strength and mobility training in every session. Technique and physical capability, addressed together, so you stop leaving distance and consistency on the table.</p>
-        <p>Each 60-minute session builds the foundation that separates recreational golfers from serious competitors in Fort Myers and Southwest Florida.</p>
+        <p>Every program starts with a full assessment of your swing, mobility, and physical capability. We identify exactly where your game is losing strokes before building a plan to fix it. No guesswork, no generic drills.</p>
+        <p>From there, each 60-minute session at Redline Golf Academy pairs expert swing coaching with golf-specific strength training. The result: measurable gains in distance, consistency, and confidence for golfers across Fort Myers and Southwest Florida.</p>
       </div>
       <div class="system-pillars">
         <div class="pillar-card" onclick="togglePillar(this)">
           <span class="pillar-number">01</span>
+          <div class="pillar-icon icon-teal"><i class="fas fa-clipboard-check"></i></div>
+          <div class="pillar-info">
+            <h3>Assessment First</h3>
+            <p>We evaluate your current swing mechanics, mobility limitations, and physical capability to build a targeted improvement plan before you hit a single ball</p>
+          </div>
+          <span class="pillar-time">Every Client</span>
+          <span class="pillar-expand-icon"><i class="fas fa-chevron-down"></i></span>
+        </div>
+        <div class="pillar-card" onclick="togglePillar(this)">
+          <span class="pillar-number">02</span>
           <div class="pillar-icon icon-blue"><i class="fas fa-crosshairs"></i></div>
           <div class="pillar-info">
             <h3>Swing Mechanics</h3>
@@ -3339,7 +3354,7 @@
           <span class="pillar-expand-icon"><i class="fas fa-chevron-down"></i></span>
         </div>
         <div class="pillar-card" onclick="togglePillar(this)">
-          <span class="pillar-number">02</span>
+          <span class="pillar-number">03</span>
           <div class="pillar-icon icon-green"><i class="fas fa-dumbbell"></i></div>
           <div class="pillar-info">
             <h3>Strength & Mobility</h3>
@@ -3349,7 +3364,7 @@
           <span class="pillar-expand-icon"><i class="fas fa-chevron-down"></i></span>
         </div>
         <div class="pillar-card" onclick="togglePillar(this)">
-          <span class="pillar-number">03</span>
+          <span class="pillar-number">04</span>
           <div class="pillar-icon icon-gold"><i class="fas fa-bolt"></i></div>
           <div class="pillar-info">
             <h3>Speed Training</h3>
