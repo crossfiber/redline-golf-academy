@@ -901,20 +901,21 @@
             font-size: 0.88rem;
         }
         @media (max-width: 980px) {
-            .pricing-grid { grid-template-columns: 1fr; gap: 12px; max-width: 520px; margin: 0 auto; }
+            .pricing-grid { grid-template-columns: 1fr; gap: 22px; max-width: 520px; margin: 0 auto; }
             /* Mobile: cards collapse to accordion (title + tagline + price + chevron visible) */
             .price-card {
                 padding: 0;
-                overflow: hidden;
+                overflow: visible;
             }
             .price-card.featured { padding-top: 0; }
             .price-badge {
-                top: 14px;
-                left: auto;
-                right: 14px;
+                top: -11px;
+                left: 16px;
+                right: auto;
                 z-index: 3;
-                font-size: 0.66rem;
-                padding: 4px 10px;
+                font-size: 0.64rem;
+                padding: 4px 11px;
+                box-shadow: 0 4px 10px rgba(14,165,233,0.30);
             }
             .price-card-summary {
                 display: flex;
@@ -925,6 +926,11 @@
                 cursor: pointer;
                 background: white;
                 width: 100%;
+                border-radius: 14px;
+                transition: border-radius 0.18s ease;
+            }
+            .price-card.open .price-card-summary {
+                border-radius: 14px 14px 0 0;
             }
             .price-card.featured .price-card-summary {
                 background: rgba(14,165,233,0.04);
@@ -985,9 +991,10 @@
             }
             .price-card.open .price-card-body {
                 max-height: 1200px;
-                padding: 0 22px 22px;
+                padding: 18px 22px 22px;
                 border-top: 1px solid var(--line);
-                padding-top: 18px;
+                border-radius: 0 0 14px 14px;
+                background: white;
             }
             .price-card-body .price-rows { margin-bottom: 18px; }
             .price-card-body .price-features { margin-bottom: 22px; }
@@ -2722,14 +2729,4 @@
             form.reset();
         }).catch(err => {
             console.error('Form submit failed:', err);
-            showFormStatus('err', 'Something hiccuped on our end. Email <a href="mailto:Ryan@redlinegolfacademy.com">Ryan@redlinegolfacademy.com</a> or call <a href="tel:+12396728143">(239) 672-8143</a> and we\'ll take care of it.');
-        }).finally(() => {
-            btn.disabled = false;
-            btn.innerHTML = originalBtnText;
-        });
-    }
-    window.submitForm = submitForm;
-</script>
-
-<!-- ========== JSON-LD: Organization + LocalBusiness/SportsActivityLocation ========== -->
-<script type="a
+            showFormStatus('err', 'Something hiccuped on our end. Email <a href="mailto:Ryan@redlinegolfacademy.com">Ryan@redlinegolfacademy.com</a> or call <a href="tel:+12396728143">(239) 672-814
