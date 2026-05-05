@@ -415,17 +415,20 @@
         }
         .hero-badge {
             position: absolute;
-            left: -18px;
-            bottom: 28px;
-            background: var(--navy);
+            left: 18px;
+            bottom: 18px;
+            background: rgba(11, 37, 69, 0.92);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             color: white;
-            padding: 14px 18px;
+            padding: 12px 16px;
             border-radius: 10px;
-            box-shadow: var(--shadow-mid);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.32);
             display: flex;
             align-items: center;
             gap: 12px;
             z-index: 2;
+            border: 1px solid rgba(255,255,255,0.10);
         }
         .hero-badge .num {
             font-family: 'Big Shoulders Display', sans-serif;
@@ -496,6 +499,63 @@
             .trust-strip { padding: 20px 0; margin-top: -24px; }
             .trust-strip-inner { gap: 8px; flex-direction: column; }
             .trust-strip .sep { display: none; }
+        }
+
+        /* ======================== HOSTED-AT BAR (venue partnership) ======================== */
+        .hosted-bar {
+            background: var(--cream);
+            padding: 22px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .hosted-bar-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+        .hosted-bar-label {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--text-body);
+            white-space: nowrap;
+        }
+        .hosted-bar-logo {
+            display: inline-flex;
+            align-items: center;
+            transition: opacity 0.22s ease, transform 0.22s ease;
+        }
+        .hosted-bar-logo img {
+            height: 36px;
+            width: auto;
+            display: block;
+        }
+        .hosted-bar-logo:hover {
+            opacity: 0.78;
+            transform: translateY(-1px);
+        }
+        .hosted-bar-text {
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 0.92rem;
+            color: var(--text-body);
+            line-height: 1.5;
+            max-width: 460px;
+        }
+        .hosted-bar-text strong {
+            color: var(--navy);
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            .hosted-bar { padding: 18px 0; }
+            .hosted-bar-inner { gap: 14px; padding: 0 20px; flex-direction: column; text-align: center; }
+            .hosted-bar-logo img { height: 30px; }
+            .hosted-bar-text { font-size: 0.86rem; max-width: none; }
         }
 
         /* ======================== SECTION SPACING ======================== */
@@ -694,44 +754,9 @@
             font-size: 1.5rem;
         }
 
-        .method-photo {
-            margin-top: 60px;
-            display: grid;
-            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-            gap: 28px;
-            align-items: center;
-        }
-        .method-photo img {
-            width: 100%;
-            height: 100%;
-            min-height: 280px;
-            object-fit: cover;
-            border-radius: 12px;
-        }
-        .method-photo .pull {
-            color: white;
-            font-size: 1.25rem;
-            line-height: 1.5;
-            padding: 0 8px;
-            font-family: 'Hanken Grotesk', sans-serif;
-        }
-        .method-photo .pull strong {
-            color: var(--teal);
-            font-weight: 700;
-        }
-        .method-photo .pull-cite {
-            font-size: 0.85rem;
-            color: var(--text-mute);
-            margin-top: 14px;
-            font-family: 'Hanken Grotesk', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.10em;
-        }
-
         @media (max-width: 980px) {
             .method-head { grid-template-columns: 1fr; gap: 16px; align-items: start; }
             .steps { grid-template-columns: 1fr 1fr; }
-            .method-photo { grid-template-columns: 1fr; gap: 24px; }
         }
         @media (max-width: 520px) {
             .step { padding: 22px 18px; }
@@ -781,7 +806,22 @@
             font-weight: 700;
             letter-spacing: 0.10em;
             text-transform: uppercase;
+            z-index: 2;
         }
+        /* Desktop: summary is a transparent passthrough that just stacks h3 + tagline */
+        .price-card-summary {
+            display: block;
+            background: transparent;
+            border: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            cursor: default;
+            width: 100%;
+        }
+        .price-card-summary-text { display: contents; }
+        .price-card-summary-meta { display: none; }
+        .price-card-body { display: flex; flex-direction: column; flex: 1; }
         .price-card h3 {
             font-size: 1.5rem;
             margin-bottom: 6px;
@@ -861,10 +901,100 @@
             font-size: 0.88rem;
         }
         @media (max-width: 980px) {
-            .pricing-grid { grid-template-columns: 1fr; gap: 16px; max-width: 480px; margin: 0 auto; }
+            .pricing-grid { grid-template-columns: 1fr; gap: 12px; max-width: 520px; margin: 0 auto; }
+            /* Mobile: cards collapse to accordion (title + tagline + price + chevron visible) */
+            .price-card {
+                padding: 0;
+                overflow: hidden;
+            }
+            .price-card.featured { padding-top: 0; }
+            .price-badge {
+                top: 14px;
+                left: auto;
+                right: 14px;
+                z-index: 3;
+                font-size: 0.66rem;
+                padding: 4px 10px;
+            }
+            .price-card-summary {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 14px;
+                padding: 18px 22px;
+                cursor: pointer;
+                background: white;
+                width: 100%;
+            }
+            .price-card.featured .price-card-summary {
+                background: rgba(14,165,233,0.04);
+            }
+            .price-card-summary-text {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                flex: 1;
+                min-width: 0;
+                text-align: left;
+            }
+            .price-card-summary-text h3 {
+                font-size: 1.15rem;
+                margin: 0;
+            }
+            .price-card-summary-text .tagline {
+                font-size: 0.84rem;
+                margin: 0;
+                min-height: 0;
+                color: var(--text-body);
+            }
+            .price-card-summary-meta {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-shrink: 0;
+            }
+            .price-card-summary-from {
+                font-family: 'Hanken Grotesk', sans-serif;
+                font-size: 0.78rem;
+                color: var(--text-body);
+                white-space: nowrap;
+                line-height: 1.1;
+                text-align: right;
+            }
+            .price-card-summary-from strong {
+                display: block;
+                font-family: 'Big Shoulders Display', sans-serif;
+                font-weight: 800;
+                color: var(--teal);
+                font-size: 1.05rem;
+                margin-top: 2px;
+                letter-spacing: 0.01em;
+            }
+            .price-card-chevron {
+                color: var(--teal);
+                font-size: 0.95rem;
+                transition: transform 0.32s ease;
+                flex-shrink: 0;
+            }
+            .price-card.open .price-card-chevron { transform: rotate(180deg); }
+            .price-card-body {
+                max-height: 0;
+                overflow: hidden;
+                padding: 0 22px;
+                transition: max-height 0.4s ease, padding 0.3s ease;
+            }
+            .price-card.open .price-card-body {
+                max-height: 1200px;
+                padding: 0 22px 22px;
+                border-top: 1px solid var(--line);
+                padding-top: 18px;
+            }
+            .price-card-body .price-rows { margin-bottom: 18px; }
+            .price-card-body .price-features { margin-bottom: 22px; }
         }
         @media (max-width: 380px) {
             .price-card-ctas { flex-direction: column; }
+            .price-card-summary { padding: 16px 18px; }
         }
 
         /* ======================== SCIENCE (image left, content right - split, alternates with COACH) ======================== */
@@ -1747,11 +1877,22 @@
         <span class="sep">•</span>
         <span><strong>100+</strong> golfers trained</span>
         <span class="sep">•</span>
-        <span><strong>Active</strong> mini-tour competitor</span>
+        <span><i class="fas fa-warehouse"></i><strong>8,000+ sq ft</strong> facility</span>
         <span class="sep">•</span>
-        <span><i class="fas fa-flag-checkered"></i>One studio, every level</span>
+        <span><i class="fas fa-flag-checkered"></i>Active mini-tour competitor</span>
     </div>
 </section>
+
+<!-- ========== HOSTED-AT BAR (Red Line Athletics venue partnership) ========== -->
+<aside class="hosted-bar" aria-label="Venue partnership">
+    <div class="hosted-bar-inner">
+        <span class="hosted-bar-label">Hosted Inside</span>
+        <a href="https://redlineathletics.com/location/ft-myers/" target="_blank" rel="noopener" class="hosted-bar-logo" aria-label="Red Line Athletics Fort Myers">
+            <img src="assets/redline-athletics-ftmyers.webp" alt="Red Line Athletics Fort Myers" width="600" height="179" loading="lazy">
+        </a>
+        <span class="hosted-bar-text">An <strong>8,000+ sq ft</strong> sports performance facility on Cleveland Ave. Same building, dedicated golf studio.</span>
+    </div>
+</aside>
 
 <!-- ========== COACH (image left, content right) ========== -->
 <section class="coach" id="coach">
@@ -1801,7 +1942,7 @@
 
                 <div class="coach-bio">
                     <p>Ryan grew up in the game: 9 years of competitive play, 7 years coaching, and still active on local mini-tours. A baseball background taught him how much raw athleticism matters in golf, and time at the <strong>Sean Foley Performance Academy</strong> showed him how the best in the world stitch swing mechanics to physical conditioning.</p>
-                    <p>He built Redline so everyday golfers get the same approach: one studio where your swing data and your strength programming talk to each other. Every session compounds.</p>
+                    <p>He built Redline so everyday golfers get the same approach: one studio where your swing data and your strength programming talk to each other. The studio lives inside <strong>Red Line Athletics on Cleveland Ave</strong>, an 8,000+ sq ft sports performance facility, so the strength side of every session has the room and the equipment it needs.</p>
                 </div>
 
                 <div class="coach-cta-row">
@@ -1842,22 +1983,13 @@
                 <p>Twenty minutes of golf-specific work: hip rotation, thoracic mobility, lead-leg stability, anti-rotation core.</p>
             </div>
             <div class="step">
-                <i class="fas fa-chart-mixed icon-mini" aria-hidden="true"></i>
+                <i class="fas fa-arrow-trend-up icon-mini" aria-hidden="true"></i>
                 <span class="num">04</span>
                 <h3>Retest</h3>
                 <p>Back on the monitor. Compare numbers before vs. after. Most golfers see 2 to 4 mph of gain in a single session.</p>
             </div>
         </div>
 
-        <div class="method-photo">
-            <img src="assets/alignment-sticks-setup.webp"
-                 alt="Alignment sticks and putter laid out on the practice green at Redline"
-                 width="1800" height="1200" loading="lazy">
-            <div>
-                <p class="pull">Every drill on the floor exists because <strong>the launch monitor said so.</strong> No filler. No tip-of-the-week. The data dictates the program.</p>
-                <p class="pull-cite">- The Redline System</p>
-            </div>
-        </div>
     </div>
 </section>
 
@@ -1871,61 +2003,91 @@
         </div>
         <div class="pricing-grid">
             <div class="price-card">
-                <h3>Single Session</h3>
-                <p class="tagline">Try the full Redline session. No commitment.</p>
-                <div class="price-rows">
-                    <div class="price-row"><span class="lbl">Solo</span><span class="amount">$200</span></div>
-                    <div class="price-row"><span class="lbl">Pair</span><span class="amount">$300</span></div>
-                </div>
-                <ul class="price-features">
-                    <li><i class="fas fa-check" aria-hidden="true"></i> 60 minutes (40 swing / 20 strength)</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> 3D swing analysis with before/after</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Launch monitor: speed, ball speed, carry</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Take-home practice plan</li>
-                </ul>
-                <div class="price-card-ctas">
-                    <a class="btn btn-primary" href="https://calendly.com/redlinegolf/single-session-solo" onclick="return openBooking('single-session-solo','Single Solo',200);">Solo · $200</a>
-                    <a class="btn btn-outline dark" href="https://calendly.com/redlinegolf/single-session-pair" onclick="return openBooking('single-session-pair','Single Pair',300);">Pair · $300</a>
+                <button type="button" class="price-card-summary" onclick="togglePricing(this)" aria-expanded="false">
+                    <span class="price-card-summary-text">
+                        <h3>Single Session</h3>
+                        <p class="tagline">Try the full Redline session. No commitment.</p>
+                    </span>
+                    <span class="price-card-summary-meta">
+                        <span class="price-card-summary-from">From <strong>$200</strong></span>
+                        <i class="fas fa-chevron-down price-card-chevron" aria-hidden="true"></i>
+                    </span>
+                </button>
+                <div class="price-card-body">
+                    <div class="price-rows">
+                        <div class="price-row"><span class="lbl">Solo</span><span class="amount">$200</span></div>
+                        <div class="price-row"><span class="lbl">Pair</span><span class="amount">$300</span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> 60 minutes (40 swing / 20 strength)</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> 3D swing analysis with before/after</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Launch monitor: speed, ball speed, carry</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Take-home practice plan</li>
+                    </ul>
+                    <div class="price-card-ctas">
+                        <a class="btn btn-primary" href="https://calendly.com/redlinegolf/single-session-solo" onclick="return openBooking('single-session-solo','Single Solo',200);">Solo · $200</a>
+                        <a class="btn btn-outline dark" href="https://calendly.com/redlinegolf/single-session-pair" onclick="return openBooking('single-session-pair','Single Pair',300);">Pair · $300</a>
+                    </div>
                 </div>
             </div>
 
             <div class="price-card featured">
                 <span class="price-badge">Most Popular</span>
-                <h3>Monthly Program</h3>
-                <p class="tagline">Four sessions a month. Where most golfers see lasting gains.</p>
-                <div class="price-rows">
-                    <div class="price-row"><span class="lbl">Solo</span><span class="amount">$700<small>/mo</small></span></div>
-                    <div class="price-row"><span class="lbl">Pair</span><span class="amount">$1,000<small>/mo</small></span></div>
-                </div>
-                <ul class="price-features">
-                    <li><i class="fas fa-check" aria-hidden="true"></i> 4 × 60-min sessions per month</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Coaching plan that evolves weekly</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Session-over-session speed tracking</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Progressive strength programming</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Pair pricing saves $100/mo per person</li>
-                </ul>
-                <div class="price-card-ctas">
-                    <a class="btn btn-primary" href="https://calendly.com/redlinegolf/monthly-coaching-solo" onclick="return openBooking('monthly-coaching-solo','Monthly Solo',700);">Solo · $700</a>
-                    <a class="btn btn-outline dark" href="https://calendly.com/redlinegolf/monthly-coaching-pair" onclick="return openBooking('monthly-coaching-pair','Monthly Pair',1000);">Pair · $1,000</a>
+                <button type="button" class="price-card-summary" onclick="togglePricing(this)" aria-expanded="false">
+                    <span class="price-card-summary-text">
+                        <h3>Monthly Program</h3>
+                        <p class="tagline">Four sessions a month. Where most golfers see lasting gains.</p>
+                    </span>
+                    <span class="price-card-summary-meta">
+                        <span class="price-card-summary-from">From <strong>$700/mo</strong></span>
+                        <i class="fas fa-chevron-down price-card-chevron" aria-hidden="true"></i>
+                    </span>
+                </button>
+                <div class="price-card-body">
+                    <div class="price-rows">
+                        <div class="price-row"><span class="lbl">Solo</span><span class="amount">$700<small>/mo</small></span></div>
+                        <div class="price-row"><span class="lbl">Pair</span><span class="amount">$1,000<small>/mo</small></span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> 4 × 60-min sessions per month</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Coaching plan that evolves weekly</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Session-over-session speed tracking</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Progressive strength programming</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Pair pricing saves $100/mo per person</li>
+                    </ul>
+                    <div class="price-card-ctas">
+                        <a class="btn btn-primary" href="https://calendly.com/redlinegolf/monthly-coaching-solo" onclick="return openBooking('monthly-coaching-solo','Monthly Solo',700);">Solo · $700</a>
+                        <a class="btn btn-outline dark" href="https://calendly.com/redlinegolf/monthly-coaching-pair" onclick="return openBooking('monthly-coaching-pair','Monthly Pair',1000);">Pair · $1,000</a>
+                    </div>
                 </div>
             </div>
 
             <div class="price-card">
-                <h3>3-Session Package</h3>
-                <p class="tagline">Enough time to spot the speed leaks and start fixing them.</p>
-                <div class="price-rows">
-                    <div class="price-row"><span class="lbl">Solo</span><span class="amount">$550</span></div>
-                    <div class="price-row"><span class="lbl">Pair</span><span class="amount">$700</span></div>
-                </div>
-                <ul class="price-features">
-                    <li><i class="fas fa-check" aria-hidden="true"></i> 3 × 60-min sessions, spaced for retention</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Multi-session coaching arc</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Baseline, midpoint, final speed tests</li>
-                    <li><i class="fas fa-check" aria-hidden="true"></i> Strength program for your specific faults</li>
-                </ul>
-                <div class="price-card-ctas">
-                    <a class="btn btn-primary" href="https://calendly.com/redlinegolf/three-session-solo" onclick="return openBooking('three-session-solo','3-Session Solo',550);">Solo · $550</a>
-                    <a class="btn btn-outline dark" href="https://calendly.com/redlinegolf/three-session-pair" onclick="return openBooking('three-session-pair','3-Session Pair',700);">Pair · $700</a>
+                <button type="button" class="price-card-summary" onclick="togglePricing(this)" aria-expanded="false">
+                    <span class="price-card-summary-text">
+                        <h3>3-Session Package</h3>
+                        <p class="tagline">Enough time to spot the speed leaks and start fixing them.</p>
+                    </span>
+                    <span class="price-card-summary-meta">
+                        <span class="price-card-summary-from">From <strong>$550</strong></span>
+                        <i class="fas fa-chevron-down price-card-chevron" aria-hidden="true"></i>
+                    </span>
+                </button>
+                <div class="price-card-body">
+                    <div class="price-rows">
+                        <div class="price-row"><span class="lbl">Solo</span><span class="amount">$550</span></div>
+                        <div class="price-row"><span class="lbl">Pair</span><span class="amount">$700</span></div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check" aria-hidden="true"></i> 3 × 60-min sessions, spaced for retention</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Multi-session coaching arc</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Baseline, midpoint, final speed tests</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i> Strength program for your specific faults</li>
+                    </ul>
+                    <div class="price-card-ctas">
+                        <a class="btn btn-primary" href="https://calendly.com/redlinegolf/three-session-solo" onclick="return openBooking('three-session-solo','3-Session Solo',550);">Solo · $550</a>
+                        <a class="btn btn-outline dark" href="https://calendly.com/redlinegolf/three-session-pair" onclick="return openBooking('three-session-pair','3-Session Pair',700);">Pair · $700</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2107,7 +2269,7 @@
         </div>
         <div class="service-area-copy">
             <span class="label">Serving Southwest Florida</span>
-            <p>Redline trains golfers from <strong>Fort Myers</strong>, <strong>Naples</strong>, <strong>Cape Coral</strong>, <strong>Estero</strong>, <strong>Bonita Springs</strong>, <strong>Marco Island</strong>, <strong>Lehigh Acres</strong>, and <strong>Fort Myers Beach</strong>. All sessions at Red Line Athletics, 4429 Cleveland Ave Suite 130.</p>
+            <p>Redline trains golfers from <strong>Fort Myers</strong>, <strong>Naples</strong>, <strong>Cape Coral</strong>, <strong>Estero</strong>, <strong>Bonita Springs</strong>, <strong>Marco Island</strong>, <strong>Lehigh Acres</strong>, and <strong>Fort Myers Beach</strong>. All sessions inside <strong>Red Line Athletics</strong>, 4429 Cleveland Ave Suite 130.</p>
         </div>
     </div>
 </section>
@@ -2320,6 +2482,27 @@
         }
     }
     window.toggleAccordion = toggleAccordion;
+
+    // Pricing card accordion (mobile only)
+    function togglePricing(summary) {
+        if (window.innerWidth > 980) return;
+        const card = summary.closest('.price-card');
+        if (!card) return;
+        const willOpen = !card.classList.contains('open');
+        card.classList.toggle('open', willOpen);
+        summary.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    }
+    window.togglePricing = togglePricing;
+    // Auto-collapse all pricing cards when resizing back up to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 980) {
+            document.querySelectorAll('.price-card.open').forEach(c => {
+                c.classList.remove('open');
+                const sum = c.querySelector('.price-card-summary');
+                if (sum) sum.setAttribute('aria-expanded', 'false');
+            });
+        }
+    });
 
     // Testimonials carousel arrows
     (function() {
@@ -2548,131 +2731,4 @@
             console.error('Form submit failed:', err);
             showFormStatus('err', 'Something hiccuped on our end. Email <a href="mailto:Ryan@redlinegolfacademy.com">Ryan@redlinegolfacademy.com</a> or call <a href="tel:+12396728143">(239) 672-8143</a> and we\'ll take care of it.');
         }).finally(() => {
-            btn.disabled = false;
-            btn.innerHTML = originalBtnText;
-        });
-    }
-    window.submitForm = submitForm;
-</script>
-
-<!-- ========== JSON-LD: Organization + LocalBusiness/SportsActivityLocation ========== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://redlinegolfacademy.com/#organization",
-      "name": "Redline Golf Academy",
-      "alternateName": "Hogan Elite Golf",
-      "url": "https://redlinegolfacademy.com/",
-      "logo": "https://redlinegolfacademy.com/assets/logo-redline-golf.png",
-      "description": "Fort Myers golf lessons that pair 40 minutes of swing coaching with 20 minutes of golf-specific strength training. Most golfers add 5 to 10 mph in 3 sessions.",
-      "founder": {
-        "@type": "Person",
-        "name": "Ryan Hogan",
-        "jobTitle": "Head Coach + Founder",
-        "alumniOf": {"@type": "EducationalOrganization", "name": "Sean Foley Performance Academy"},
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "name": "TPI Level 1 Certified",
-          "credentialCategory": "certification",
-          "recognizedBy": {"@type": "Organization", "name": "Titleist Performance Institute"}
-        }
-      },
-      "sameAs": [
-        "https://facebook.com/redlinegolfacademy",
-        "https://instagram.com/redlinegolfacademy"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-239-672-8143",
-        "email": "Ryan@redlinegolfacademy.com",
-        "contactType": "customer service",
-        "areaServed": "US",
-        "availableLanguage": "English"
-      }
-    },
-    {
-      "@type": ["LocalBusiness", "SportsActivityLocation"],
-      "@id": "https://redlinegolfacademy.com/#studio",
-      "name": "Redline Golf Academy",
-      "url": "https://redlinegolfacademy.com/",
-      "image": "https://redlinegolfacademy.com/assets/ryan-followthrough-monitor-hero.jpg",
-      "telephone": "+1-239-672-8143",
-      "email": "Ryan@redlinegolfacademy.com",
-      "description": "Fort Myers golf lessons that pair 40 minutes of swing coaching with 20 minutes of golf-specific strength training. Most golfers add 5 to 10 mph in 3 sessions.",
-      "priceRange": "$200-$1000",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "4429 Cleveland Ave, Suite 130",
-        "addressLocality": "Fort Myers",
-        "addressRegion": "FL",
-        "postalCode": "33901",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 26.6406,
-        "longitude": -81.8723
-      },
-      "openingHoursSpecification": [
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "06:00", "closes": "19:00"},
-        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "17:00"}
-      ],
-      "areaServed": [
-        {"@type": "City", "name": "Fort Myers"},
-        {"@type": "City", "name": "Naples"},
-        {"@type": "City", "name": "Cape Coral"},
-        {"@type": "City", "name": "Estero"},
-        {"@type": "City", "name": "Bonita Springs"},
-        {"@type": "City", "name": "Marco Island"},
-        {"@type": "City", "name": "Lehigh Acres"},
-        {"@type": "City", "name": "Fort Myers Beach"},
-        {"@type": "AdministrativeArea", "name": "Lee County, Florida"}
-      ],
-      "knowsAbout": [
-        "Golf swing coaching",
-        "Clubhead speed training",
-        "TPI golf assessment",
-        "3D swing analysis",
-        "Launch monitor lessons",
-        "Junior golf training",
-        "Golf-specific strength training"
-      ],
-      "founder": {"@id": "https://redlinegolfacademy.com/#organization"},
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Golf Training Packages",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Single Golf Training Session", "description": "60 minutes: 40 min swing coaching + 20 min strength training"}, "price": "200", "priceCurrency": "USD"},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "3-Session Golf Training Package", "description": "Three 60-minute sessions with progress assessments"}, "price": "550", "priceCurrency": "USD"},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Monthly Golf Training Program", "description": "Four 60-minute sessions per month with session-over-session tracking"}, "price": "700", "priceCurrency": "USD"}
-        ]
-      }
-    }
-  ]
-}
-</script>
-
-<!-- ========== JSON-LD: FAQPage ========== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "How much do golf lessons cost at Redline Golf Academy?", "acceptedAnswer": {"@type": "Answer", "text": "Single sessions start at $200 solo and $300 for a pair. The 3-session package is $550 solo / $700 pair. The Monthly Program is $700/mo solo (4 sessions) or $1,000/mo for a pair. Every option includes swing coaching, 3D analysis, launch-monitor feedback, and golf-specific strength work."}},
-    {"@type": "Question", "name": "What's included in a 60-minute golf lesson?", "acceptedAnswer": {"@type": "Answer", "text": "Forty minutes of swing-mechanics coaching with 3D analysis and real-time feedback, plus 20 minutes of golf-specific strength and mobility training. Throughout, the launch monitor tracks clubhead speed, ball speed, and carry distance."}},
-    {"@type": "Question", "name": "What makes golf-specific strength training different from a regular gym workout?", "acceptedAnswer": {"@type": "Answer", "text": "Golf-specific training targets the movement patterns the swing demands: rotational power through the hips and torso, shoulder mobility, thoracic spine rotation, lead-leg stability, anti-rotation core control. Every drill ties back to what the launch monitor is showing."}},
-    {"@type": "Question", "name": "How soon will I see speed gains?", "acceptedAnswer": {"@type": "Answer", "text": "Most golfers see 2 to 4 mph of measurable improvement within the first 1 to 2 sessions. For the full 5 to 10 mph gain, the 3-session package or monthly program gives the time needed to lock in new mechanics."}},
-    {"@type": "Question", "name": "Do I need to be good at golf to start?", "acceptedAnswer": {"@type": "Answer", "text": "No. Beginners through low-handicap players train at Redline. The system adjusts. New to the game? We build fundamentals with speed in mind from day one. Already competitive? We find the inefficiencies that are leaving distance on the table."}},
-    {"@type": "Question", "name": "Can I train with a friend?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every package has a pair option. Pair pricing is cheaper per person and adds a competitive edge. Each of you gets individual coaching within the session."}},
-    {"@type": "Question", "name": "Where is Redline Golf Academy located?", "acceptedAnswer": {"@type": "Answer", "text": "Inside Red Line Athletics at 4429 Cleveland Ave, Suite 130, Fort Myers, FL 33901. Golfers come from across Southwest Florida including Naples, Cape Coral, Estero, Bonita Springs, and Marco Island."}},
-    {"@type": "Question", "name": "What should I bring to a golf lesson?", "acceptedAnswer": {"@type": "Answer", "text": "Bring your own clubs if you prefer, or use our equipment. Wear athletic clothing and golf or athletic shoes. We provide everything else for a complete session."}},
-    {"@type": "Question", "name": "How do I book a golf lesson at Redline?", "acceptedAnswer": {"@type": "Answer", "text": "Pick a session from the pricing section and click Solo or Pair. Choose a time and pay securely through Stripe. Prefer to talk first? Call (239) 672-8143 or use the contact form."}}
-  ]
-}
-</script>
-
-</body>
-</html>
+   
