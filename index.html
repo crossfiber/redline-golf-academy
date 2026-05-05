@@ -235,10 +235,17 @@
             display: none; flex-direction: column; gap: 5px;
             width: 44px; height: 44px; align-items: center; justify-content: center;
             background: transparent; border: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(14,165,233,0.20);
+            touch-action: manipulation;
+            padding: 0;
+            -webkit-appearance: none;
+            appearance: none;
         }
         .hamburger span {
             width: 24px; height: 2.5px; background: white;
             border-radius: 2px; transition: all 0.3s;
+            pointer-events: none;
         }
 
         .nav-overlay {
@@ -459,11 +466,28 @@
                 gap: 0;
             }
             .hero-content { display: contents; }
-            .hero-eyebrow-pill { order: 1; margin-bottom: 16px; }
-            .hero h1 { order: 2; margin-bottom: 24px; }
-            .hero-photo { order: 3; margin-bottom: 26px; aspect-ratio: 16/11; }
-            .hero-ctas { order: 4; margin-bottom: 22px; }
-            .hero p.lede { order: 5; margin-bottom: 20px; max-width: none; }
+            .hero-eyebrow-pill { order: 1; margin-bottom: 14px; align-self: flex-start; }
+            .hero h1 { order: 2; margin-bottom: 22px; }
+            .hero-photo { order: 3; margin-bottom: 22px; aspect-ratio: 16/11; }
+            .hero-ctas {
+                order: 4;
+                margin-bottom: 14px;
+                gap: 10px;
+                flex-wrap: nowrap;
+            }
+            .hero-ctas .btn {
+                flex: 1 1 0;
+                min-width: 0;
+                padding: 13px 12px;
+                font-size: 0.92rem;
+                gap: 6px;
+            }
+            .hero p.lede {
+                order: 5;
+                margin-bottom: 16px;
+                max-width: none;
+                font-size: 1.02rem;
+            }
             .hero-meta { order: 6; margin-bottom: 0; }
             .hero-badge { left: 12px; bottom: 14px; padding: 11px 14px; }
             .hero-badge .num { font-size: 1.55rem; }
@@ -2023,7 +2047,7 @@
         </div>
         <div class="pricing-grid">
             <div class="price-card">
-                <button type="button" class="price-card-summary" onclick="togglePricing(this)" aria-expanded="false">
+                <div class="price-card-summary" role="button" tabindex="0" onclick="togglePricing(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePricing(this);}" aria-expanded="false">
                     <span class="price-card-summary-text">
                         <h3>Single Session</h3>
                         <p class="tagline">Try the full Redline session. No commitment.</p>
@@ -2032,7 +2056,7 @@
                         <span class="price-card-summary-from">From <strong>$200</strong></span>
                         <i class="fas fa-chevron-down price-card-chevron" aria-hidden="true"></i>
                     </span>
-                </button>
+                </div>
                 <div class="price-card-body">
                     <div class="price-rows">
                         <div class="price-row"><span class="lbl">Solo</span><span class="amount">$200</span></div>
@@ -2053,7 +2077,7 @@
 
             <div class="price-card featured">
                 <span class="price-badge">Most Popular</span>
-                <button type="button" class="price-card-summary" onclick="togglePricing(this)" aria-expanded="false">
+                <div class="price-card-summary" role="button" tabindex="0" onclick="togglePricing(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePricing(this);}" aria-expanded="false">
                     <span class="price-card-summary-text">
                         <h3>Monthly Program</h3>
                         <p class="tagline">Four sessions a month. Where most golfers see lasting gains.</p>
@@ -2062,7 +2086,7 @@
                         <span class="price-card-summary-from">From <strong>$700/mo</strong></span>
                         <i class="fas fa-chevron-down price-card-chevron" aria-hidden="true"></i>
                     </span>
-                </button>
+                </div>
                 <div class="price-card-body">
                     <div class="price-rows">
                         <div class="price-row"><span class="lbl">Solo</span><span class="amount">$700<small>/mo</small></span></div>
@@ -2083,7 +2107,7 @@
             </div>
 
             <div class="price-card">
-                <button type="button" class="price-card-summary" onclick="togglePricing(this)" aria-expanded="false">
+                <div class="price-card-summary" role="button" tabindex="0" onclick="togglePricing(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePricing(this);}" aria-expanded="false">
                     <span class="price-card-summary-text">
                         <h3>3-Session Package</h3>
                         <p class="tagline">Enough time to spot the speed leaks and start fixing them.</p>
@@ -2092,7 +2116,7 @@
                         <span class="price-card-summary-from">From <strong>$550</strong></span>
                         <i class="fas fa-chevron-down price-card-chevron" aria-hidden="true"></i>
                     </span>
-                </button>
+                </div>
                 <div class="price-card-body">
                     <div class="price-rows">
                         <div class="price-row"><span class="lbl">Solo</span><span class="amount">$550</span></div>
@@ -2724,7 +2748,6 @@
             return;
         }
         const btn = document.getElementById('contactSubmitBtn');
-        const originalBtnText = btn.innerHTML;
         btn.disabled = true;
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
@@ -2733,4 +2756,134 @@
         for (const [k, v] of data.entries()) body.append(k, v);
 
         fetch('/', {
- 
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body.toString()
+        }).then(res => {
+            if (!res.ok) throw new Error('Network response was not ok: ' + res.status);
+            showFormStatus('ok', "Thanks. Ryan will be in touch shortly. For anything urgent, call <a href=\"tel:+12396728143\">(239) 672-8143</a>.");
+            form.reset();
+        }).catch(err => {
+            console.error('Form submit failed:', err);
+            showFormStatus('err', 'Something hiccuped on our end. Email <a href="mailto:Ryan@redlinegolfacademy.com">Ryan@redlinegolfacademy.com</a> or call <a href="tel:+12396728143">(239) 672-8143</a> and we\'ll take care of it.');
+        }).finally(() => {
+            btn.disabled = false;
+            btn.innerHTML = originalBtnText;
+        });
+    }
+    window.submitForm = submitForm;
+</script>
+
+<!-- ========== JSON-LD: Organization + LocalBusiness/SportsActivityLocation ========== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://redlinegolfacademy.com/#organization",
+      "name": "Redline Golf Academy",
+      "alternateName": "Hogan Elite Golf",
+      "url": "https://redlinegolfacademy.com/",
+      "logo": "https://redlinegolfacademy.com/assets/logo-redline-golf.png",
+      "description": "Fort Myers golf lessons that pair 40 minutes of swing coaching with 20 minutes of golf-specific strength training. Most golfers add 5 to 10 mph in 3 sessions.",
+      "founder": {
+        "@type": "Person",
+        "name": "Ryan Hogan",
+        "jobTitle": "Head Coach + Founder",
+        "alumniOf": {"@type": "EducationalOrganization", "name": "Sean Foley Performance Academy"},
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "name": "TPI Level 1 Certified",
+          "credentialCategory": "certification",
+          "recognizedBy": {"@type": "Organization", "name": "Titleist Performance Institute"}
+        }
+      },
+      "sameAs": [
+        "https://facebook.com/redlinegolfacademy",
+        "https://instagram.com/redlinegolfacademy"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-239-672-8143",
+        "email": "Ryan@redlinegolfacademy.com",
+        "contactType": "customer service",
+        "areaServed": "US",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": ["LocalBusiness", "SportsActivityLocation"],
+      "@id": "https://redlinegolfacademy.com/#studio",
+      "name": "Redline Golf Academy",
+      "url": "https://redlinegolfacademy.com/",
+      "image": "https://redlinegolfacademy.com/assets/ryan-followthrough-monitor-hero.jpg",
+      "telephone": "+1-239-672-8143",
+      "email": "Ryan@redlinegolfacademy.com",
+      "description": "Fort Myers golf lessons that pair 40 minutes of swing coaching with 20 minutes of golf-specific strength training. Most golfers add 5 to 10 mph in 3 sessions.",
+      "priceRange": "$200-$1000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4429 Cleveland Ave, Suite 130",
+        "addressLocality": "Fort Myers",
+        "addressRegion": "FL",
+        "postalCode": "33901",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.6406,
+        "longitude": -81.8723
+      },
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "06:00", "closes": "19:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "17:00"}
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Fort Myers"},
+        {"@type": "City", "name": "Naples"},
+        {"@type": "City", "name": "Cape Coral"},
+        {"@type": "City", "name": "Estero"},
+        {"@type": "City", "name": "Bonita Springs"},
+        {"@type": "City", "name": "Marco Island"},
+        {"@type": "City", "name": "Lehigh Acres"},
+        {"@type": "City", "name": "Fort Myers Beach"},
+        {"@type": "AdministrativeArea", "name": "Lee County, Florida"}
+      ],
+      "knowsAbout": [
+        "Golf swing coaching",
+        "Clubhead speed training",
+        "TPI golf assessment",
+        "3D swing analysis",
+        "Launch monitor lessons",
+        "Junior golf training",
+        "Golf-specific strength training"
+      ],
+      "founder": {"@id": "https://redlinegolfacademy.com/#organization"},
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Golf Training Packages",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Single Golf Training Session", "description": "60 minutes: 40 min swing coaching + 20 min strength training"}, "price": "200", "priceCurrency": "USD"},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "3-Session Golf Training Package", "description": "Three 60-minute sessions with progress assessments"}, "price": "550", "priceCurrency": "USD"},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Monthly Golf Training Program", "description": "Four 60-minute sessions per month with session-over-session tracking"}, "price": "700", "priceCurrency": "USD"}
+        ]
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ========== JSON-LD: FAQPage ========== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How much do golf lessons cost at Redline Golf Academy?", "acceptedAnswer": {"@type": "Answer", "text": "Single sessions start at $200 solo and $300 for a pair. The 3-session package is $550 solo / $700 pair. The Monthly Program is $700/mo solo (4 sessions) or $1,000/mo for a pair. Every option includes swing coaching, 3D analysis, launch-monitor feedback, and golf-specific strength work."}},
+    {"@type": "Question", "name": "What's included in a 60-minute golf lesson?", "acceptedAnswer": {"@type": "Answer", "text": "Forty minutes of swing-mechanics coaching with 3D analysis and real-time feedback, plus 20 minutes of golf-specific strength and mobility training. Throughout, the launch monitor tracks clubhead speed, ball speed, and carry distance."}},
+    {"@type": "Question", "name": "What makes golf-specific strength training different from a regular gym workout?", "acceptedAnswer": {"@type": "Answer", "text": "Golf-specific training targets the movement patterns the swing demands: rotational power through the hips and torso, shoulder mobility, thoracic spine rotation, lead-leg stability, anti-rotation core control. Every drill ties back to what the launch monitor is showing."}},
+    {"@type": "Question", "name": "How soon will I see speed gains?", "acceptedAnswer": {"@type": "Answer", "text": "Most golfers see 2 to 4 mph of measurable improvement within the first 1 to 2 sessions. For the full 5 to 10 mph gain, the 3-session package or monthly program gives the time needed to lock in new mechanics."}},
+    {"@type": "Question", "name": "Do I need to be good at golf to start?", "acceptedAnswer": {"@type": "Answer", "text": "No. Beginners through low-handicap players train at Redline. The system adjusts. New to the game? We build fundamentals with speed in mind from day one. Already competitive? We find the inefficiencies that are leaving distance on the table."}},
+    {"@type": "Question", "name": "Can I train with a friend?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every package has a pair option. Pair pricing is cheaper per person and adds a competitive edge. Each of you gets individual coaching within the session."}},
+    {"@type": "Question", "name": "Where is Redline Golf Academy located?", "acceptedAnswer": {"@type": "Answer", "text": "Inside Red Line Athletics at 4429 Cleveland Ave, Suite 130, Fort Myers, FL
