@@ -449,9 +449,22 @@
 
         @media (max-width: 980px) {
             .hero { padding: calc(var(--nav-h) + 28px) 0 60px; }
-            .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-            .hero-content { order: 2; }
-            .hero-photo { order: 1; aspect-ratio: 16/11; }
+            /* Mobile hero is its own design problem: reorder so conversion path
+               elements (H1 + photo + CTAs) come BEFORE editorial typography (lede + meta).
+               display: contents on .hero-content lets its children participate
+               in the parent flex order. */
+            .hero-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+            .hero-content { display: contents; }
+            .hero-eyebrow-pill { order: 1; margin-bottom: 16px; }
+            .hero h1 { order: 2; margin-bottom: 24px; }
+            .hero-photo { order: 3; margin-bottom: 26px; aspect-ratio: 16/11; }
+            .hero-ctas { order: 4; margin-bottom: 22px; }
+            .hero p.lede { order: 5; margin-bottom: 20px; max-width: none; }
+            .hero-meta { order: 6; margin-bottom: 0; }
             .hero-badge { left: 12px; bottom: 14px; padding: 11px 14px; }
             .hero-badge .num { font-size: 1.55rem; }
             .hero-badge .lbl { font-size: 0.66rem; }
@@ -2720,13 +2733,4 @@
         for (const [k, v] of data.entries()) body.append(k, v);
 
         fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: body.toString()
-        }).then(res => {
-            if (!res.ok) throw new Error('Network response was not ok: ' + res.status);
-            showFormStatus('ok', "Thanks. Ryan will be in touch shortly. For anything urgent, call <a href=\"tel:+12396728143\">(239) 672-8143</a>.");
-            form.reset();
-        }).catch(err => {
-            console.error('Form submit failed:', err);
-            showFormStatus('err', 'Something hiccuped on our end. Email <a href="mailto:Ryan@redlinegolfacademy.com">Ryan@redlinegolfacademy.com</a> or call <a href="tel:+12396728143">(239) 672-814
+ 
