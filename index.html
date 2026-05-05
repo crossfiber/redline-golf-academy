@@ -1942,7 +1942,7 @@
 
                 <div class="coach-bio">
                     <p>Ryan grew up in the game: 9 years of competitive play, 7 years coaching, and still active on local mini-tours. A baseball background taught him how much raw athleticism matters in golf, and time at the <strong>Sean Foley Performance Academy</strong> showed him how the best in the world stitch swing mechanics to physical conditioning.</p>
-                    <p>He built Redline so everyday golfers get the same approach: one studio where your swing data and your strength programming talk to each other. The studio lives inside <strong>Red Line Athletics on Cleveland Ave</strong>, an 8,000+ sq ft sports performance facility, so the strength side of every session has the room and the equipment it needs.</p>
+                    <p>He built Redline Golf Academy so everyday golfers get the same approach: one studio where your swing data and your strength programming talk to each other. The studio lives inside <strong>Red Line Athletics on Cleveland Ave</strong>, an 8,000+ sq ft sports performance facility, so the strength side of every session has the room and the equipment it needs.</p>
                 </div>
 
                 <div class="coach-cta-row">
@@ -2320,7 +2320,7 @@
                         Fort Myers, FL 33901
                     </address>
                     <div class="row"><i class="fas fa-phone-volume" aria-hidden="true"></i><a href="tel:+12396728143">(239) 672-8143</a></div>
-                    <div class="row"><i class="fas fa-envelope-open-text" aria-hidden="true"></i><a href="#" class="js-email" data-u="Ryan" data-d="redlinegolfacademy.com">loading...</a></div>
+                    <div class="row"><i class="fas fa-envelope-open-text" aria-hidden="true"></i><a href="mailto:ryan@redlinegolfacademy.com">ryan@redlinegolfacademy.com</a></div>
                     <div class="row"><i class="fas fa-clock" aria-hidden="true"></i><span><strong style="color: var(--navy);">Mon–Fri</strong> 6am–7pm · <strong style="color: var(--navy);">Sat</strong> 7am–5pm</span></div>
                 </div>
                 <div class="map-card">
@@ -2624,13 +2624,6 @@
     window.openBooking = openBooking;
 
     document.addEventListener('DOMContentLoaded', function () {
-        // Email obfuscation
-        document.querySelectorAll('.js-email').forEach(function (el) {
-            const addr = el.dataset.u + '@' + el.dataset.d;
-            el.href = 'mailto:' + addr;
-            el.textContent = addr;
-        });
-
         const { modal, frame, loading, close } = rgEls();
         if (close) close.addEventListener('click', rgCloseModal);
         if (modal) modal.addEventListener('click', function (e) {
@@ -2731,4 +2724,12 @@
             console.error('Form submit failed:', err);
             showFormStatus('err', 'Something hiccuped on our end. Email <a href="mailto:Ryan@redlinegolfacademy.com">Ryan@redlinegolfacademy.com</a> or call <a href="tel:+12396728143">(239) 672-8143</a> and we\'ll take care of it.');
         }).finally(() => {
-   
+            btn.disabled = false;
+            btn.innerHTML = originalBtnText;
+        });
+    }
+    window.submitForm = submitForm;
+</script>
+
+<!-- ========== JSON-LD: Organization + LocalBusiness/SportsActivityLocation ========== -->
+<script type="a
