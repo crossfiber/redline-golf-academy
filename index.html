@@ -494,13 +494,13 @@
             .hero-badge .lbl { font-size: 0.66rem; }
         }
 
-        /* ======================== TRUST STRIP (overlapping, single sentence - not a SaaS grid) ======================== */
+        /* ======================== TRUST STRIP (stats + venue, single dark band) ======================== */
         .trust-strip {
             position: relative;
             z-index: 5;
             background: var(--navy);
-            color: white;
-            padding: 26px 0;
+            color: var(--text-mute);
+            padding: 24px 0 22px;
             margin-top: -32px;
             box-shadow: var(--shadow-mid);
         }
@@ -508,18 +508,19 @@
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 28px;
+        }
+        .trust-stats {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 18px;
             flex-wrap: wrap;
-            font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+            font-size: clamp(0.95rem, 1.25vw, 1.08rem);
             line-height: 1.5;
             text-align: center;
             font-weight: 500;
-            color: var(--text-mute);
         }
-        .trust-strip strong {
+        .trust-stats strong {
             color: white;
             font-family: 'Big Shoulders Display', sans-serif;
             font-weight: 800;
@@ -527,72 +528,59 @@
             letter-spacing: 0.01em;
             margin: 0 4px;
         }
-        .trust-strip i { color: var(--teal); margin: 0 6px; }
-        .trust-strip .sep {
-            color: rgba(255,255,255,0.20);
-            margin: 0 6px;
-        }
-        @media (max-width: 600px) {
-            .trust-strip { padding: 20px 0; margin-top: -24px; }
-            .trust-strip-inner { gap: 8px; flex-direction: column; }
-            .trust-strip .sep { display: none; }
+        .trust-stats i { color: var(--teal); margin: 0 6px; }
+        .trust-stats .sep { color: rgba(255,255,255,0.22); margin: 0 6px; }
+
+        .trust-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.12);
+            margin: 18px auto 16px;
+            max-width: 760px;
         }
 
-        /* ======================== HOSTED-AT BAR (venue partnership) ======================== */
-        .hosted-bar {
-            background: var(--cream);
-            padding: 22px 0;
-            border-bottom: 1px solid var(--line);
-        }
-        .hosted-bar-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 28px;
+        .trust-host {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 22px;
             flex-wrap: wrap;
+            text-align: center;
         }
-        .hosted-bar-label {
+        .trust-host-label {
             font-family: 'Hanken Grotesk', sans-serif;
-            font-size: 0.74rem;
+            font-size: 0.72rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.18em;
-            color: var(--text-body);
+            color: rgba(255,255,255,0.55);
             white-space: nowrap;
         }
-        .hosted-bar-logo {
+        .trust-host-logo {
             display: inline-flex;
             align-items: center;
             transition: opacity 0.22s ease, transform 0.22s ease;
         }
-        .hosted-bar-logo img {
-            height: 36px;
+        .trust-host-logo img {
+            height: 30px;
             width: auto;
             display: block;
         }
-        .hosted-bar-logo:hover {
-            opacity: 0.78;
-            transform: translateY(-1px);
-        }
-        .hosted-bar-text {
+        .trust-host-logo:hover { opacity: 0.78; transform: translateY(-1px); }
+        .trust-host-text {
             font-family: 'Hanken Grotesk', sans-serif;
-            font-size: 0.92rem;
-            color: var(--text-body);
+            font-size: 0.88rem;
+            color: var(--text-mute);
             line-height: 1.5;
-            max-width: 460px;
-        }
-        .hosted-bar-text strong {
-            color: var(--navy);
-            font-weight: 700;
+            max-width: 420px;
         }
         @media (max-width: 768px) {
-            .hosted-bar { padding: 18px 0; }
-            .hosted-bar-inner { gap: 14px; padding: 0 20px; flex-direction: column; text-align: center; }
-            .hosted-bar-logo img { height: 30px; }
-            .hosted-bar-text { font-size: 0.86rem; max-width: none; }
+            .trust-strip { padding: 20px 0 18px; margin-top: -24px; }
+            .trust-stats { gap: 8px; flex-direction: column; }
+            .trust-stats .sep { display: none; }
+            .trust-divider { margin: 14px auto 14px; max-width: 220px; }
+            .trust-host { gap: 12px; flex-direction: column; }
+            .trust-host-logo img { height: 26px; }
+            .trust-host-text { font-size: 0.84rem; max-width: none; }
         }
 
         /* ======================== SECTION SPACING ======================== */
@@ -1914,29 +1902,28 @@
     </div>
 </header>
 
-<!-- ========== TRUST STRIP (single sentence, woven - not a SaaS grid) ========== -->
-<section class="trust-strip" aria-label="Quick credentials">
+<!-- ========== TRUST STRIP (stats + venue partnership, single dark band) ========== -->
+<section class="trust-strip" aria-label="Quick credentials and venue">
     <div class="trust-strip-inner">
-        <span><i class="fas fa-stopwatch"></i><strong>7 years</strong> coaching</span>
-        <span class="sep">•</span>
-        <span><strong>100+</strong> golfers trained</span>
-        <span class="sep">•</span>
-        <span><i class="fas fa-warehouse"></i><strong>8,000+ sq ft</strong> facility</span>
-        <span class="sep">•</span>
-        <span><i class="fas fa-flag-checkered"></i>Active mini-tour competitor</span>
+        <div class="trust-stats">
+            <span><i class="fas fa-stopwatch"></i><strong>7 years</strong> coaching</span>
+            <span class="sep">•</span>
+            <span><strong>100+</strong> golfers trained</span>
+            <span class="sep">•</span>
+            <span><i class="fas fa-warehouse"></i><strong>8,000+ sq ft</strong> facility</span>
+            <span class="sep">•</span>
+            <span><i class="fas fa-flag-checkered"></i>Active mini-tour competitor</span>
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-host">
+            <span class="trust-host-label">Hosted Inside</span>
+            <a href="https://redlineathletics.com/location/ft-myers/" target="_blank" rel="noopener" class="trust-host-logo" aria-label="Red Line Athletics Fort Myers">
+                <img src="assets/redline-athletics-ftmyers.webp" alt="Red Line Athletics Fort Myers" width="600" height="179" loading="lazy">
+            </a>
+            <span class="trust-host-text">Cleveland Ave studio with a dedicated golf bay inside their sports performance facility.</span>
+        </div>
     </div>
 </section>
-
-<!-- ========== HOSTED-AT BAR (Red Line Athletics venue partnership) ========== -->
-<aside class="hosted-bar" aria-label="Venue partnership">
-    <div class="hosted-bar-inner">
-        <span class="hosted-bar-label">Hosted Inside</span>
-        <a href="https://redlineathletics.com/location/ft-myers/" target="_blank" rel="noopener" class="hosted-bar-logo" aria-label="Red Line Athletics Fort Myers">
-            <img src="assets/redline-athletics-ftmyers.webp" alt="Red Line Athletics Fort Myers" width="600" height="179" loading="lazy">
-        </a>
-        <span class="hosted-bar-text">An <strong>8,000+ sq ft</strong> sports performance facility on Cleveland Ave. Same building, dedicated golf studio.</span>
-    </div>
-</aside>
 
 <!-- ========== COACH (image left, content right) ========== -->
 <section class="coach" id="coach">
@@ -2895,3 +2882,4 @@
 
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                 
